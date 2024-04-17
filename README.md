@@ -1,6 +1,10 @@
 # iDrott-Website
 
-This template should help get you started developing with Vue 3 in Vite.
+This repository contains the source code for iDrott's website. iDrott is a committee of the Data Science department on Chalmers.
+This website is built using Vue.js and you can follow the instructions below to build the project on your own machine.
+
+If there's any questions regarding the code of the website you can contact me!
+**Mail:** luksode@chalmers.se
 
 ## Recommended IDE Setup
 
