@@ -16,8 +16,14 @@ defineProps<{
 </template>
 
 <style scoped>
+
+
 h1 {
-  font-weight: 500;
+  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Courier New', Courier, monospace;
+  font-family: Inter;
+  color: red;
+  font-weight: 700;
   font-size: 2.6rem;
   position: relative;
   top: -10px;
