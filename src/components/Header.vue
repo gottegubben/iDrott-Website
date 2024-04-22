@@ -8,7 +8,9 @@
             <iDrottTxtLogo width="132px" color="var(--color60)"></iDrottTxtLogo> <!-- This is the iDrott logo. -->
 
             <!-- The unordered list contains all the router links to the different pages on the website. -->
-            <ul></ul>
+            <ul>
+                <li v-for="route in $router.options.routes"><router-link :to=route.path>{{ route.name }}</router-link></li> <!-- For each route that exist => create a routeLink with that route. -->
+            </ul>
         </header>
     </div>
 </template>

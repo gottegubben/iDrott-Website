@@ -24,10 +24,10 @@ import ViewActivities from './views/ViewActivities.vue';
 import ViewHackeDutd from './views/ViewHackeDutd.vue';
 
 const routes = [
-    { path: '/', component: ViewHome },
-    { path: '/board', component: ViewBoard },
-    { path: '/activities', component: ViewActivities },
-    { path: '/hackeutd', component: ViewHackeDutd }
+    { path: '/', component: ViewHome, name: "Home" },
+    { path: '/board', component: ViewBoard, name: "The Board" },
+    { path: '/activities', component: ViewActivities, name: "Activities" },
+    { path: '/hackeutd', component: ViewHackeDutd, name: "HackeD Utd" }
 ];
 
 const router = createRouter({
