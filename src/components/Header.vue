@@ -1,3 +1,6 @@
+<script setup>
+    import iDrottTxtLogo from '@/assets/icons/iDrottTxtLogo.vue';
+</script>
+
 <template>
-    <img src="../assets/svg/iDrottLogo.svg" alt="iDrott">
 </template>
