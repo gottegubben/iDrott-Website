@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+:root {
+    --max_page_width: 1200px; /* The max width of content on the page. Is used for not making everything seperated on wide screens. */
+    --page_min_margin: 150px; /* The minimal margin between the content and the page's sides. */
+}

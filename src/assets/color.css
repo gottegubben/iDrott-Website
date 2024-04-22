@@ -1,16 +1,16 @@
 :root {
     /* The main color of the page. */
-    --color60: blue;
+    --color60: hsl(40, 100%, 93%);
     --color60_sh1: rgb(7, 7, 158);
     --color60_sh2: rgb(0, 0, 90);
 
     /* The secondary color. */
-    --color30: rgb(149, 255, 0);
+    --color30: hsl(240, 14%, 1%);
     --color30_sh1: rgb(83, 142, 0);
     --color30_sh2: rgb(50, 85, 2);
 
     /* The color for taking action. */
-    --color10: rgb(255, 179, 0);
+    --color10: hsl(42, 100%, 50%)
     --color10_sh1: rgb(167, 139, 1);
     --color10_sh2: rgb(91, 71, 0);
 }

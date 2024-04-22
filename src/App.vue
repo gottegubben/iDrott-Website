@@ -8,5 +8,8 @@
   <Header></Header>
 </template>
 
-<style scoped>
+<style>
+  body {
+    background-color: var(--color60);
+  }
 </style>
