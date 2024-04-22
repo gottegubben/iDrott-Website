@@ -1,9 +1,9 @@
 @font-face {
     font-family: Inter;
-    src: url(assets\font\Inter-VariableFont_slnt,wght.ttf);
+    src: url(font\Inter-VariableFont_slnt,wght.ttf);
 }
 
-:root {    
+:root {
     /* The main font used. */
     --font_main: Inter;
 }
