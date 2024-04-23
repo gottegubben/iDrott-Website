@@ -11,5 +11,7 @@
 <style>
   body {
     background-color: var(--color60);
+
+    font-family: var(--font_main);
   }
 </style>

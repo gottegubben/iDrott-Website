@@ -6,4 +6,8 @@
 :root {
     /* The main font used. */
     --font_main: Inter;
+
+    --font_weight_big: 900;
+    --font_weight_med: 600;
+    --font_weight_sma: 300;
 }

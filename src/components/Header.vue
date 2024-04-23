@@ -33,4 +33,13 @@
         display: flex;
         align-items: center
     }
+
+    ul {
+        display: flex;
+        margin-left: auto;
+    }
+
+    li {
+        display: inline;
+    }
 </style>
