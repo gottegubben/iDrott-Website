@@ -53,5 +53,26 @@
         color: var(--color60);
 
         text-decoration: none; /* Remove the awful lines. */
+
+        display: inline-block;
+    }
+
+    a::after {
+        display: block;
+        content: '';
+        position: relative;
+        width: 0;
+        height: 3px;
+        background-color: var(--color10);
+
+        transition: var(--ani-del-snappy);
+    }
+
+    a:hover::after {
+        width: 100%;
+    }
+
+    .router-link-active {
+        color: var(--color10);
     }
 </style>

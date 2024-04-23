@@ -1,12 +1,12 @@
 <script setup lang="ts">
-  import { RouterLink, RouterView } from 'vue-router'
+  import { RouterView } from 'vue-router'
 
   import Header from './components/Header.vue';
 </script>
 
 <template>
   <Header></Header>
-  <RouterView></RouterView>
+  <RouterView></RouterView> <!-- This is where the different pages will be loaded! -->
 </template>
 
 <style>
