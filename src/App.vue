@@ -6,12 +6,13 @@
 
 <template>
   <Header></Header>
+  <RouterView></RouterView>
 </template>
 
 <style>
   body {
     background-color: var(--color60);
 
-    font-family: var(--font_main);
+    font-family: var(--font-main);
   }
 </style>

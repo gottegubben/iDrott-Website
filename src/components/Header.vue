@@ -25,8 +25,8 @@
     }
 
     header {
-        max-width: var(--max_page_width);
-        margin: 0 var(--page_min_margin) 0 var(--page_min_margin); /* Left and right margin is = (--page_min_margin). */
+        max-width: var(--max-page-width);
+        margin: 0 var(--page-min-margin) 0 var(--page-min-margin); /* Left and right margin is = (--page_min_margin). */
         width: 100%; /* The header should try to reach as far as it can, but should be stopped by the max-width. */
         height: 70px;
 
@@ -36,10 +36,22 @@
 
     ul {
         display: flex;
+        flex-direction: row;
+        gap: var(--space-xl);
+
         margin-left: auto;
     }
 
     li {
         display: inline;
+    }
+
+    /* These a-elements are the links themselves after vue has done it's part. */
+    a {
+        font-weight: var(--font-weight-l);
+        font-size: var(--font-size-s);
+        color: var(--color60);
+
+        text-decoration: none; /* Remove the awful lines. */
     }
 </style>

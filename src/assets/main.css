@@ -6,6 +6,16 @@ body {
 }
 
 :root {
-    --max_page_width: 1200px; /* The max width of content on the page. Is used for not making everything seperated on wide screens. */
-    --page_min_margin: 150px; /* The minimal margin between the content and the page's sides. */
+    --max-page-width: 1200px; /* The max width of content on the page. Is used for not making everything seperated on wide screens. */
+    --page-min-margin: 150px; /* The minimal margin between the content and the page's sides. */
+
+    /* Spacing values for margin and padding! */
+    --space-unit: 1em;
+    --space-xxs:  calc(0.25 * var(--space-unit));
+    --space-xs:   calc(0.5 * var(--space-unit));
+    --space-sm:   calc(0.75 * var(--space-unit));
+    --space-md:   calc(1.25 * var(--space-unit));
+    --space-lg:   calc(2 * var(--space-unit));
+    --space-xl:   calc(3.25 * var(--space-unit));
+    --space-xxl:  calc(5.25 * var(--space-unit));
 }

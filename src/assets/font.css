@@ -5,9 +5,16 @@
 
 :root {
     /* The main font used. */
-    --font_main: Inter;
+    --font-main: Inter;
 
-    --font_weight_big: 900;
-    --font_weight_med: 600;
-    --font_weight_sma: 300;
+    /* The font weights that can be used (The thickness of the font). */
+    --font-weight-l: 900;
+    --font-weight-m: 600;
+    --font-weight-s: 300;
+
+    /* The different sizes of the font that will be used. */
+    --font-size-x: 4em;
+    --font-size-m: 2em;
+    --font-size-s: 1.5em;
+    --font-size-xs: 1em;
 }
