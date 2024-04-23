@@ -18,4 +18,7 @@ body {
     --space-lg:   calc(2 * var(--space-unit));
     --space-xl:   calc(3.25 * var(--space-unit));
     --space-xxl:  calc(5.25 * var(--space-unit));
+
+    /* The height of the header. */
+    --header-height: 50px;
 }
