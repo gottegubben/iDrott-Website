@@ -5,7 +5,7 @@
 <template>
     <div id="header-container">
         <header class="content-container">
-            <iDrottTxtLogo width="132px" color="var(--color60)"></iDrottTxtLogo> <!-- This is the iDrott logo. -->
+            <iDrottTxtLogo width="8em" color="var(--color60)"></iDrottTxtLogo> <!-- This is the iDrott logo. -->
 
             <!-- The unordered list contains all the router links to the different pages on the website. -->
             <ul>
