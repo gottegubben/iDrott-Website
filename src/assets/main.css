@@ -22,3 +22,10 @@ body {
     /* The height of the header. */
     --header-height: 50px;
 }
+
+/* The content-container class is used for the base of the page to allow for the content to have the same margins on the right & left side. */
+.content-container {
+    max-width: var(--max-page-width);
+    margin: 0 var(--page-min-margin) 0 var(--page-min-margin); /* Left and right margin is = (--page_min_margin). */
+    width: 100%; /* The header should try to reach as far as it can, but should be stopped by the max-width. */
+}

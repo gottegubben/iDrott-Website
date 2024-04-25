@@ -2,7 +2,10 @@
     <div id="img-container">
         <img id="start" src="../assets/images/iDrott-homepage.jfif" alt="homepage-image">
         <div id="img-shadow">
-
+            <div id="shadow-text" class="content-container">
+                <h2>Welcome to iDrott</h2>
+                <h3>iDrott is the Computer Technology Section's sports association that organizes sports activities at least once a week. The association is responsible for putting together teams for the various Chalmers Championships (CM) in sports such as floorball, football, ghost ball and not least kubb.</h3>
+            </div>
         </div>
     </div>
 </template>
@@ -32,5 +35,17 @@
         height: 50%;
         width: 100% ;
         background-image: linear-gradient(to top, var(--color30), hsla(0, 0%, 0%, 0));
+    }
+
+    div#shadow-text {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: var(--space-lg);
+    }
+    h2, h3 {
+        color: var(--color60);
+    }
+    h3 {
+        font-weight: var(--font-weight-s);
     }
 </style>

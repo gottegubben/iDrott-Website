@@ -18,3 +18,16 @@
     --font-size-s: 1.5em;
     --font-size-xs: 1em;
 }
+
+h1 {
+    font-size: var(--font-size-x);
+}
+h2 {
+    font-size: var(--font-size-m);
+}
+h3 {
+    font-size: var(--font-size-s);
+}
+p {
+    font-size: var(--font-size-xs);
+}
