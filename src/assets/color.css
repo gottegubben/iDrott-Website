@@ -4,6 +4,7 @@
 
     /* The secondary color. */
     --color30: hsl(240, 14%, 1%);
+    --color30-sh1: hsl(240, 14%, 30%);
 
     /* The color for taking action. */
     --color10: hsl(34, 100%, 50%);

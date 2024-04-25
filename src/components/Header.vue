@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
     import iDrottTxtLogo from '@/assets/icons/iDrottTxtLogo.vue';
 </script>
 
