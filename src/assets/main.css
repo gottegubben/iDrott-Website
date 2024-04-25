@@ -19,8 +19,9 @@ body {
     --space-xl:   calc(3.25 * var(--space-unit));
     --space-xxl:  calc(5.25 * var(--space-unit));
 
-    /* The height of the header. */
+    /* The height of the header and footer. */
     --header-height: 50px;
+    --footer-height: 70px;
 }
 
 /* The content-container class is used for the base of the page to allow for the content to have the same margins on the right & left side. */
