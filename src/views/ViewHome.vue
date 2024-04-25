@@ -30,6 +30,8 @@
         display: block;
     }
     div#img-shadow {
+        display: flex;
+        justify-content: center;
         position: absolute;
         bottom: 0;
         height: 50%;
