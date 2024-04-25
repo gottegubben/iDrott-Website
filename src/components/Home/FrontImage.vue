@@ -8,7 +8,7 @@
         <div id="img-shadow"></div>
         <div id="image-content" class="content-container">
             <div id="logo-container">
-                <!--<iDrottLogo height="100%"></iDrottLogo>-->
+                <iDrottLogo height=""></iDrottLogo>
             </div>
             <div id="text-container">
                 <h2>Welcome to iDrott</h2>
@@ -21,6 +21,8 @@
 <style scoped>
     div#img-container {
         position: relative;
+        display: flex;
+        justify-content: center;
 
         width: 100%;
         height: calc(100dvh - var(--header-height)); /* The viewport height minus the header will be the desired height of the image container. */
@@ -63,12 +65,9 @@
         width: 100%;
     }
     div#logo-container {
-        position: relative;
-
         flex-grow: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        min-width: 0;
+        min-height: 0;
 
         margin-top: var(--space-xxl);
         margin-bottom: var(--space-xxl);

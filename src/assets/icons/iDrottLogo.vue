@@ -1,13 +1,11 @@
-<script setup lang="ts">
-    const props = defineProps({
-        //The width of the logo. Ex: width = "50px".
-        height: {
-            type: String,
-            required: true
-        }
-    });
-</script>
-
 <template>
-    <img :style="{'height': height}" src="../images/iDrott23Logo.png" alt="Logo">
+    <img src="../images/iDrott23Logo.png" alt="Logo">
 </template>
+
+<style scoped>
+    img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+</style>
