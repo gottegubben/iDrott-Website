@@ -1,20 +1,18 @@
 <script setup>
     import FrontImage from '@/components/Home/FrontImage.vue';
-
-    import Climbing from '@/assets/icons/Climbing.vue';
 </script>
 
 <template>
     <FrontImage></FrontImage>
 
     <div id="info-container">
-        <Climbing></Climbing>
         <div class="content-container">
             <div id="grid">
                 <div></div>
                 <div id="text-container">
-                    <h2>We host practice sessions!</h2>
+                    <h1>We host <span id="practice">practice</span> sessions!</h1>
                     <p>At least once a week, iDrott hosts a practice session for all students currently enrolled in the Computer Science program at Chalmers. The types of sessions themselves can range from a variety of different sports such as volleyball, basketball and table tennis.<br><br>To read more about upcoming events and activities, please refer yourself to the activities page!</p>
+                    <button style="width: 100px; height: 50px; background-color: red;"></button>
                 </div>
             </div>
         </div>
@@ -28,16 +26,20 @@
 </template>
 
 <style scoped>
-    svg {
+    img {
         position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     div#info-container {
+        position: relative;
         display: flex;
         justify-content: center;
-        width: 100%;
-        height: 700px;
-        object-fit: contain;
+
+        background: url("../assets/images/climbing.svg") no-repeat center top;
+        background-size: auto;
     }
 
     div.content-container, div#grid {
@@ -45,11 +47,23 @@
     }
 
     div#grid {
+        margin-top: var(--space-xxl);
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
-    p, h2 {
-        color: red;
+    div#text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    p {
+        margin-top: 0;
+        font-weight: var(--font-weight-m);
+    }
+
+    span#practice {
+        color: var(--color10);
     }
 </style>
