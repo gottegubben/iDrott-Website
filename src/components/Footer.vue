@@ -6,7 +6,7 @@
     <div id="footer-container">
         <div class="content-container">
             <iDrottTxtLogo width="5em" color="var(--color30-sh1)"></iDrottTxtLogo>
-            <p>@ All rights reserved 2024</p>
+            <p>Designed by: Lukas Söderberg</p>
             <div id="social-media-links">
 
             </div>
