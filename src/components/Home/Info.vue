@@ -22,6 +22,7 @@
     }
 
     div.content-container-1 {
+        /* If you want to change the color of the main page (--color30), then you have to manualy change the climbing.svg files fill attribute to that color. */
         background: var(--color60) url("../../assets/images/climbing.svg") no-repeat center top;
         background-size: cover;
     }
