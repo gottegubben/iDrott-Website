@@ -8,4 +8,5 @@
 
     /* The color for taking action. */
     --color10: hsl(34, 100%, 50%);
+    --color10-sh1: hsl(34, 100%, 60%);
 }
