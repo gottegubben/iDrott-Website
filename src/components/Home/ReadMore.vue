@@ -3,7 +3,7 @@
         <div class="content-container">
             <h2>More <span>sports</span> related topics</h2>
             <div id="card-container">
-
+                
             </div>
         </div>
     </div>
