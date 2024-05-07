@@ -11,7 +11,9 @@
                     <Button text="Contact us!" color="var(--color10)" colorHover="var(--color10-sh1)"></Button>
                 </div>
             </div>
-            <div></div>
+            <div id="team-image">
+                <img src="../../assets/images/team-picture.png" alt="">
+            </div>
         </div>
     </div>
 </template>
@@ -40,5 +42,7 @@
     div#contact-us {
         display: flex;
         flex-direction: column;
+        
+        justify-content: center;
     }
 </style>
