@@ -19,6 +19,10 @@ import { computed } from 'vue';
         colorHover: {
             type: String,
             required: true
+        },
+        boxshadow: {
+            type: Boolean,
+            default: false
         }
     });
 
@@ -27,7 +31,9 @@ import { computed } from 'vue';
             '--color-main': props.color,
             '--color-hover': props.colorHover,
 
-            'font-size': props.textSize
+            'font-size': props.textSize,
+
+            'box-shadow': props.boxshadow ? '0 0.1em 0.3em var(--color30)' : ''
         };
     });
 </script>
@@ -40,9 +46,9 @@ import { computed } from 'vue';
     button {
         color: var(--color60);
 
-        border-radius: 8px;
+        border-radius: 0.3em;
 
-        padding: 10px 0 10px 0;
+        padding: 0.4em 1.5em 0.4em 1.5em;
 
         font-weight: bold;
         font-family: Inter;
