@@ -5,6 +5,14 @@
         {
             text: "Meet the board!",
             imgSrc: ""
+        },
+        {
+            text: "Test number two!",
+            imgSrc: ""
+        },
+        { 
+            text: "Test nmr three!",
+            imgSrc: ""
         }
     ];
 </script>
@@ -25,7 +33,9 @@
         margin-top: var(--space-lg);
 
         display: flex;
-        justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
     }
 
     span {
@@ -36,5 +46,14 @@
         width: 100%;
         display: flex;
         align-items: center;
+    }
+
+    div#card-container {  
+        margin-top: var(--space-md);
+        margin-bottom: var(--space-lg);
+
+        display: flex;
+        flex-direction: row;
+        gap: var(--space-lg);
     }
 </style>
