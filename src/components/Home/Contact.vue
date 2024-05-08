@@ -8,7 +8,7 @@
             <div id="contact-us">
                 <h2>Any questions?</h2>
                 <div id="btn-container">
-                    <Button text="Contact us!" color="var(--color10)" colorHover="var(--color10-sh1)"></Button>
+                    <Button text="Contact us!" color="var(--color10)" colorHover="var(--color10-sh1)" textSize="var(--font-size-s)"></Button>
                 </div>
             </div>
             <div id="team-image">
