@@ -11,5 +11,11 @@
         width: 200px; /* These are just temporary values. */
         height: 300px;
         background-color: red;
+
+        transition: 0.5s ease;
+    }
+
+    #card-container:hover {
+        transform: translateY(-10%);
     }
 </style>
