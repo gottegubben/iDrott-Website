@@ -16,6 +16,8 @@
     }
 
     #card-container:hover {
+        cursor: pointer;
+        
         transform: translateY(-10%);
     }
 </style>

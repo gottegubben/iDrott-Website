@@ -58,6 +58,8 @@ import { computed } from 'vue';
     }
 
     button:hover {
+        cursor: pointer;
+
         background-color: var(--color-hover);
     }
 </style>
