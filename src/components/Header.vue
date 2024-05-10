@@ -16,7 +16,7 @@
 </template>
 
 <style scoped>
-    div#header-container { /* The header container just centers the header. */
+    #header-container { /* The header container just centers the header. */
         background-color: var(--color30);
 
         width: 100%;

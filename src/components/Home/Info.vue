@@ -24,30 +24,30 @@
         margin-bottom: var(--space-xl);
     }
 
-    div#info-container {
+    #info-container {
         position: relative;
         display: flex;
         justify-content: center;
         background-color: var(--color30);
     }
 
-    div.content-container-1 {
+    .content-container-1 {
         /* If you want to change the color of the main page (--color30), then you have to manualy change the climbing.svg files fill attribute to that color. */
-        background: var(--color60) url("../../assets/images/climbing.svg") no-repeat center top;
+        background: var(--color60) url("../../assets/images/home/climbing.svg") no-repeat center top;
         background-size: cover;
     }
 
-    div.content-container, div#grid {
+    .content-container-1, div#grid {
         height: inherit;
     }
 
-    div#grid {
+    #grid {
         margin-top: var(--space-xxl);
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
-    div#text-container {
+    #text-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -59,7 +59,7 @@
         font-weight: var(--font-weight-s);
     }
 
-    span#practice {
+    #practice {
         color: var(--color10);
     }
 </style>

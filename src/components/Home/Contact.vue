@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div id="team-image">
-                <img src="../../assets/images/team-picture.png" alt="">
+                <img src="../../assets/images/home/team-picture.png" alt="">
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
         color: var(--color60);
     }
 
-    div#contact-container {
+    #contact-container {
         display: flex;
         justify-content: center;
 
@@ -33,14 +33,14 @@
         background-color: var(--color30);
     }
 
-    div.content-container {
+    .content-container {
         height: inherit;
 
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
-    div#contact-us {
+    #contact-us {
         display: flex;
         flex-direction: column;
         

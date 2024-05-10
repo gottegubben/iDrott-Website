@@ -15,7 +15,7 @@
 </template>
 
 <style scoped>
-    div#footer-container {
+    #footer-container {
         width: 100%;
         height: var(--footer-height);
         background-color: var(--color30);
@@ -34,7 +34,7 @@
         font-weight: var(--font-weight-m);
     }
 
-    div#social-media-links {
+    #social-media-links {
         margin-left: auto;
     }
 </style>

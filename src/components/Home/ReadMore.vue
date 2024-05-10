@@ -3,16 +3,19 @@
 
     const cardLinks = [
         {
-            text: "Meet the board!",
-            imgSrc: ""
+            text: "Meet HackeD Utd",
+            src: "/src/assets/images/home/HackeUtd.png",
+            link: ""
         },
         {
-            text: "Test number two!",
-            imgSrc: ""
+            text: "Sports at Chalmers",
+            src: "/src/assets/images/home/SportsChalm.png",
+            link: ""
         },
-        { 
-            text: "Test nmr three!",
-            imgSrc: ""
+        {
+            text: "Meet the board",
+            src: "/src/assets/images/home/MeetBoard.png",
+            link: ""
         }
     ];
 </script>
@@ -22,14 +25,14 @@
         <div class="content-container">
             <h2>More <span>sports</span> related topics</h2>
             <div id="card-container">
-                <CardLink v-for="cards in cardLinks"></CardLink>
+                <CardLink v-for="cards in cardLinks" :text="cards.text" :src="cards.src" :link="cards.link"></CardLink>
             </div>
         </div>
     </div>
 </template>
 
 <style scoped>
-    div.content-container {
+    .content-container {
         margin-top: var(--space-lg);
 
         display: flex;
@@ -42,18 +45,20 @@
         color: var(--color10);
     }
 
-    div#read-more-container {
+    #read-more-container {
         width: 100%;
+
         display: flex;
         justify-content: center;
     }
 
-    div#card-container {  
+    #card-container {  
         margin-top: var(--space-md);
-        margin-bottom: var(--space-lg);
+        margin-bottom: var(--space-xxl);
 
         display: flex;
         flex-direction: row;
-        gap: var(--space-lg);
+        
+        gap: var(--space-xxl); /* Fix the gaps such that it covers the whole content-container! */
     }
 </style>

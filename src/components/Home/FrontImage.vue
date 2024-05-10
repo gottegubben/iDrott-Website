@@ -4,7 +4,7 @@
 
 <template>
     <div id="img-container">
-        <img id="start" src="../../assets/images/iDrott-homepage.jfif" alt="homepage-image">
+        <img id="start" src="../../assets/images/home/iDrott-homepage.jfif" alt="homepage-image">
         <div id="img-shadow"></div>
         <div id="image-content" class="content-container">
             <div id="logo-container">
@@ -19,7 +19,7 @@
 </template>
 
 <style scoped>
-    div#img-container {
+    #img-container {
         position: relative;
         display: flex;
         justify-content: center;
@@ -31,7 +31,7 @@
         max-height: none;
         max-width: none;
     }
-    img#start {
+    #start {
         width: 100%;
         height: 100%;
 
@@ -39,7 +39,7 @@
 
         display: block;
     }
-    div#img-shadow {
+    #img-shadow {
         display: flex;
         justify-content: center;
 
@@ -52,7 +52,7 @@
         background-image: linear-gradient(to top, var(--color30), hsla(0, 0%, 0%, 0));
     }
 
-    div#image-content {
+    #image-content {
         position: absolute;
         bottom: 0;
 
@@ -64,7 +64,7 @@
         height: 100%;
         width: 100%;
     }
-    div#logo-container {
+    #logo-container {
         flex-grow: 1;
         min-width: 0;
         min-height: 0;
@@ -72,7 +72,7 @@
         margin-top: var(--space-xxl);
         margin-bottom: var(--space-xxl);
     }
-    div#text-container {
+    #text-container {
         margin-bottom: var(--space-lg);
     }
     h2, h3 {
