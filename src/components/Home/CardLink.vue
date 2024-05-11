@@ -23,7 +23,7 @@
 </script>
 
 <template>
-    <div id="card">
+    <div id="card" @click="$router.push(props.link)">
         <img :src="props.src" alt="">
         <div id="img-overlay" :style="'background-color: color-mix(in srgb, ' + props.overlayColor + ' ' + props.opacity + ', #00000000)' + ';'">
             <div id="shadow">

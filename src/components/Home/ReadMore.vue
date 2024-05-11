@@ -5,17 +5,17 @@
         {
             text: "Meet HackeD Utd",
             src: "/src/assets/images/home/HackeUtd.png",
-            link: ""
+            link: "/board"
         },
         {
             text: "Sports at Chalmers",
             src: "/src/assets/images/home/SportsChalm.png",
-            link: ""
+            link: "/activities"
         },
         {
             text: "Meet the board",
             src: "/src/assets/images/home/MeetBoard.png",
-            link: ""
+            link: "/hackeutd"
         }
     ];
 </script>

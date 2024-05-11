@@ -39,16 +39,16 @@ import { computed } from 'vue';
 </script>
 
 <template>
-    <button :style="style" @click="clickEvent">{{ text }}</button>
+    <button :style="style" @click="props.clickEvent">{{ text }}</button>
 </template>
 
 <style scoped>
     button {
         color: var(--color60);
 
-        border-radius: 0.3em;
+        border-radius: 0.2em;
 
-        padding: 0.4em 1.5em 0.4em 1.5em;
+        padding: 0.3em 1.5em 0.3em 1.5em;
 
         font-weight: bold;
         font-family: Inter;
