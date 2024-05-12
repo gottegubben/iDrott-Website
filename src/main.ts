@@ -38,5 +38,5 @@ const router = createRouter({
 
 app.use(router);
 
-//Mount the app on a div with the id = #app.
+//Mount the app on a div with the id = app.
 app.mount('#app');
