@@ -20,15 +20,9 @@ app.use(pinia);
 
 //Configure the routes and the router itself.
 import ViewHome from './views/ViewHome.vue';
-import ViewBoard from './views/ViewBoard.vue';
-import ViewActivities from './views/ViewActivities.vue';
-import ViewHackeDutd from './views/ViewHackeDutd.vue';
 
 const routes = [
-    { path: '/', component: ViewHome, name: "Home" },
-    { path: '/board', component: ViewBoard, name: "The Board" },
-    { path: '/activities', component: ViewActivities, name: "Activities" },
-    { path: '/hackeutd', component: ViewHackeDutd, name: "HackeD Utd" }
+    { path: '/', component: ViewHome, name: "Home" }
 ];
 
 const router = createRouter({
