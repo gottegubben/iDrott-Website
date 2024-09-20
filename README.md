@@ -97,3 +97,5 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## 5. About the creator
