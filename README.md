@@ -53,37 +53,28 @@ An example: `main/baseline-1/feature/about-button`.
 
 ### 3.4 Code standard
 
----
+## 4. Build
 
-# Idrott-Website
+_OBS!!! This build guide assumes that the device is a Windows machine._
 
-This template should help get you started developing with Vue 3 in Vite.
+1. Make sure you've **NPM** installed. Otherwise you can download it together with Node.js [here](https://nodejs.org/en/download/package-manager).
 
-## Recommended IDE Setup
+2. Then clone the repository to your local machine.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+3. Configure your IDE, recommended is VS Code, to use the "Vue Official" extension, to allow for autocorrection and other useful stuff. Link to extension [here](https://marketplace.visualstudio.com/items?itemName=Vue.volar).
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+4. Run this command to install all the required packages:
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+5. To run the web server locally on your computer, use this command. This allows for Hot-Reload as well:
 
 ```sh
 npm run dev
 ```
-
-### Type-Check, Compile and Minify for Production
+6. When you feel ready to build it into it's final form, use this command to Type-Check, Compile and Minify:
 
 ```sh
 npm run build
