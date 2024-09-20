@@ -49,7 +49,9 @@ An example: `main/baseline-1/feature/about-button`.
 
 ### 3.2 Roadmap & Changelog
 
-### 3.3 Code standard
+### 3.3 Project structure
+
+### 3.4 Code standard
 
 ---
 
