@@ -49,6 +49,24 @@ An example: `main/baseline-1/feature/about-button`.
 
 ### 3.2 Roadmap & Changelog
 
+**Roadmap** - Contains all features and core goals for the upcoming baseline. Useful for structering up what each baseline should contain.
+
+Format of the roadmap file:
+
+1. Baseline version (ex: Baseline-1.2.3)
+
+2. Main objective (ex: have a functional page)
+
+3. Core features (ex: added an API)
+
+**Changelog** - Contains all the information about the changes that's has been made in the latest baseline.
+
+Format of the changelog file:
+
+1. Baseline version (ex: Baseline-1.2.3)
+
+2. Changes made in no particular order.
+
 ### 3.3 Project structure
 
 ### 3.4 Code standard
