@@ -46,3 +46,7 @@ Features, hotfixes etc. uses the baseline as origin. Here are the main keywords 
 The naming convention for naming category word is the use of the slash: `/` and for naming the feature with a long name: `-`.
 
 An example: `main/baseline-1/feature/about-button`.
+
+### 3.2 Roadmap & Changelog
+
+### 3.3 Code standard
