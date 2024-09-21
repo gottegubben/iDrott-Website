@@ -92,6 +92,7 @@ npm install
 ```sh
 npm run dev
 ```
+
 6. When you feel ready to build it into it's final form, use this command to Type-Check, Compile and Minify:
 
 ```sh
