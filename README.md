@@ -31,17 +31,17 @@ When creating branches, these are the things to be aware of.
 
 **main** - is the main branch of the repository and should only contain code that's in production. This branch can only be merged into using a pull request.
 
-**baseline-X** - is the branch that models all the features that will be committed in this baseline. A collective of features, hotfixes, bugfixes and tests etc. X is a placeholder for a version, ex: 1. Baselines can also bridge out from an existing baseline. Ex: a baseline called `baseline-1` could have a dependent branch named `baseline-1.1`, and this `baseline-1.1.1`.
+**baseline-X.X.X** - is the branch that models all the features that will be committed in this baseline. A collective of features, hotfixes, bugfixes and tests etc. X.X.X is a placeholder for a version, ex: _baseline-1.0.0_.
 
 Features, hotfixes etc. uses the baseline as origin. Here are the main keywords to use for different things:
 
-| Category Word | Meaning                                        |
-| :------------ | :--------------------------------------------- |
-| baseline-X    | _The root except main, X = Version, ex: 1._    |
-| hotfix        | _For quikcly fixing critical issues._          |
-| bugfix        | _For fixing a bug._                            |
-| feature       | _For adding, removing or modifying a feature._ |
-| test          | _For experimenting, not an issue._             |
+| Category Word  | Meaning                                        |
+| :------------- | :--------------------------------------------- |
+| baseline-X.X.X | _The root except main, X = Version, ex: 1._    |
+| hotfix         | _For quikcly fixing critical issues._          |
+| bugfix         | _For fixing a bug._                            |
+| feature        | _For adding, removing or modifying a feature._ |
+| test           | _For experimenting, not an issue._             |
 
 The naming convention for naming category word is the use of the slash: `/` and for naming the feature with a long name: `-`.
 
