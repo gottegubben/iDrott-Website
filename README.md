@@ -63,7 +63,7 @@ Format of the roadmap file:
 
 Format of the changelog file:
 
-1. Baseline version (ex: Baseline-1.2.3)
+1. Baseline version (ex: Baseline-1.2.1)
 
 2. Changes made in no particular order.
 
