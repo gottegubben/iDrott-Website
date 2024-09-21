@@ -99,4 +99,18 @@ npm run dev
 npm run build
 ```
 
-## 5. About the creator
+## 5. Resources
+
+When working on this project, you'll need to know how to work with the tools given to you. For this project there's a couple of libraries and frameworks that's being used to make this project easier to work with. The packages this program uses, through npm, can be found inside of the package-lock.json which also contains their respective versions.
+
+The project itself is built upon **Vue.js** which in short is a javascript framework. When you write components, which is in a certain format, Vue will later interpret these and build it down to only _css_, _html_ & _javascript_.
+
+### 5.1 Links
+
+This section covers links that could be useful to read through to understand the use of some tools, ex: Vue.js.
+
+- [Vue](https://vuejs.org/guide/introduction.html)
+
+- [Vue Composition API](https://vuejs.org/guide/extras/composition-api-faq.html)
+
+- [Vue Router](https://router.vuejs.org/guide/)
