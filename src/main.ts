@@ -1,5 +1,3 @@
-import { createApp } from "vue"; //For Vue init.
-
 import { createRouter, createMemoryHistory } from "vue-router"; //For Vue Router init.
 
 //Import all the views (pages).
@@ -13,6 +11,13 @@ const router = createRouter({
     history: createMemoryHistory(), //For playground purposes.
     routes
 });
+
+import "./assets/css/variabels/AllVar.css"
+
+
+//--- Init the application ---
+
+import { createApp } from "vue"; //For Vue init.
 
 import App from "./App.vue";
 
