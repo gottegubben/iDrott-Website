@@ -33,18 +33,6 @@ else {
 
 app.use(express.static(CONFIG.resources_absolute_path)); // Make resources avaible!
 
-app.get("/api/dfoto/*", (req, res) => {
-
-});
-
-app.get("/api/data/*", (req, res) => {
-
-});
-
-app.get("/api/info", (req, res) => {
-
-});
-
 server.listen(CONFIG.port, () => {
     console.log(`Server has begun listening: ${CONFIG.use_https ? "https" : "http"}://localhost:${CONFIG.port}`);
 });
