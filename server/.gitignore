@@ -1,0 +1,6 @@
+build        # Ignore the build directory.
+web-test     # Contains a folder with a static web page, for testing.
+node_modules # The node modules will be downloaded as long as the package.json file exists.
+
+env-config-dev.json # Contains configurations for the development of the app.
+env-config.json     # Contains configurations for production.
