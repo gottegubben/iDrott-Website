@@ -12,8 +12,6 @@ const app = express();
 
 const CONFIG: env_config = config_json;
 
-app.use(express.static(CONFIG.resources_absolute_path)); // Make resources avaible!
-
 let server: https.Server | http.Server;
 
 if(CONFIG.use_https) {
@@ -32,6 +30,20 @@ if(CONFIG.use_https) {
 else {
     server = http.createServer(app);
 }
+
+app.use(express.static(CONFIG.resources_absolute_path)); // Make resources avaible!
+
+app.get("/api/dfoto/*", (req, res) => {
+
+});
+
+app.get("/api/data/*", (req, res) => {
+
+});
+
+app.get("/api/info", (req, res) => {
+
+});
 
 server.listen(CONFIG.port, () => {
     console.log(`Server has begun listening: ${CONFIG.use_https ? "https" : "http"}://localhost:${CONFIG.port}`);
