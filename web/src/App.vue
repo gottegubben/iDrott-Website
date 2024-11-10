@@ -6,10 +6,12 @@
 -->
 
 <template>
-  <p>testing</p>
-  <div style="height: 50px; width: 50px;"><p>testing again</p></div>
-  <p v-for="i in 50">TESTING...</p>
+  <BaseLayout><p>Testing</p></BaseLayout>
 </template>
+
+<script setup lang="ts">
+  import BaseLayout from './assets/components/BaseLayout.vue';
+</script>
 
 <style>
   /* @import url("./assets/css/variables/variables_import.css"); */
