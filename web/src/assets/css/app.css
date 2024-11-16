@@ -1,7 +1,7 @@
 #app {
     position: relative; /* Make child elements position relative to this container */
     
-    max-width: 1920px;  /* Set maximum width for the main container. */
+    max-width: 1000px;  /* Set maximum width for the main container. */
     min-height: 100vh;  /* The container, should at minimum, take up the whole viewport height. */
     width: 100%;        /* Ensure it scales down on smaller screens. */
 

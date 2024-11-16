@@ -1,5 +1,6 @@
 <template>
     <div class="base-layout">
+        <p style="color: white;">HELLOO!!!</p>
         <slot></slot>
     </div>
 </template>
@@ -9,10 +10,14 @@
         display: flex;
         align-items: center;
         box-sizing: border-box;
-        width: calc(100% - 2 * clamp(10px, 5%, 100px));
+        width: calc(100% - 2 * var(--dynamic_margin));
         height: 200px;
         background-color: black;
-        margin-left: clamp(10px, 5%, 100px);
-        margin-right: clamp(10px, 5%, 100px);
+        margin-left: var(--dynamic_margin);
+        margin-right: var(--dynamic_margin);
     }
 </style>
+
+<script setup lang="ts">
+
+</script>

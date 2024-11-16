@@ -1,0 +1,17 @@
+/*
+    The dynamic_margin variable is used for dynamically
+    add padding to the sides of the content container.
+    The margin will be:
+        --min_dyn_margin <= margin <= --max_dyn_margin
+    and will have a linear relation between the values
+    of --min_dyn_width and --max_dyn_width.
+*/
+:root {
+    --dynamic_margin: -1;
+
+    --max_dyn_margin: 50px;
+    --min_dyn_margin: 10px;
+
+    --max_dyn_width: 1300px; /* Over --max_dyn_width the margin will be capped to --max_dyn_margin! */
+    --min_dyn_width: 1100px; /* Below --min_dyn_width the margin will be capped to --min_dyn_margin! */
+}

@@ -5,6 +5,4 @@
     when wanting to make the variables like modules.
 */
 
-.root {
-    --testing: 0;
-}
+@import url(dynamic_margin.css);

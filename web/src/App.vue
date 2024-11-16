@@ -14,7 +14,7 @@
 </script>
 
 <style>
-  /* @import url("./assets/css/variables/variables_import.css"); */
+  @import url("./assets/css/variables/variables_import.css");
 
   @import url("./assets/css/body.css");
   @import url("./assets/css/app.css");
