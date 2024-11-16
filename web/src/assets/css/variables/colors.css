@@ -1,0 +1,12 @@
+/*
+    This file will contain all the different variables for
+    the colors displayed on the page. For example, the color
+    of the background etc.
+*/
+:root {
+    --primary_color:   #2C2C2C; /* Rule: takes up about 60% of the page. */
+
+    --secondary_color: #F5F5F5; /* Rule: takes up about 30% of the page. */
+
+    --tertiary_color:  #EC6724; /* Rule: takes up about 10% of the page. */
+}

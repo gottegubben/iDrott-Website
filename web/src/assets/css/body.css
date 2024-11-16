@@ -5,5 +5,5 @@ body {
     margin: 0;               /* Removes default margin! */
     padding: 0;              /* Removes default padding! */
 
-    background-color: #f0f0f0; /* Optional background for the container */
+    background-color: var(--primary_color); /* Optional background for the container */
 }

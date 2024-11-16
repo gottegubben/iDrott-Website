@@ -7,6 +7,6 @@
 
     overflow-y: hidden; /* Makes sure that no elements override the size of the container. */
 
-    background-color: #ffffff; /* Optional background for the container */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for styling */
+    background-color: var(--secondary_color); /* Optional background for the container */
+    box-shadow: 0 0 10px var(--secondary_color); /* Optional shadow for styling */
 }

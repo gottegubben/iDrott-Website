@@ -37,6 +37,9 @@ function getDynamicMargin(windowWidth: number): number {
     return 0;
 }
 
+// One update in the beginning in case of resize event not firing first hand!
+setCssVariableValue("--dynamic_margin", `${getDynamicMargin(window.innerWidth).toString()}px`);
+
 window.addEventListener("resize", () => {
     let width = window.innerWidth;
 
