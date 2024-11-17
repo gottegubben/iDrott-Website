@@ -6,6 +6,7 @@
     and will have a linear relation between the values
     of --min_dyn_width and --max_dyn_width.
 */
+
 :root {
     --dynamic_margin: -1;
 

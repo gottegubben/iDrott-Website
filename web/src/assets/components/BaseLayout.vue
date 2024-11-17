@@ -1,3 +1,8 @@
+<!--
+    The base layout component will contain content
+    that should have a uniformed margin applied to it.
+-->
+
 <template>
     <div class="base-layout">
         <slot></slot>
