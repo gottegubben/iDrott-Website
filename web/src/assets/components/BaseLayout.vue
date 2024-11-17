@@ -19,6 +19,7 @@
         width: calc(100% - 2 * var(--dynamic_margin));
         margin-left: var(--dynamic_margin);
         margin-right: var(--dynamic_margin);
+        height: inherit;
     }
 </style>
 

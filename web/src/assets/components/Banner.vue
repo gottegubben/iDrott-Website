@@ -25,4 +25,11 @@
 
         width: 100%;
     }
+
+    p {
+        font-size: .6em;
+        font-weight: 600;
+        color: var(--secondary_color);
+        margin: 0;
+    }
 </style>
