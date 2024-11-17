@@ -1,0 +1,11 @@
+/*
+    This file contains the default values for
+    which font different text elements uses and
+    the size of them!
+
+    Also may contain variables for fonts in general.
+*/
+
+p {
+    font-family: inter;
+}
