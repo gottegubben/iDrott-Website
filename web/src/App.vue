@@ -6,11 +6,13 @@
 -->
 
 <template>
-  <BaseLayout><p>Testing</p></BaseLayout>
+  <Banner></Banner>
+  <Header></Header>
 </template>
 
 <script setup lang="ts">
-  import BaseLayout from './assets/components/BaseLayout.vue';
+  import Banner from './assets/components/Banner.vue';
+  import Header from './assets/components/Header.vue';
 </script>
 
 <style>
