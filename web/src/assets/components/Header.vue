@@ -3,7 +3,9 @@
         <BaseLayout>
             <div id="header-content">
                 <div id="logo-container" style="height: inherit; width: 150px; background-color: black;"></div>
-                <div id="link-container" style="height: inherit; width: 500px; background-color: gray;"></div>
+                <div id="link-container" style="height: inherit; width: 500px; background-color: gray;">
+                    <RouterLink to="/">HOME</RouterLink>
+                </div>
             </div>
         </BaseLayout>
     </div>

@@ -8,6 +8,7 @@
 <template>
   <Banner></Banner>
   <Header></Header>
+  <RouterView></RouterView>
 </template>
 
 <script setup lang="ts">
