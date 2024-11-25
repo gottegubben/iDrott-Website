@@ -2,9 +2,11 @@
     <div id="header-base">
         <BaseLayout>
             <div id="header-content">
-                <div id="logo-container" style="height: inherit; width: 150px; background-color: black;"></div>
+                <div id="logo-container" style="height: inherit; height: inherit; display: flex; align-items: center;">
+                    <IdrottTextLogo></IdrottTextLogo>
+                </div>
                 <div id="link-container" style="height: inherit; width: 500px; background-color: gray;">
-                    <RouterLink to="/">HOME</RouterLink>
+                    <RouterLink to="/">TESTING</RouterLink>
                 </div>
             </div>
         </BaseLayout>
@@ -12,7 +14,9 @@
 </template>
 
 <script setup lang="ts">
-    import BaseLayout from './BaseLayout.vue';
+import BaseLayout from './BaseLayout.vue';
+
+import IdrottTextLogo from './IdrottTextLogo.vue';
 
     const testLinks = [
         {
