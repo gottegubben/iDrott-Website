@@ -6,7 +6,7 @@
                     <IdrottTextLogo style="fill: var(--secondary_color);"></IdrottTextLogo>
                 </div>
                 <div id="link-container" style="height: inherit; display: flex; align-items: center; gap: 30px;">
-                    <RouterLink v-for="route in router.options.routes" :to="route.path" class="link_idle" active-class="link_active">{{ route.name }}</RouterLink>
+                    <RouterLink v-for="route in routes" :to="route.path" class="link_idle" active-class="link_active">{{ route.name }}</RouterLink>
                 </div>
             </div>
         </BaseLayout>
@@ -14,13 +14,12 @@
 </template>
 
 <script setup lang="ts">
-    import BaseLayout from './BaseLayout.vue';
-
-    import IdrottTextLogo from './IdrottTextLogo.vue';
-
     import { useRouter } from 'vue-router';
 
-    const router = useRouter();
+    import BaseLayout from './BaseLayout.vue';
+    import IdrottTextLogo from './IdrottTextLogo.vue';
+
+    const routes = useRouter().options.routes;
 </script>
 
 <style scoped>
