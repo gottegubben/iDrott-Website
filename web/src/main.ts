@@ -9,9 +9,9 @@ import AboutPage from "./pages/AboutPage.vue";
 import GalleryPage from "./pages/GalleryPage.vue";
 
 const routes = [
-    { path: "/", component: HomePage },
-    { path: "/about", component: AboutPage },
-    { path: "/gallery", component: GalleryPage }
+    { path: "/", component: HomePage, name: "Home" },
+    { path: "/about", component: AboutPage, name: "About" },
+    { path: "/gallery", component: GalleryPage, name: "Gallery" }
 ];
 
 const router = createRouter({

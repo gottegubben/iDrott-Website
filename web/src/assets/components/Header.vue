@@ -2,13 +2,11 @@
     <div id="header-base">
         <BaseLayout>
             <div id="header-content">
-                <div id="logo-container" style="height: inherit; height: inherit; display: flex; align-items: center;">
-                    <IdrottTextLogo></IdrottTextLogo>
+                <div id="logo-container" style="height: inherit; display: flex; align-items: center;">
+                    <IdrottTextLogo style="fill: var(--secondary_color);"></IdrottTextLogo>
                 </div>
                 <div id="link-container" style="height: inherit; display: flex; align-items: center; gap: 30px;">
-                    <RouterLink to="/"  class="nav_idle" active-class="nav_active">Home</RouterLink>
-                    <RouterLink to="/about" class="nav_idle" active-class="nav_active">About</RouterLink>
-                    <RouterLink to="/gallery"  class="nav_idle" active-class="nav_active">Gallery</RouterLink>
+                    <RouterLink v-for="route in router.options.routes" :to="route.path" class="link_idle" active-class="link_active">{{ route.name }}</RouterLink>
                 </div>
             </div>
         </BaseLayout>
@@ -16,37 +14,39 @@
 </template>
 
 <script setup lang="ts">
-import BaseLayout from './BaseLayout.vue';
+    import BaseLayout from './BaseLayout.vue';
 
-import IdrottTextLogo from './IdrottTextLogo.vue';
+    import IdrottTextLogo from './IdrottTextLogo.vue';
+
+    import { useRouter } from 'vue-router';
+
+    const router = useRouter();
 </script>
 
 <style scoped>
-    #header-base {
+    #header-base, #header-content {
         width: 100%;
         height: 70px;
+    }
+
+    #header-base {
         background-color: var(--primary_color);
         position: relative;
     }
 
     #header-content {
-        width: 100%;
-        height: inherit;
-
         display: flex;
         justify-content: space-between;
     }
 
-    .nav_idle {
+    .link_idle, .link_idle:hover, .nav_active {
         font-size: 1em;
         color: var(--secondary_color);
         font-family: inter;
         text-decoration: none;
     }
-    .nav_idle:hover, .nav_active {
-        font-size: 1em;
-        color: var(--secondary_color);
-        font-family: inter;
+
+    .link_idle:hover, .link_active {
         text-decoration: underline;
     }
 </style>
