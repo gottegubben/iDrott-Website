@@ -1,7 +1,7 @@
 <template>
     <div id="banner-base">
         <BaseLayout>
-            <div id="banner-content">
+            <div id="banner-content" style="height: inherit;">
                 <p>Every student at TKDAT is free to attend our practices! Keep your eyes out for upcoming events!</p>
             </div>
         </BaseLayout>
