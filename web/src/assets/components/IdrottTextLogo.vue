@@ -13,8 +13,4 @@
     #idrott_text_logo {
         height: 2.5em;
     }
-    
-    svg {
-        fill: var(--secondary_color);
-    }
 </style>

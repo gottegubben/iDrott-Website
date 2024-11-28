@@ -5,10 +5,13 @@ import App from "./App.vue";
 
 // Pages:
 import HomePage from "./pages/HomePage.vue";
+import AboutPage from "./pages/AboutPage.vue";
+import GalleryPage from "./pages/GalleryPage.vue";
 
 const routes = [
-    { path: "/", name: "Home", component: HomePage },
-    { path: "/test", name: "Test", component: HomePage }
+    { path: "/", component: HomePage, name: "Home" },
+    { path: "/about", component: AboutPage, name: "About" },
+    { path: "/gallery", component: GalleryPage, name: "Gallery" }
 ];
 
 const router = createRouter({
