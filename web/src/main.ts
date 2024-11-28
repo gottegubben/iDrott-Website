@@ -7,7 +7,8 @@ import App from "./App.vue";
 import HomePage from "./pages/HomePage.vue";
 
 const routes = [
-    { path: "/", component: HomePage }
+    { path: "/", name: "Home", component: HomePage },
+    { path: "/test", name: "Test", component: HomePage }
 ];
 
 const router = createRouter({
@@ -16,6 +17,8 @@ const router = createRouter({
 });
 
 const app = createApp(App);
+
+app.config.globalProperties.$routes = routes;
 
 app.use(router);
 

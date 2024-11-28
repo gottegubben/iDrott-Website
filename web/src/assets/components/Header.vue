@@ -6,7 +6,7 @@
                     <IdrottTextLogo></IdrottTextLogo>
                 </div>
                 <div id="link-container" style="height: inherit; width: 500px; background-color: gray;">
-                    <RouterLink to="/">TESTING</RouterLink>
+                    <RouterLink v-for="link in routes" to={{ link.path }}>{{ link.name }}</RouterLink>
                 </div>
             </div>
         </BaseLayout>
@@ -14,24 +14,14 @@
 </template>
 
 <script setup lang="ts">
-import BaseLayout from './BaseLayout.vue';
+    import { getCurrentInstance } from 'vue';
 
-import IdrottTextLogo from './IdrottTextLogo.vue';
+    const routes = getCurrentInstance()?.appContext.config.globalProperties.$routes;
 
-    const testLinks = [
-        {
-            name: "Home",
-            path: "/"
-        },
-        {
-            name: "About",
-            path: "/about"
-        },
-        {
-            name: "Gallery",
-            path: "/gallery"
-        }
-    ];
+    console.log(routes);
+
+    import BaseLayout from './BaseLayout.vue';
+    import IdrottTextLogo from './IdrottTextLogo.vue';
 </script>
 
 <style scoped>
