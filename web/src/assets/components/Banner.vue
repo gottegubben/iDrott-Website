@@ -3,7 +3,7 @@
 -->
 
 <template>
-    <div :id="vueRouter.currentRoute.value.path == '/' ? 'banner-base' : 'banner-base-collapsed'">
+    <div :id="vueRouter.currentRoute.value.path == routes[0].path ? 'banner-base' : 'banner-base-collapsed'">
         <BaseLayout>
             <div id="banner-content" style="height: inherit;">
                 <p>Every student at TKDAT is free to attend our practices! Keep your eyes out for upcoming events!</p>
@@ -18,6 +18,8 @@
     import { useRouter } from 'vue-router';
 
     const vueRouter = useRouter();
+
+    const routes = vueRouter.getRoutes();
 
     console.log(vueRouter.currentRoute);
     console.log(vueRouter.currentRoute.value.path);
