@@ -68,5 +68,7 @@
 
     .link_idle:hover, .link_active {
         text-decoration: underline;
+        text-decoration-color: var(--tertiary_color);
+        text-underline-offset: 4px;
     }
 </style>

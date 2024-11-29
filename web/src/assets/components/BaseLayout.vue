@@ -14,7 +14,6 @@
         display: flex;
         flex-direction: column;
         
-        align-items: center;
         box-sizing: border-box;
 
         width: calc(100% - 2 * var(--dynamic_margin));
