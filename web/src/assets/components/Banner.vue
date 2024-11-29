@@ -3,7 +3,7 @@
 -->
 
 <template>
-    <div id="banner-base">
+    <div :id="vueRouter.currentRoute.value.path == '/' ? 'banner-base' : 'banner-base-collapsed'">
         <BaseLayout>
             <div id="banner-content" style="height: inherit;">
                 <p>Every student at TKDAT is free to attend our practices! Keep your eyes out for upcoming events!</p>
@@ -14,12 +14,32 @@
 
 <script setup lang="ts">
     import BaseLayout from './BaseLayout.vue';
+
+    import { useRouter } from 'vue-router';
+
+    const vueRouter = useRouter();
+
+    console.log(vueRouter.currentRoute);
+    console.log(vueRouter.currentRoute.value.path);
 </script>
 
 <style scoped>
+    #banner-base, #banner-base-collapsed {
+        transition: 0.3s;
+    }
+
     #banner-base {
         height: 30px;
         background-color: var(--tertiary_color);
+    }
+
+    #banner-base-collapsed {
+        height: 5px;
+        background-color: var(--tertiary_color);
+    }
+
+    #banner-base-collapsed div p {
+        display: none;
     }
 
     #banner-content {
