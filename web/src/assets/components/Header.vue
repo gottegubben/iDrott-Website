@@ -52,6 +52,8 @@
     #header-base {
         background-color: var(--primary_color);
         position: relative;
+
+        border-bottom: 2px solid var(--secondary_color);
     }
 
     #header-content {

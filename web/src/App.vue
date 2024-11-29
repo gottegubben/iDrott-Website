@@ -6,8 +6,15 @@
 -->
 
 <template>
+  <div style="position: fixed; width: inherit; height: inherit; z-index: 1;">
+    <Banner></Banner>
+    <Header></Header>
+  </div>
+
+  <!-- These two copies are used to make sure that the margin is correct! -->
   <Banner></Banner>
   <Header></Header>
+
   <RouterView></RouterView>
 </template>
 
