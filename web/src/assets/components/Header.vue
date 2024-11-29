@@ -1,3 +1,7 @@
+<!--
+    The header is the element containing the navigation for the website.
+-->
+
 <template>
     <div id="header-base">
         <BaseLayout>
@@ -7,6 +11,7 @@
                 </div>
                 <div id="link-container" style="height: inherit; display: flex; align-items: center; gap: 30px;">
                     <RouterLink v-for="route in routes" :to="route.path" class="link_idle" active-class="link_active">{{ route.name }}</RouterLink>
+                    <button :onclick="() => { console.log('Clicked on contact-us button!'); }">Contact Us</button>
                 </div>
             </div>
         </BaseLayout>
@@ -19,10 +24,26 @@
     import BaseLayout from './BaseLayout.vue';
     import IdrottTextLogo from './IdrottTextLogo.vue';
 
-    const routes = useRouter().options.routes;
+    const vueRouter = useRouter();
+
+    const routes = vueRouter.options.routes;
 </script>
 
 <style scoped>
+    button {
+        font-family: inter;
+        font-size: 1em;
+        color: var(--primary_color);
+        background-color: var(--secondary_color);
+        padding: 7px 15px 7px 15px;
+        border-radius: 5px;
+        border: 0;
+    }
+    button:hover {
+        cursor: pointer;
+        background-color: var(--secondary_color_1);
+    }
+
     #header-base, #header-content {
         width: 100%;
         height: 70px;

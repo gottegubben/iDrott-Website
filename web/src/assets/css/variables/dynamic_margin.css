@@ -10,7 +10,7 @@
 :root {
     --dynamic_margin: -1;
 
-    --max_dyn_margin: 100px;
+    --max_dyn_margin: 120px;
     --min_dyn_margin: 20px;
 
     --max_dyn_width: 1300px; /* Over --max_dyn_width the margin will be capped to --max_dyn_margin! */

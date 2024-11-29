@@ -1,3 +1,7 @@
+<!--
+    This element is the top banner on the page that displays a message.
+-->
+
 <template>
     <div id="banner-base">
         <BaseLayout>

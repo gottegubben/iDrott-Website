@@ -1,3 +1,7 @@
+<!--
+    The idrott text logo is the SVG logo that spells out: "iDrott".
+-->
+
 <template>
     <svg id="idrott_text_logo" viewBox="0 0 248 61" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <g id="ball" transform="translate(-8 -14)">

@@ -5,9 +5,24 @@
 */
 
 :root {
-    --primary_color:   #2C2C2C; /* Rule: takes up about 60% of the page. */
+    --primary_color:   hsl(0, 0%, 17%);   /* Rule: takes up about 60% of the page. */
+    --primary_color_hue: 0;
+    --primary_color_sat: 0%;
+    --primary_color_lig: 17%;
+    --primary_color_1: hsl(var(--primary_color_hue), var(--primary_color_sat), calc(var(--primary_color_lig) - 5%));
+    --primary_color_2: hsl(var(--primary_color_hue), var(--primary_color_sat), calc(var(--primary_color_lig) - 10%));
 
-    --secondary_color: #F5F5F5; /* Rule: takes up about 30% of the page. */
+    --secondary_color: hsl(0, 0%, 96%);   /* Rule: takes up about 30% of the page. */
+    --secondary_color_hue: 0;
+    --secondary_color_sat: 0%;
+    --secondary_color_lig: 96%;
+    --secondary_color_1: hsl(var(--secondary_color_hue), var(--secondary_color_sat), calc(var(--secondary_color_lig) - 20%));
+    --secondary_color_2: hsl(var(--secondary_color_hue), var(--secondary_color_sat), calc(var(--secondary_color_lig) - 40%));
 
-    --tertiary_color:  #EC6724; /* Rule: takes up about 10% of the page. */
+    --tertiary_color:  hsl(20, 84%, 53%); /* Rule: takes up about 10% of the page. */
+    --tertiary_color_hue: 20;
+    --tertiary_color_sat: 84%;
+    --tertiary_color_lig: 53%;
+    --tertiary_color_1: hsl(var(--tertiary_color_hue), var(--tertiary_color_sat), calc(var(--tertiary_color) - 10%));
+    --tertiary_color_2: hsl(var(--tertiary_color_hue), var(--tertiary_color_sat), calc(var(--tertiary_color) - 20%));
 }
