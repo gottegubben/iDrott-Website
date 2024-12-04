@@ -1,5 +1,5 @@
 <template>
-    <div style="width: 100%; height: calc(100vh - 101px); background-color: var(--primary_color); background: linear-gradient(rgba(40, 40, 40, 90%), rgba(40, 40, 40, 90%)), url(../../public/temporary/images/Home.png); background-size: cover;">
+    <TintedBackground background-url="/public/temporary/images/Home.png" style="width: 100%; height: calc(100vh - 101px);">
         <BaseLayout>
             <div id="container" style="display: flex; flex-direction: row; height: 100%">
                 <div id="text" style="flex-basis: 0; flex-grow: 1; flex-shrink: 1; display: flex; flex-direction: column; justify-content: center; z-index: 1;">
@@ -17,11 +17,13 @@
                 </div>
             </div>
         </BaseLayout>
-    </div>
+    </TintedBackground>
 </template>
 
 <script setup lang="ts">
     import BaseLayout from '../assets/components/BaseLayout.vue';
+
+    import TintedBackground from '../assets/components/TintedBackground.vue';
 </script>
 
 <style scoped>
