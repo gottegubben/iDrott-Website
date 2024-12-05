@@ -10,7 +10,7 @@
                     <IdrottTextLogo id="idrott-text-logo" style="fill: var(--secondary_color);"></IdrottTextLogo>
                 </div>
                 <div id="link-container" style="height: inherit; display: flex; align-items: center; gap: 30px;">
-                    <RouterLink v-for="route in routes" :to="route.path" class="link_idle" active-class="link_active">{{ route.name }}</RouterLink>
+                    <RouterLink v-for="route in routes" :to="route.path" class="p link_idle" active-class="p link_active">{{ route.name }}</RouterLink>
                     <button :onclick="() => { console.log('Clicked on contact-us button!'); }">Contact Us</button>
                 </div>
             </div>
@@ -62,7 +62,6 @@
     }
 
     .link_idle, .link_idle:hover, .nav_active {
-        font-size: 1em;
         color: var(--secondary_color);
         font-family: inter;
         text-decoration: none;

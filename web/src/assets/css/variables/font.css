@@ -9,7 +9,7 @@
 :root {
     --font_size_multiplier: 1.3;
 
-    --font_p_size_min: 0.5em;
+    --font_p_size_min: 0.8em;
     --font_p_size_max: 2em;
 
     --font_h1_size: calc(var(--font_h2_size) * var(--font_size_multiplier));
@@ -23,16 +23,17 @@
     --font_tiny_size: calc(var(--font_small_size) * calc(var(--font_size_multiplier) - 1));
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6, .p {
     font-family: inter;
     font-weight: 100;
+    text-decoration: none;
 
     color: var(--secondary_color);
 
     text-wrap: wrap;
 }
 
-h1 {
+h1, .h1 {
     font-size: clamp(
         calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 6)),
         var(--font_h1_size),
@@ -40,7 +41,7 @@ h1 {
     );
 }
 
-h2 {
+h2, .h2 {
     font-size: clamp(
         calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 5)),
         var(--font_h2_size),
@@ -48,7 +49,7 @@ h2 {
     );
 }
 
-h3 {
+h3, .h3 {
     font-size: clamp(
         calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 4)),
         var(--font_h3_size),
@@ -56,7 +57,7 @@ h3 {
     );
 }
 
-h4 {
+h4, .h4 {
     font-size: clamp(
         calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 3)),
         var(--font_h4_size),
@@ -64,7 +65,7 @@ h4 {
     );
 }
 
-h5 {
+h5, .h5 {
     font-size: clamp(
         calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 2)),
         var(--font_h5_size),
@@ -72,7 +73,7 @@ h5 {
     );
 }
 
-h6 {
+h6, .h6 {
     font-size: clamp(
         calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 1)),
         var(--font_h6_size),
@@ -80,7 +81,7 @@ h6 {
     );
 }
 
-p {
+p, .p {
     font-size: clamp(
         var(--font_p_size_min),
         var(--font_p_size),
