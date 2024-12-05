@@ -10,8 +10,8 @@
                     <IdrottTextLogo id="idrott-text-logo" style="fill: var(--secondary_color);"></IdrottTextLogo>
                 </div>
                 <div id="link-container" style="height: inherit; display: flex; align-items: center; gap: 30px;">
-                    <RouterLink v-for="route in routes" :to="route.path" class="p link_idle" active-class="p link_active">{{ route.name }}</RouterLink>
-                    <button :onclick="() => { console.log('Clicked on contact-us button!'); }">Contact Us</button>
+                    <RouterLink v-for="route in routes" :to="route.path" class="font_p link_idle" active-class="font_p link_active">{{ route.name }}</RouterLink>
+                    <button class="font_p" :onclick="() => { console.log('Clicked on contact-us button!'); }">Contact Us</button>
                 </div>
             </div>
         </BaseLayout>
@@ -31,8 +31,6 @@
 
 <style scoped>
     button {
-        font-family: inter;
-        font-size: 1em;
         color: var(--primary_color);
         background-color: var(--secondary_color);
         padding: 7px 15px 7px 15px;
@@ -61,12 +59,6 @@
         justify-content: space-between;
     }
 
-    .link_idle, .link_idle:hover, .nav_active {
-        color: var(--secondary_color);
-        font-family: inter;
-        text-decoration: none;
-    }
-
     .link_idle:hover, .link_active {
         text-decoration: underline;
         text-decoration-color: var(--tertiary_color);
@@ -75,9 +67,9 @@
 
     #idrott-text-logo {
         height: clamp(
-            calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 4)),
+            var(--font_h3_size_min),
             var(--font_h3_size),
-            calc(var(--font_p_size_max) * pow(var(--font_size_multiplier), 4))
+            var(--font_h3_size_max)
         );
     }
 </style>
