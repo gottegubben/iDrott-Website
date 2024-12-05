@@ -18,7 +18,7 @@
 <script setup lang="ts">
     import BaseLayout from '../assets/components/BaseLayout.vue';
 
-    import MemberContainer from '../assets/components/Gallery/MemberContainer.vue';
+    import MemberContainer from '../assets/components/about/MemberContainer.vue';
 
     import TintedBackground from '../assets/components/TintedBackground.vue';
 </script>

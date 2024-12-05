@@ -9,7 +9,7 @@
                         <h4 style="font-size: 1.4em; font-weight: 100;">All ages and abilites are invitied to work with our talented and dedicated volunteer coaches.</h4>
                     </div>
                     <div style="margin-top: 30px;">
-                        <button style="background-color: var(--tertiary_color); border: 0; border-radius: 5px; padding: 10px 20px 10px 20px; font-family: inter; font-size: 1em; margin-right: 35px; color: var(--primary_color);">Get involved</button>
+                        <button style="background-color: var(--tertiary_color); border: 0; border-radius: 5px; padding: 10px 20px 10px 20px; font-family: inter; font-size: 1em; margin-right: 35px; color: var(--secondary_color);">Get involved</button>
                         <a href="" style="text-decoration: none; color: var(--secondary_color); font-family: inter; font-size: 1em;">Watch our video</a>
                     </div>
                 </div>
