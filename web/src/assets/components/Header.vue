@@ -11,7 +11,7 @@
                 </div>
                 <div id="link-container" style="height: inherit; display: flex; align-items: center; gap: 30px;">
                     <RouterLink v-for="route in routes" :to="route.path" class="font_p link_idle" active-class="font_p link_active">{{ route.name }}</RouterLink>
-                    <button class="font_p" :onclick="() => { console.log('Clicked on contact-us button!'); }">Contact Us</button>
+                    <MyButton class="font_p" title="Contact us"></MyButton>
                 </div>
             </div>
         </BaseLayout>
@@ -23,6 +23,7 @@
 
     import BaseLayout from './BaseLayout.vue';
     import IdrottTextLogo from './IdrottTextLogo.vue';
+    import MyButton from './MyButton.vue';
 
     const vueRouter = useRouter();
 

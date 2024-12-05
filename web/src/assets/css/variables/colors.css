@@ -23,6 +23,6 @@
     --tertiary_color_hue: 20;
     --tertiary_color_sat: 84%;
     --tertiary_color_lig: 53%;
-    --tertiary_color_1: hsl(var(--tertiary_color_hue), var(--tertiary_color_sat), calc(var(--tertiary_color) - 10%));
-    --tertiary_color_2: hsl(var(--tertiary_color_hue), var(--tertiary_color_sat), calc(var(--tertiary_color) - 20%));
+    --tertiary_color_1: hsl(var(--tertiary_color_hue), var(--tertiary_color_sat), calc(var(--tertiary_color_lig) - 10%));
+    --tertiary_color_2: hsl(var(--tertiary_color_hue), var(--tertiary_color_sat), calc(var(--tertiary_color_lig) - 20%));
 }

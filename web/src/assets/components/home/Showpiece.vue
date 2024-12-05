@@ -9,8 +9,8 @@
                         <h6>All ages and abilites are invitied to work with our talented and dedicated volunteer coaches.</h6>
                     </div>
                     <div style="margin-top: 30px;">
-                        <button style="background-color: var(--tertiary_color); border: 0; border-radius: 5px; padding: 10px 20px 10px 20px; font-family: inter; font-size: 1em; margin-right: 35px; color: var(--secondary_color);">Get involved</button>
-                        <a href="" style="text-decoration: none; color: var(--secondary_color); font-family: inter; font-size: 1em;">Watch our video</a>
+                        <MyButton title="Get involved" class="font_p" :button-style="ButtonStyle.variant_2"></MyButton>
+                        <a href="" class="font_p">Watch our video</a>
                     </div>
                 </div>
                 <IdrottLogo style="transform: scale(1.1) translateX(calc((1 - 1.1) * 50%))"></IdrottLogo>
@@ -22,4 +22,7 @@
 <script setup lang="ts">
     import TintedBackground from '../TintedBackground.vue';
     import BaseLayout from '../BaseLayout.vue';
+    import IdrottLogo from '../IdrottLogo.vue';
+    import MyButton from '../MyButton.vue';
+import { ButtonStyle } from '../../typescripts/other/ButtonStyle';
 </script>
