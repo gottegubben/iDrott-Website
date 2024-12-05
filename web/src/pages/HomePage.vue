@@ -13,8 +13,7 @@
                         <a href="" style="text-decoration: none; color: var(--secondary_color); font-family: inter; font-size: 1em;">Watch our video</a>
                     </div>
                 </div>
-                <div id="logo" style="flex-basis: 0; flex-grow: 1; flex-shrink: 1; background-image: url(../../public/temporary/images/iDrottLogo720x720.png); background-size: contain; background-position: center; background-repeat: no-repeat; transform: scale(1.1) translate(-25px);">
-                </div>
+                <IdrottLogo style="transform: scale(1.1) translateX(calc((1 - 1.1) * 50%))"></IdrottLogo>
             </div>
         </BaseLayout>
     </TintedBackground>
@@ -24,6 +23,8 @@
     import BaseLayout from '../assets/components/BaseLayout.vue';
 
     import TintedBackground from '../assets/components/TintedBackground.vue';
+
+    import IdrottLogo from '../assets/components/IdrottLogo.vue';
 </script>
 
 <style scoped>
