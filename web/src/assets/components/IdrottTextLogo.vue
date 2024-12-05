@@ -12,9 +12,3 @@
         </g>
     </svg>
 </template>
-
-<style scoped>
-    #idrott_text_logo {
-        height: 2.5em;
-    }
-</style>

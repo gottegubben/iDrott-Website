@@ -50,8 +50,8 @@
         gap: 5px;
     }
 
-    .member_card_container:hover .member_card_shade {
-        background-image: none;
+    .member_card_container:hover {
+        transform: scale(1.05);
 
         cursor: pointer;
     }

@@ -7,7 +7,7 @@
         <BaseLayout>
             <div id="header-content">
                 <div id="logo-container" style="height: inherit; display: flex; align-items: center;">
-                    <IdrottTextLogo style="fill: var(--secondary_color);"></IdrottTextLogo>
+                    <IdrottTextLogo id="idrott-text-logo" style="fill: var(--secondary_color);"></IdrottTextLogo>
                 </div>
                 <div id="link-container" style="height: inherit; display: flex; align-items: center; gap: 30px;">
                     <RouterLink v-for="route in routes" :to="route.path" class="link_idle" active-class="link_active">{{ route.name }}</RouterLink>
@@ -72,5 +72,13 @@
         text-decoration: underline;
         text-decoration-color: var(--tertiary_color);
         text-underline-offset: 4px;
+    }
+
+    #idrott-text-logo {
+        height: clamp(
+            calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 4)),
+            var(--font_h3_size),
+            calc(var(--font_p_size_max) * pow(var(--font_size_multiplier), 4))
+        );
     }
 </style>

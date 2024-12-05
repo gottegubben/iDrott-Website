@@ -6,7 +6,84 @@
     Also may contain variables for fonts in general.
 */
 
-p {
+:root {
+    --font_size_multiplier: 1.3;
+
+    --font_p_size_min: 0.5em;
+    --font_p_size_max: 2em;
+
+    --font_h1_size: calc(var(--font_h2_size) * var(--font_size_multiplier));
+    --font_h2_size: calc(var(--font_h3_size) * var(--font_size_multiplier));
+    --font_h3_size: calc(var(--font_h4_size) * var(--font_size_multiplier));
+    --font_h4_size: calc(var(--font_h5_size) * var(--font_size_multiplier));
+    --font_h5_size: calc(var(--font_h6_size) * var(--font_size_multiplier));
+    --font_h6_size: calc(var(--font_p_size) * var(--font_size_multiplier));
+    --font_p_size: 1.05vw;
+    --font_small_size: calc(var(--font_p_size) * calc(var(--font_size_multiplier) - 1));
+    --font_tiny_size: calc(var(--font_small_size) * calc(var(--font_size_multiplier) - 1));
+}
+
+h1, h2, h3, h4, h5, h6, p {
     font-family: inter;
-    font-size: 1em;
+    font-weight: 100;
+
+    color: var(--secondary_color);
+
+    text-wrap: wrap;
+}
+
+h1 {
+    font-size: clamp(
+        calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 6)),
+        var(--font_h1_size),
+        calc(var(--font_p_size_max) * pow(var(--font_size_multiplier), 6))
+    );
+}
+
+h2 {
+    font-size: clamp(
+        calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 5)),
+        var(--font_h2_size),
+        calc(var(--font_p_size_max) * pow(var(--font_size_multiplier), 5))
+    );
+}
+
+h3 {
+    font-size: clamp(
+        calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 4)),
+        var(--font_h3_size),
+        calc(var(--font_p_size_max) * pow(var(--font_size_multiplier), 4))
+    );
+}
+
+h4 {
+    font-size: clamp(
+        calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 3)),
+        var(--font_h4_size),
+        calc(var(--font_p_size_max) * pow(var(--font_size_multiplier), 3))
+    );
+}
+
+h5 {
+    font-size: clamp(
+        calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 2)),
+        var(--font_h5_size),
+        calc(var(--font_p_size_max) * pow(var(--font_size_multiplier), 2))
+    );
+}
+
+h6 {
+    font-size: clamp(
+        calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 1)),
+        var(--font_h6_size),
+        calc(var(--font_p_size_max) * pow(var(--font_size_multiplier), 1))
+    );
+}
+
+p {
+    font-size: clamp(
+        var(--font_p_size_min),
+        var(--font_p_size),
+        var(--font_p_size_max)
+    );
 }
