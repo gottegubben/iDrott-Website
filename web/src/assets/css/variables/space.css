@@ -1,0 +1,75 @@
+/*
+    The space.css file contains variables for distance
+    between elements.
+*/
+
+:root {
+    --space_unit: 1vw;
+    --space_multiplier: 0.25;
+    --space_min_max_multiplier: 1.3;
+
+    --space_xxl_min: calc(var(--space_xss_min) * pow(var(--space_min_max_multiplier), 6));
+    --space_xxl_max: calc(var(--space_xss_max) * pow(var(--space_min_max_multiplier), 6));
+
+    --space_xl_min: calc(var(--space_xss_min) * pow(var(--space_min_max_multiplier), 5));
+    --space_xl_max: calc(var(--space_xss_max) * pow(var(--space_min_max_multiplier), 5));
+
+    --space_lg_min: calc(var(--space_xss_min) * pow(var(--space_min_max_multiplier), 4));
+    --space_lg_max: calc(var(--space_xss_max) * pow(var(--space_min_max_multiplier), 4));
+
+    --space_md_min: calc(var(--space_xss_min) * pow(var(--space_min_max_multiplier), 3));
+    --space_md_max: calc(var(--space_xss_max) * pow(var(--space_min_max_multiplier), 3));
+
+    --space_sm_min: calc(var(--space_xss_min) * pow(var(--space_min_max_multiplier), 2));
+    --space_sm_max: calc(var(--space_xss_max) * pow(var(--space_min_max_multiplier), 2));
+
+    --space_xs_min: calc(var(--space_xss_min) * pow(var(--space_min_max_multiplier), 1));
+    --space_xs_max: calc(var(--space_xss_max) * pow(var(--space_min_max_multiplier), 1));
+
+    --space_xss_min: 8px;
+    --space_xss_max: 500px;
+
+    --space_xxs:  calc(var(--space_multiplier) * 1 * var(--space_unit));
+    --space_xs:   calc(var(--space_multiplier) * 2 * var(--space_unit));
+    --space_sm:   calc(var(--space_multiplier) * 3 * var(--space_unit));
+    --space_md:   calc(var(--space_multiplier) * 5 * var(--space_unit));
+    --space_lg:   calc(var(--space_multiplier) * 8 * var(--space_unit));
+    --space_xl:   calc(var(--space_multiplier) * 13 * var(--space_unit));
+    --space_xxl:  calc(var(--space_multiplier) * 21 * var(--space_unit));
+
+    --space_xss_clamped: clamp(
+        var(--space_xss_min),
+        var(--space_xss),
+        var(--space_xss_max)
+    );
+    --space_xs_clamped: clamp(
+        var(--space_xs_min),
+        var(--space_xs),
+        var(--space_xs_max)
+    );
+    --space_sm_clamped: clamp(
+        var(--space_sm_min),
+        var(--space_sm),
+        var(--space_sm_max)
+    );
+    --space_md_clamped: clamp(
+        var(--space_md_min),
+        var(--space_md),
+        var(--space_md_max)
+    );
+    --space_lg_clamped: clamp(
+        var(--space_lg_min),
+        var(--space_lg),
+        var(--space_lg_max)
+    );
+    --space_xl_clamped: clamp(
+        var(--space_xl_min),
+        var(--space_xl),
+        var(--space_xl_max)
+    );
+    --space_xxl_clamped: clamp(
+        var(--space_xxl_min),
+        var(--space_xxl),
+        var(--space_xxl_max)
+    );
+}

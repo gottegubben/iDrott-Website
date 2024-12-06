@@ -45,6 +45,52 @@
     --font_p_size: 1.05vw;
     --font_small_size: calc(var(--font_p_size) * calc(var(--font_size_multiplier) - 1));
     --font_tiny_size: calc(var(--font_small_size) * calc(var(--font_size_multiplier) - 1));
+
+    --font_h1_size_clamped: clamp(
+        var(--font_h1_size_min),
+        var(--font_h1_size),
+        var(--font_h1_size_max)
+    );
+    --font_h2_size_clamped: clamp(
+        var(--font_h2_size_min),
+        var(--font_h2_size),
+        var(--font_h2_size_max)
+    );
+    --font_h3_size_clamped: clamp(
+        var(--font_h3_size_min),
+        var(--font_h3_size),
+        var(--font_h3_size_max)
+    );
+    --font_h4_size_clamped: clamp(
+        var(--font_h4_size_min),
+        var(--font_h4_size),
+        var(--font_h4_size_max)
+    );
+    --font_h5_size_clamped: clamp(
+        var(--font_h5_size_min),
+        var(--font_h5_size),
+        var(--font_h5_size_max)
+    );
+    --font_h6_size_clamped: clamp(
+        var(--font_h6_size_min),
+        var(--font_h6_size),
+        var(--font_h6_size_max)
+    );
+    --font_p_size_clamped: clamp(
+        var(--font_p_size_min),
+        var(--font_p_size),
+        var(--font_p_size_max)
+    );
+    --font_small_size_clamped: clamp(
+        var(--font_small_size_min),
+        var(--font_small_size),
+        var(--font_small_size_max)
+    );
+    --font_tiny_size_clamped: clamp(
+        var(--font_tiny_size_min),
+        var(--font_tiny_size),
+        var(--font_tiny_size_max)
+    );
 }
 
 h1, h2, h3, h4, h5, h6, p, .font_h1, .font_h2, .font_h3, .font_h4, .font_h5, .font_h6, .font_p, .font_small, .font_tiny {
@@ -52,79 +98,45 @@ h1, h2, h3, h4, h5, h6, p, .font_h1, .font_h2, .font_h3, .font_h4, .font_h5, .fo
     font-weight: 100;
     text-decoration: none;
 
+    margin: 0;
+
     color: var(--secondary_color);
 
     text-wrap: wrap;
 }
 
 h1, .font_h1 {
-    font-size: clamp(
-        var(--font_h1_size_min),
-        var(--font_h1_size),
-        var(--font_h1_size_max)
-    );
+    font-size: var(--font_h1_size_clamped);
 }
 
 h2, .font_h2 {
-    font-size: clamp(
-        var(--font_h2_size_min),
-        var(--font_h2_size),
-        var(--font_h2_size_max)
-    );
+    font-size: var(--font_h2_size_clamped);
 }
 
 h3, .font_h3 {
-    font-size: clamp(
-        var(--font_h3_size_min),
-        var(--font_h3_size),
-        var(--font_h3_size_max)
-    );
+    font-size: var(--font_h3_size_clamped);
 }
 
 h4, .font_h4 {
-    font-size: clamp(
-        var(--font_h4_size_min),
-        var(--font_h4_size),
-        var(--font_h4_size_max)
-    );
+    font-size: var(--font_h4_size_clamped);
 }
 
 h5, .font_h5 {
-    font-size: clamp(
-        var(--font_h5_size_min),
-        var(--font_h5_size),
-        var(--font_h5_size_max)
-    );
+    font-size: var(--font_h5_size_clamped);
 }
 
 h6, .font_h6 {
-    font-size: clamp(
-        var(--font_h6_size_min),
-        var(--font_h6_size),
-        var(--font_h6_size_max)
-    );
+    font-size: var(--font_h6_size_clamped);
 }
 
 p, .font_p {
-    font-size: clamp(
-        var(--font_p_size_min),
-        var(--font_p_size),
-        var(--font_p_size_max)
-    );
+    font-size: var(--font_p_size_clamped);
 }
 
 .font_small {
-    font-size: clamp(
-        var(--font_small_size_min),
-        var(--font_small_size),
-        var(--font_small_size_max)
-    );
+    font-size: var(--font_small_size_clamped);
 }
 
 .font_tiny {
-    font-size: clamp(
-        var(--font_tiny_size_min),
-        var(--font_tiny_size),
-        var(--font_tiny_size_max)
-    );
+    font-size: var(--font_tiny_size_clamped);
 }
