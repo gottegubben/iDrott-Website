@@ -1,4 +1,5 @@
 <template>
+    <YoutubeVideo v-if="videoIsVisible" video-id="dQw4w9WgXcQ" @close_youtube_video="handleVideoClose"></YoutubeVideo>
     <TintedBackground background-url="/public/temporary/images/Home.png" style="width: 100%; height: calc(100vh - 101px);">
         <BaseLayout>
             <div id="container" style="display: flex; flex-direction: row; height: 100%">
@@ -10,7 +11,7 @@
                     </div>
                     <div id="button_container">
                         <MyButton title="Get involved" class="font_p" :button-style="ButtonStyle.variant_2"></MyButton>
-                        <a href="" class="font_p">Watch our video</a>
+                        <p id="video_text" @click.self="videoIsVisible = true">Watch our video</p>
                     </div>
                 </div>
                 <IdrottLogo style="transform: scale(1.1) translateX(calc((1 - 1.1) * 50%))"></IdrottLogo>
@@ -24,7 +25,16 @@
     import BaseLayout from '../BaseLayout.vue';
     import IdrottLogo from '../IdrottLogo.vue';
     import MyButton from '../MyButton.vue';
+    import YoutubeVideo from '../YoutubeVideo.vue';
     import { ButtonStyle } from '../../typescripts/other/ButtonStyle';
+
+    import { ref } from 'vue';
+
+    const videoIsVisible = ref(false);
+
+    function handleVideoClose() {
+        videoIsVisible.value = false;
+    };
 </script>
 
 <style scoped>
@@ -40,5 +50,12 @@
         flex-direction: row;
         align-items: center;
         gap: var(--space_md_clamped);
+    }
+
+    #video_text:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: var(--tertiary_color);
+        text-underline-offset: 4px;
     }
 </style>
