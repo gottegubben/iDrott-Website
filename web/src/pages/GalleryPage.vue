@@ -1,6 +1,6 @@
 <template>
     <div style="display: flex; width: 100%;">
-        <TintedBackground id="background" background-url="/public/temporary/images/GalleryBackground.png" style="flex-grow: 1;">
+        <TintedBackground id="background" background-url="/public/temporary/images/GalleryBackground.png" style="flex-grow: 1; box-shadow: var(--shadow_variant_1);">
             <BaseLayout style="display: flex; align-items: center;">
                 <h1 style="font-weight: bold;">Gallery</h1>
                 <h6>A collection of images from certain events covered by iDrott.</h6>

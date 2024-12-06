@@ -1,5 +1,5 @@
 <template>
-    <TintedBackground background-url="/public/temporary/images/TheTeamBackground.png" style="width: 100%; height: calc(100vh - 76px);">
+    <TintedBackground background-url="/public/temporary/images/TheTeamBackground.png" style="width: 100%; height: calc(100vh - 76px); box-shadow: var(--shadow_variant_1);">
         <BaseLayout>
             <div id="content_container">
                 <h1 id="main_title">The team</h1>

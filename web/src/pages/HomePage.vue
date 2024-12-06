@@ -1,6 +1,6 @@
 <template>
-    <Showpiece></Showpiece>
-    <Footer></Footer>
+    <Showpiece id="showpiece" style="z-index: 10; position: relative;"></Showpiece>
+    <Footer style="position: relative;"></Footer>
 </template>
 
 <script setup lang="ts">
@@ -14,4 +14,7 @@
 </script>
 
 <style scoped>
+    #showpiece {
+        box-shadow: var(--shadow_variant_1);
+    }
 </style>
