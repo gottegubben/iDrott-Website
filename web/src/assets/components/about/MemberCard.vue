@@ -1,5 +1,5 @@
 <template>
-    <div class="member_card_container" :style="`background-image: url(${memberCardViewModel.image_src});`" :onclick="() => { console.log('Clicked on a member!'); }">
+    <div class="member_card_container" :style="`background-image: url(${memberCardViewModel.image_src}); box-shadow: var(--shadow_variant_1);`" :onclick="() => { console.log('Clicked on a member!'); }">
         <div class="member_card_shade">
             <p class="member_card_name">{{ memberCardViewModel.name }}</p>
             <p class="member_card_other">{{ memberCardViewModel.role }} - {{ memberCardViewModel.post_name }}</p>

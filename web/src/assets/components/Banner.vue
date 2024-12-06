@@ -6,7 +6,7 @@
     <div :id="vueRouter.currentRoute.value.path == routes[0].path ? 'banner-base' : 'banner-base-collapsed'">
         <BaseLayout>
             <div id="banner-content" style="height: inherit;">
-                <p>Every student at TKDAT is free to attend our practices! Keep your eyes out for upcoming events!</p>
+                <p class="font_small">Every student at TKDAT is free to attend our practices! Keep your eyes out for upcoming events!</p>
             </div>
         </BaseLayout>
     </div>
@@ -53,9 +53,6 @@
     }
 
     p {
-        font-size: .6em;
-        font-weight: 600;
-        color: var(--secondary_color);
-        margin: 0;
+        font-weight: bold;
     }
 </style>

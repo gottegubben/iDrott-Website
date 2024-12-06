@@ -13,6 +13,7 @@
             <MemberContainer></MemberContainer>
         </BaseLayout>
     </div>
+    <Footer></Footer>
 </template>
 
 <script setup lang="ts">
@@ -21,6 +22,7 @@
     import MemberContainer from '../assets/components/about/MemberContainer.vue';
 
     import TintedBackground from '../assets/components/TintedBackground.vue';
+    import Footer from '../assets/components/Footer.vue';
 </script>
 
 <style scoped>
