@@ -1,9 +1,9 @@
 <template>
     <div style="display: flex; width: 100%;">
-        <TintedBackground background-url="/public/temporary/images/GalleryBackground.png" style="flex-grow: 1;">
+        <TintedBackground id="background" background-url="/public/temporary/images/GalleryBackground.png" style="flex-grow: 1;">
             <BaseLayout style="display: flex; align-items: center;">
-                <h1 style="font-family: inter; font-size: 4em; color: var(--secondary_color); margin-bottom: 10px;">Gallery</h1>
-                <h3 style="font-family: inter; font-size: 1.3em; color: var(--secondary_color); font-weight: 100; margin-bottom: 50px;">A collection of images from certain events covered by iDrott.</h3>
+                <h1 style="font-weight: bold;">Gallery</h1>
+                <h6>A collection of images from certain events covered by iDrott.</h6>
             </BaseLayout>
         </TintedBackground>
     </div>
@@ -14,3 +14,10 @@
 
     import TintedBackground from '../assets/components/TintedBackground.vue';
 </script>
+
+<style scoped>
+    #background {
+        padding-top: var(--space_xl_clamped);
+        padding-bottom: var(--space_xl_clamped);
+    }
+</style>

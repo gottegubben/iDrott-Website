@@ -9,7 +9,7 @@
                 <div id="logo-container" style="height: inherit; display: flex; align-items: center;">
                     <IdrottTextLogo id="idrott-text-logo" style="fill: var(--secondary_color);"></IdrottTextLogo>
                 </div>
-                <div id="link-container" style="height: inherit; display: flex; align-items: center; gap: 30px;">
+                <div id="link-container" style="height: inherit; display: flex; align-items: center; gap: var(--space_md_clamped);">
                     <RouterLink v-for="route in routes" :to="route.path" class="font_p link_idle" active-class="font_p link_active">{{ route.name }}</RouterLink>
                     <MyButton class="font_p" title="Contact us"></MyButton>
                 </div>

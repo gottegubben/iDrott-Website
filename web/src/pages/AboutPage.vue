@@ -1,10 +1,10 @@
 <template>
     <TintedBackground background-url="/public/temporary/images/TheTeamBackground.png" style="width: 100%; height: calc(100vh - 76px);">
         <BaseLayout>
-            <div style="display: flex; width: 100%; flex-direction: column; align-items: center;">
-                <h1 style="font-family: inter; font-size: 4.5em; color: var(--secondary_color); font-weight: bold; margin-bottom: 0;">The team</h1>
-                <p style="font-family: inter; font-size: 1.5em; color: var(--secondary_color); font-weight: 100; width: 70%;">A diverse and dedicated group of professionals united by a shared passion for excellence and innovation with a blend of unique talents.</p>
-                <img src="/public/temporary/images/TheTeam.png" style="width: 100%;" alt="">
+            <div id="content_container">
+                <h1 id="main_title">The team</h1>
+                <h6 id="description_text" style="width: 65%;">A diverse and dedicated group of professionals united by a shared passion for excellence and innovation with a blend of unique talents.</h6>
+                <div id="image" style="background-image: url(/public/temporary/images/TheTeam.png);"></div>
             </div>
         </BaseLayout>
     </TintedBackground>
@@ -22,3 +22,31 @@
 
     import TintedBackground from '../assets/components/TintedBackground.vue';
 </script>
+
+<style scoped>
+    #main_title {
+        font-weight: bold;
+        margin-top: var(--space_xl_clamped);
+    }
+
+    #image {
+        width: 100%;
+        flex-grow: 1;
+        
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        margin-top: var(--space_xl_clamped);
+        margin-bottom: var(--space_xxl_clamped);
+    }
+
+    #content_container {
+        width: 100%;
+        height: inherit;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
