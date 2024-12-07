@@ -1,5 +1,6 @@
 <template>
     <Showpiece id="showpiece" style="z-index: 10; position: relative;"></Showpiece>
+    <InfiniteSlide></InfiniteSlide>
     <Footer style="position: relative;"></Footer>
 </template>
 
@@ -11,6 +12,8 @@
     import LoremIpsumTest from '../assets/components/LoremIpsumTest.vue';
 
     import Footer from '../assets/components/Footer.vue';
+
+    import InfiniteSlide from '../assets/components/InfiniteSlide.vue';
 </script>
 
 <style scoped>

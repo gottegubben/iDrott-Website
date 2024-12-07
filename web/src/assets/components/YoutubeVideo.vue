@@ -56,12 +56,15 @@
 <style>
     .youtube_video_container {
         z-index: 101;
+
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.411);
+        
+        background-color: var(--overlay_color);
+
         display: flex;
         justify-content: center;
         align-items: center;

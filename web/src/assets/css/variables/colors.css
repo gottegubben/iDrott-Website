@@ -27,4 +27,6 @@
     --tertiary_color_2: hsl(var(--tertiary_color_hue), var(--tertiary_color_sat), calc(var(--tertiary_color_lig) - 20%));
 
     --shadow_color_1: rgb(21, 21, 21);
+
+    --overlay_color: hsl(var(--primary_color_hue), var(--primary_color_sat), var(--primary_color_lig), 90%);
 }

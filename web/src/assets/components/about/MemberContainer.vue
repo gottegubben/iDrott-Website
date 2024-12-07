@@ -4,7 +4,7 @@
 -->
 
 <template>
-    <div id="people-container" style="display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; height: 100%; gap: 30px; grid-auto-rows: 1fr;">
+    <div id="people-container">
         <MemberCard v-for="i in 6"></MemberCard>
     </div>
 </template>
@@ -24,3 +24,17 @@
         }
     ]
 </script>
+
+<style scoped>
+    #people-container {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 1fr;
+        gap: var(--space_xl_clamped); 
+
+        margin-top: var(--space_xxl_clamped);
+        margin-bottom: var(--space_xxl_clamped);
+    }
+</style>
