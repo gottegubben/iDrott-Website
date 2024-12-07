@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-    import { defineProps, computed, defineEmits } from 'vue'
+    import { defineProps, computed, defineEmits, onBeforeMount, onBeforeUnmount } from 'vue'
     import type { PropType } from 'vue';
 
     const props = defineProps({
@@ -38,6 +38,18 @@
         // Emit the event to the parent. The parent needs to be listening for this event!
         // Use the '@close_youtube_video' attribute on the child from the parent.
         emits('close_youtube_video');
+    };
+
+    onBeforeMount(() => {
+        document.addEventListener('keydown', onEscapePressed);
+    });
+
+    onBeforeUnmount(() => {
+        document.removeEventListener('keydown', onEscapePressed);
+    });
+
+    function onEscapePressed(e: KeyboardEvent) {
+        if(e.key == "Escape") emits('close_youtube_video');
     };
 </script>
 
