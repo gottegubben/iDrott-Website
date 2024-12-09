@@ -1,12 +1,37 @@
 <template>
     <div class="infinite_slide_logos">
-        <div class="infinite_slide_logos_slide" v-for="i in 4">
+        <div class="infinite_slide_logos_slide" :style="sliderAnimation" v-for="i in props.timesToRepeat">
             <img src="/public/temporary/images/HubbauLogo.png" alt="">
             <img src="/public/temporary/images/LisebergLogo.png" alt="">
             <img src="/public/temporary/images/GoogleLogo.png" alt="">
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+    import { defineProps, computed } from 'vue';
+    import type { PropType } from 'vue';
+
+    const props = defineProps({
+        // The images will be sent in as a url!
+        images: {
+            required: true,
+            type: Object as PropType<Array<string>>
+        },
+        // The amount of times to repeat the logo slide to make it seem infinite!
+        timesToRepeat: {
+            required: true,
+            type: Object as PropType<number>
+        }
+    });
+
+    const sliderAnimation = computed(() => {
+        return {
+            'display': 'inline-block;',
+            'animation': `${props.images.length * 2}s slide infinite linear;`
+        };
+    });
+</script>
 
 <style>
     @keyframes slide {
@@ -19,8 +44,6 @@
     }
 
     .infinite_slide_logos {
-        background-color: var(--secondary_color);
-        
         padding: var(--space_md_clamped) 0;
 
         overflow-x: hidden;

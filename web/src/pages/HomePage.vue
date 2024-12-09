@@ -1,6 +1,6 @@
 <template>
     <Showpiece id="showpiece" style="z-index: 10; position: relative;"></Showpiece>
-    <InfiniteSlide></InfiniteSlide>
+    <InfiniteSlide :images="['/public/temporary/images/HubbauLogo.png', '/public/temporary/images/LisebergLogo.png', '/public/temporary/images/GoogleLogo.png']" :times-to-repeat="4"></InfiniteSlide>
     <Footer style="position: relative;"></Footer>
 </template>
 
