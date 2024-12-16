@@ -6,7 +6,7 @@
 -->
 
 <template>
-  <div style="position: fixed; width: inherit; height: inherit; z-index: 100;">
+  <div style="position: fixed; width: inherit; height: inherit; z-index: 100; max-width: 1920px;">
     <Banner></Banner>
     <Header></Header>
   </div>

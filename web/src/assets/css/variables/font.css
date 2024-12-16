@@ -28,7 +28,7 @@
     --font_h6_size_max: calc(var(--font_p_size_max) * pow(var(--font_size_multiplier), 1));
 
     --font_p_size_min: 0.8em;
-    --font_p_size_max: 2em;
+    --font_p_size_max: 1em;
 
     --font_small_size_min: calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), -1));
     --font_small_size_max: calc(var(--font_p_size_max) * pow(var(--font_size_multiplier), -1));

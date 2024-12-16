@@ -16,8 +16,8 @@
     --secondary_color_hue: 0;
     --secondary_color_sat: 0%;
     --secondary_color_lig: 96%;
-    --secondary_color_1: hsl(var(--secondary_color_hue), var(--secondary_color_sat), calc(var(--secondary_color_lig) - 20%));
-    --secondary_color_2: hsl(var(--secondary_color_hue), var(--secondary_color_sat), calc(var(--secondary_color_lig) - 40%));
+    --secondary_color_1: hsl(var(--secondary_color_hue), var(--secondary_color_sat), calc(var(--secondary_color_lig) - 10%));
+    --secondary_color_2: hsl(var(--secondary_color_hue), var(--secondary_color_sat), calc(var(--secondary_color_lig) - 20%));
 
     --tertiary_color:  hsl(20, 84%, 53%); /* Rule: takes up about 10% of the page. */
     --tertiary_color_hue: 20;

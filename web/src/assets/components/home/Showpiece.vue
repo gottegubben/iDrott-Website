@@ -14,7 +14,9 @@
                         <p id="video_text" @click.self="videoIsVisible = true">Watch our video</p>
                     </div>
                 </div>
-                <IdrottLogo style="transform: scale(1.1) translateX(calc((1 - 1.1) * 50%))"></IdrottLogo>
+                <div style="display: flex; flex-grow: 1;">
+                    <IdrottLogo style="transform: scale(1.1) translateX(calc((1 - 1.1) * 50%))"></IdrottLogo>
+                </div>
             </div>
         </BaseLayout>
     </TintedBackground>

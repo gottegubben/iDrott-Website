@@ -13,6 +13,6 @@
     --max_dyn_margin: 120px;
     --min_dyn_margin: 20px;
 
-    --max_dyn_width: 1300px; /* Over --max_dyn_width the margin will be capped to --max_dyn_margin! */
+    --max_dyn_width: 1400px; /* Over --max_dyn_width the margin will be capped to --max_dyn_margin! */
     --min_dyn_width: 1100px; /* Below --min_dyn_width the margin will be capped to --min_dyn_margin! */
 }
