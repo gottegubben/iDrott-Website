@@ -7,32 +7,15 @@
                 <h1 style="color: black; font-weight: bold;">Events</h1>
                 <h6 style="color: black;">Through out the year there will be events taking place by us. So keep an eye out!</h6>
             </div>
-            <div id="events_container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
-                <div id="event" v-for="i in 3" style="background-image: radial-gradient(circle at center, var(--tertiary_color) 0, transparent 70%); aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: space-between;">
-                    <div id="top_container" style="display: flex; justify-content: space-between;">
-                        <div id="date" style="aspect-ratio: 1 / 1; width: 70px; height: 70px; border: black solid 2px; border-radius: 5px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-                            <p style="color: black; font-weight: bold;">April</p>
-                            <p style="color: black;">13</p>
-                        </div>
-                        <div id="text_container" style="flex-grow: 1; margin-left: var(--space_md_clamped); display: flex; flex-direction: column; justify-content: space-between;">
-                            <div id="top_text_container" style="display: flex; justify-content: space-between; align-items: center;">
-                                <p style="color: black; font-weight: bold;">Volleyball</p>
-                                <p class="font_small" style="color: black;">13:00 - 14:30</p>
-                            </div>
-                            <p class="font_small" style="color: black; text-overflow: ellipsis; overflow: hidden; width: 220px; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; height: 5em;">Ladies and gentlemen, welcome to the Grand Autumn Harvest Festival! Tonight, we celebrate the season with delicious food, live music, and community spirit. Get ready for an evening of fun and laughter — enjoy the local artisans' market, taste our mouthwatering pumpkin pies at the bake-off, and dance under the stars to the rhythm of our talented local bands.</p>
-                        </div>
-                    </div>
-                    <img style="width: 100%;" src="/public/temporary/images/TheTeamBackground.png" alt="">
-                    <div>
-                        <MyButton title="Learn more" :button-style="ButtonStyle.variant_2"></MyButton>
-                    </div>
-                </div>
+            <div id="events_container" style="display: flex; gap: 30px; justify-content: center;">
+                <Event :event-view-model="events[0]"></Event>
             </div>
             <p style="color: black; margin-top: var(--space_lg_clamped); text-align: center;">To read about all upcoming events, check the Event page!</p>
         </BaseLayout>
     </div>
 
     <InfiniteSlide :images="['/public/temporary/images/HubbauLogo.png', '/public/temporary/images/LisebergLogo.png', '/public/temporary/images/GoogleLogo.png']" :times-to-repeat="4"></InfiniteSlide>
+
     <Footer style="position: relative;"></Footer>
 </template>
 
@@ -48,7 +31,29 @@
     import InfiniteSlide from '../assets/components/InfiniteSlide.vue';
 
     import MyButton from '../assets/components/MyButton.vue';
-import { ButtonStyle } from '../assets/typescripts/other/ButtonStyle';
+
+    import { ButtonStyle } from '../assets/typescripts/other/ButtonStyle';
+
+    import Event from '../assets/components/Event.vue';
+
+    import type { PropType } from 'vue';
+
+    import type { EventViewModel } from '../assets/typescripts/ViewModel/EventViewmodel';
+
+    const events: EventViewModel[] = [
+        {
+            Title: "Volleyball",
+            Description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            Date: {
+                Day: "18",
+                Month: "April",
+                Year: "2004",
+                StartTime: "12:00",
+                EndTime: "15:00"
+            },
+            ImageUrl: "\\temporary\\images\\TheTeam.png"
+        }
+    ];
 </script>
 
 <style scoped>
