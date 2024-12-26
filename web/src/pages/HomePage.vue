@@ -8,7 +8,7 @@
                 <h6 style="color: black;">Through out the year there will be events taking place by us. So keep an eye out!</h6>
             </div>
             <div id="events_container" style="display: flex; gap: 30px; justify-content: center;">
-                <Event :event-view-model="events[0]"></Event>
+                <Event v-for="event in events" :event-view-model="event"></Event>
             </div>
             <p style="color: black; margin-top: var(--space_lg_clamped); text-align: center;">To read about all upcoming events, check the Event page!</p>
         </BaseLayout>
