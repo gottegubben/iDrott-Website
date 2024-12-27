@@ -31,6 +31,18 @@ else {
     server = http.createServer(app);
 }
 
+app.get("/api/GetAllAlbums", (req, res) => {
+    res.json({
+        albums: [
+            "ID#0",
+            "ID#1",
+            "ID#2",
+            "ID#3",
+            "ID#4"
+        ]
+    });
+});
+
 app.use(express.static(CONFIG.resources_absolute_path)); // Make resources avaible!
 
 server.listen(CONFIG.port, () => {

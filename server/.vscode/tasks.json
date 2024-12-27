@@ -4,7 +4,7 @@
 		{
 			"label": "BUILD Server",
 			"type": "shell",
-			"command": "tsc",
+			"command": "npx tsc",
 			"group": {
 				"kind": "build",
 				"isDefault": false
