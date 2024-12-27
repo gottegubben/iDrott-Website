@@ -23,6 +23,12 @@ export interface env_config {
     resources_absolute_path: string;
 
     /**
+     * The absolute path of the albums that will be used in the image
+     * gallery on the website.
+     */
+    albums_absolute_path: string;
+
+    /**
      * An object that contains all the configurations done for the
      * cryptography part of the server.
      */

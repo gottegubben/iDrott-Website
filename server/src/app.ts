@@ -31,16 +31,21 @@ else {
     server = http.createServer(app);
 }
 
+const albums: Array<string> = [];
+
+fs.readdir(CONFIG.albums_absolute_path, (error, files) => {
+    if(error) {
+        console.log("Error occured when reading albums from disk: ", error.message);
+    }
+    else {
+        files.forEach(file => {
+            albums.push(file);
+        });
+    }
+});
+
 app.get("/api/GetAllAlbums", (req, res) => {
-    res.json({
-        albums: [
-            "ID#0",
-            "ID#1",
-            "ID#2",
-            "ID#3",
-            "ID#4"
-        ]
-    });
+    res.json(albums);
 });
 
 app.use(express.static(CONFIG.resources_absolute_path)); // Make resources avaible!
