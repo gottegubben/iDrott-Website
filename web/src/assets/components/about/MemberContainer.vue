@@ -32,7 +32,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-auto-rows: 1fr;
-        gap: var(--space_lg_clamped);
+        gap: var(--space_xl_clamped);
 
         margin-top: var(--space_xxl_clamped);
         margin-bottom: var(--space_xxl_clamped);

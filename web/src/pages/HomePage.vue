@@ -8,13 +8,30 @@
                 <h6 style="color: black;">Through out the year there will be events taking place by us. So keep an eye out!</h6>
             </div>
             <div id="events_container" style="display: flex; gap: 30px; justify-content: center;">
-                <Event v-for="event in events" :event-view-model="event"></Event>
+                <div v-for="event in events" style="width: 350px;"><Event :event-view-model="event"></Event></div>
             </div>
             <p style="color: black; margin-top: var(--space_lg_clamped); text-align: center;">To read about all upcoming events, check the Event page!</p>
         </BaseLayout>
     </div>
 
     <InfiniteSlide :images="['/public/temporary/images/HubbauLogo.png', '/public/temporary/images/LisebergLogo.png', '/public/temporary/images/GoogleLogo.png']" :times-to-repeat="4"></InfiniteSlide>
+
+    <div style="width: 100%; height: 800px; background-color: var(--primary_color);">
+        <BaseLayout style="display: flex; flex-direction: row; justify-content: space-between;">
+            <div id="information">
+                <h2>Contact us</h2>
+                <p>BLABALBA</p>
+            </div>
+            <div id="contact form">
+                <div id="input">
+                    <input id="aaa" placeholder=" " type="text">
+                    <label for="aaa">WAAZ</label>
+                </div>
+
+                <label for="">BBB</label>
+            </div>
+        </BaseLayout>
+    </div>
 
     <Footer style="position: relative;"></Footer>
 </template>
@@ -38,7 +55,7 @@
 
     import type { PropType } from 'vue';
 
-    import type { EventViewModel } from '../assets/typescripts/ViewModel/EventViewmodel';
+    import type { EventViewModel } from '../assets/typescripts/ViewModel/EventViewModel';
 
     const events: EventViewModel[] = [
         {
@@ -51,7 +68,7 @@
                 StartTime: "12:00",
                 EndTime: "15:00"
             },
-            ImageUrl: "\\temporary\\images\\TheTeam.png"
+            ImageUrl: "\\temporary\\images\\ImageAspectRatio.jpg"
         }
     ];
 </script>
@@ -59,5 +76,36 @@
 <style scoped>
     #showpiece {
         box-shadow: var(--shadow_variant_1);
+    }
+</style>
+
+<style scoped>
+    input#aaa {
+        margin-top: 50px;
+        display: block;
+    }
+
+    input#aaa:not(:placeholder-shown) + label {
+        position: relative;
+        top: -1.6em;
+        color: white;
+    }
+
+    input#aaa + label, input#aaa {
+        padding: 5px;
+    }
+
+    input#aaa + label {
+        display: block;
+        top: 0;
+        position: relative;
+        transform: translateY(-1.8em) translateX(5px);
+        color: black;
+        transition: 0.3s;
+        height: 0;
+    }
+
+    input#aaa:focus {
+        outline: none;
     }
 </style>

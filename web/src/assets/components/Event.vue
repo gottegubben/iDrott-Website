@@ -25,7 +25,7 @@
     import { defineProps } from 'vue';
 
     import { ButtonStyle } from '../typescripts/other/ButtonStyle';
-    import type { EventViewModel } from '../typescripts/ViewModel/EventViewmodel';
+    import type { EventViewModel } from '../typescripts/ViewModel/EventViewModel';
     import MyButton from './MyButton.vue';
 
     const props = defineProps({
@@ -43,7 +43,7 @@
 
 <style>
     .event {
-        width: 350px;
+        width: 100%;
 
         background-image: radial-gradient(circle at center, var(--tertiary_color) 0, transparent 70%);
         aspect-ratio: 1 / 1;
