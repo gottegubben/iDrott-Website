@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: inter;
-    src: url(/public/fonts/inter/Inter_18pt-Regular.ttf);
+    src: url(/fonts/inter/Inter_18pt-Regular.ttf);
     font-stretch: normal;
     font-weight: normal;
     font-style: normal;
@@ -14,7 +14,7 @@
 
 @font-face {
     font-family: inter;
-    src: url(/public/fonts/inter/Inter_18pt-MediumItalic.ttf);
+    src: url(/fonts/inter/Inter_18pt-MediumItalic.ttf);
     font-stretch: normal;
     font-weight: 400;
     font-style: italic;
@@ -22,7 +22,7 @@
 
 @font-face {
     font-family: inter;
-    src: url(/public/fonts/inter/Inter_18pt-Medium.ttf);
+    src: url(/fonts/inter/Inter_18pt-Medium.ttf);
     font-stretch: normal;
     font-weight: 400;
     font-style: normal;
@@ -30,7 +30,7 @@
 
 @font-face {
     font-family: inter;
-    src: url(/public/fonts/inter/Inter_18pt-Light.ttf);
+    src: url(/fonts/inter/Inter_18pt-Light.ttf);
     font-stretch: normal;
     font-weight: 100;
     font-style: normal;
@@ -38,7 +38,7 @@
 
 @font-face {
     font-family: inter;
-    src: url(/public/fonts/inter/Inter_18pt-LightItalic.ttf);
+    src: url(/fonts/inter/Inter_18pt-LightItalic.ttf);
     font-stretch: normal;
     font-weight: 100;
     font-style: italic;
@@ -46,7 +46,7 @@
 
 @font-face {
     font-family: inter;
-    src: url(/public/fonts/inter/Inter_18pt-BoldItalic.ttf);
+    src: url(/fonts/inter/Inter_18pt-BoldItalic.ttf);
     font-stretch: normal;
     font-weight: bold;
     font-style: italic;
@@ -54,7 +54,7 @@
 
 @font-face {
     font-family: inter;
-    src: url(/public/fonts/inter/Inter_18pt-Bold.ttf);
+    src: url(/fonts/inter/Inter_18pt-Bold.ttf);
     font-stretch: normal;
     font-weight: bold;
     font-style: normal;
@@ -62,7 +62,7 @@
 
 @font-face {
     font-family: inter;
-    src: url(/public/fonts/inter/Inter_18pt-BlackItalic.ttf);
+    src: url(/fonts/inter/Inter_18pt-BlackItalic.ttf);
     font-stretch: normal;
     font-weight: 900;
     font-style: italic;
@@ -70,7 +70,7 @@
 
 @font-face {
     font-family: inter;
-    src: url(/public/fonts/inter/Inter_18pt-Black.ttf);
+    src: url(/fonts/inter/Inter_18pt-Black.ttf);
     font-stretch: normal;
     font-weight: 900;
     font-style: normal;

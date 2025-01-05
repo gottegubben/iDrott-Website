@@ -24,7 +24,7 @@ const dyn_k          = (max_dyn_margin - min_dyn_margin) / (max_dyn_width - min_
 
 // Linear function with a clamp when windowWidth is out of bounds, used for calculating the margin.
 function getDynamicMargin(windowWidth: number): number {
-    if(min_dyn_width <= windowWidth && min_dyn_width <= max_dyn_width) {
+    if(min_dyn_width <= windowWidth && windowWidth <= max_dyn_width) {
         return dyn_k * (windowWidth - min_dyn_width) + min_dyn_margin;
     }
     else if(windowWidth < min_dyn_width) {

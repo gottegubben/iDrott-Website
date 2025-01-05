@@ -1,0 +1,14 @@
+:root {
+    /* Dynamic margin variables:
+        * max_dyn_margin = maximum size of the margin, at it's peak.
+        * min_dyn_margin = minimum size of the margin.
+        * max_dyn_width  = maximum size for dynamic margin, after this the margin is fixed.
+        * min_dyn_width  = minimum size for dynamic margin, after this the margin is fixed.
+    */
+    --max_dyn_margin: 300px;
+    --min_dyn_margin: 30px;
+    --max_dyn_width: var(--page_container_max_width);
+    --min_dyn_width: var(--page_container_min_width);
+
+    --dynamic_margin: 0; /* The variable to be used! */
+}

@@ -1,63 +1,32 @@
-<!--
-    The header is the element containing the navigation for the website.
--->
-
 <template>
-    <div id="header-base">
-        <BaseLayout>
-            <div id="header-content">
-                <div id="logo-container" style="height: inherit; display: flex; align-items: center;">
-                    <IdrottTextLogo id="idrott-text-logo" style="fill: var(--secondary_color);"></IdrottTextLogo>
-                </div>
-                <div id="link-container" style="height: inherit; display: flex; align-items: center; gap: var(--space_md_clamped);">
-                    <RouterLink v-for="route in routes" :to="route.path" class="font_p link_idle" active-class="font_p link_active">{{ route.name }}</RouterLink>
-                    <MyButton class="font_p" title="Contact us"></MyButton>
-                </div>
+    <FixedPageContainer>
+        <ContentContainer>
+            <IdrottTextLogo></IdrottTextLogo>
+
+            <div>
+                <RouterLink v-for="route in routes" :to="route.path" class="font_p link_idle" active-class="font_p link_active">{{ route.name }}</RouterLink>
             </div>
-        </BaseLayout>
-    </div>
+        </ContentContainer>
+    </FixedPageContainer>
 </template>
 
 <script setup lang="ts">
+    import FixedPageContainer from './containers/FixedPageContainer.vue';
+    import ContentContainer from './containers/ContentContainer.vue';
+
+    /* Component specific components! */
+    import IdrottTextLogo from './IdrottTextLogo.vue';
+    
     import { useRouter } from 'vue-router';
 
-    import BaseLayout from './BaseLayout.vue';
-    import IdrottTextLogo from './IdrottTextLogo.vue';
-    import MyButton from './MyButton.vue';
-
     const vueRouter = useRouter();
-
     const routes = vueRouter.options.routes;
 </script>
 
-<style scoped>
-    button {
-        color: var(--primary_color);
-        background-color: var(--secondary_color);
-        padding: 7px 15px 7px 15px;
-        border-radius: 5px;
-        border: 0;
-    }
-    button:hover {
-        cursor: pointer;
-        background-color: var(--secondary_color_1);
-    }
-
-    #header-base, #header-content {
-        width: 100%;
-        height: 70px;
-    }
-
-    #header-base {
-        background-color: var(--primary_color);
-        position: relative;
-
-        border-bottom: 1px solid var(--secondary_color);
-    }
-
-    #header-content {
-        display: flex;
-        justify-content: space-between;
+<style>
+    :root {
+        --header_height: 60px;
+        --header_background_color: none;
     }
 
     .link_idle:hover, .link_active {
@@ -65,12 +34,24 @@
         text-decoration-color: var(--tertiary_color);
         text-underline-offset: 4px;
     }
+</style>
 
-    #idrott-text-logo {
-        height: clamp(
-            var(--font_h3_size_min),
-            var(--font_h3_size),
-            var(--font_h3_size_max)
-        );
+<style scoped>
+    .fixed_page_container {
+        height: var(--header_height);
+
+        background-color: var(--header_background_color);
+    }
+
+    .content_container {
+        height: inherit;
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .idrott_text_logo {
+        height: var(--font_h5_size_clamped);
     }
 </style>

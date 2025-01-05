@@ -1,31 +1,15 @@
-<!--
-  The App component will be the first component that is
-  injected to the page. It's only parent will be the body.
-  The App component will be the wrapper for all the content
-  that should be displayed on the actual website.
--->
-
 <template>
-  <div style="position: fixed; width: inherit; height: inherit; z-index: 100; max-width: 1920px;">
-    <Banner></Banner>
-    <Header></Header>
-  </div>
-
-  <!-- These two copies are used to make sure that the margin is correct! -->
-  <Banner></Banner>
   <Header></Header>
 
   <RouterView></RouterView>
 </template>
 
 <script setup lang="ts">
-  import Banner from './assets/components/Banner.vue';
   import Header from './assets/components/Header.vue';
 </script>
 
 <style>
-  @import url("./assets/css/variables/variables_import.css");
-
-  @import url("./assets/css/body.css");
-  @import url("./assets/css/app.css");
+  @import url("./assets/css/basic.css");
+  @import url("./assets/css/other/other_imports.css");
+  @import url("./assets/css/dynamic_margin.css");
 </style>

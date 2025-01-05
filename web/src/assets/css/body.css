@@ -1,9 +1,0 @@
-body {
-    display: flex;
-    justify-content: center; /* Horizontally center the child (the content container). */
-
-    margin: 0;               /* Removes default margin! */
-    padding: 0;              /* Removes default padding! */
-
-    background-color: var(--primary_color); /* Optional background for the container */
-}
