@@ -10,3 +10,8 @@ body {
 
     overflow: visible;
 }
+
+/* Padding and margin is accounted for with the size of the element (ex: width and height). */
+*, *::before, *::after {
+    box-sizing: border-box;
+}

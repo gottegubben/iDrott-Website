@@ -5,10 +5,10 @@
         * max_dyn_width  = maximum size for dynamic margin, after this the margin is fixed.
         * min_dyn_width  = minimum size for dynamic margin, after this the margin is fixed.
     */
-    --max_dyn_margin: 300px;
-    --min_dyn_margin: 30px;
+    --max_dyn_margin: 304px; /* 19rem. */
+    --min_dyn_margin: 32px;  /* 2rem. */
     --max_dyn_width: var(--page_container_max_width);
-    --min_dyn_width: var(--page_container_min_width);
+    --min_dyn_width: var(--media_query_width_small);
 
     --dynamic_margin: 0; /* The variable to be used! */
 }
