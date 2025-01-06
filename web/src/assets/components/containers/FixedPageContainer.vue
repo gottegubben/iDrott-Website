@@ -15,7 +15,5 @@
 
         /* But make sure the page container takes up as much space as it can! */
         width: 100%;
-
-        outline: 1px solid yellow;
     }
 </style>

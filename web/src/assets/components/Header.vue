@@ -11,7 +11,7 @@
 
             <FixedPageContainer v-if="okForNavToBeDisplayed" :class="hamburgerIsSelected ? 'nav_hamburger_selected' : 'nav_hamburger_unselected'">
                 <ContentContainer id="content_container_nav">
-                    <RouterLink v-for="route in routes" :to="route.path" class="font_h3 font_weight_medium">{{ route.name }}</RouterLink>
+                    <RouterLink v-for="route in routes" :to="route.path" class="font_h3 link_idle" active-class="font_h3 link_active">{{ route.name }}</RouterLink>
                 </ContentContainer>
             </FixedPageContainer>
         </ContentContainer>
