@@ -4,8 +4,8 @@
             <IdrottTextLogo></IdrottTextLogo>
 
             <div id="router_links">
-                <RouterLink v-for="route in routes" :to="route.path" class="font_p link_idle" active-class="font_p link_active">{{ route.name }}</RouterLink>
-                <BasicButton :button-style="ButtonStyle.variant_2" title="Contact us" class="font_p"></BasicButton>
+                <RouterLink v-for="route in routes" :to="route.path" class="font_p font_header link_idle" active-class="font_p font_header link_active">{{ route.name }}</RouterLink>
+                <BasicButton :button-style="ButtonStyle.variant_2" title="Contact us" class="font_p font_header"></BasicButton>
             </div>
 
             <HamburgerMenu :onclick="onHamburgerClick"></HamburgerMenu>
@@ -70,12 +70,11 @@
         --header_background_color_not_ontop: var(--primary_color);
         --header_link_gap: var(--space_lg_clamped);
         --header_logo_color: var(--secondary_color);
-        --header_logo_height_large: var(--font_h6_size_clamped);
-        --header_logo_height_medium: var(--font_h6_size_clamped);
-        --header_logo_height_small: var(--font_h6_size_clamped);
         --header_hamburger_color: var(--secondary_color);
         --header_hamburger_height: 1.6rem;
         --nav_background_color: var(--primary_color);
+        --header_logo_height: var(--font_h4_size_clamped);
+        --font_header_size: clamp(0.8em, var(--font_p_size), 1em);
     }
 
     .link_idle:hover, .link_active {
@@ -86,6 +85,10 @@
 </style>
 
 <style scoped>
+    .font_header {
+        font-size: var(--font_header_size);
+    }
+
     .fixed_page_container {
         height: var(--header_height);
     }
@@ -98,7 +101,7 @@
     }
 
     .idrott_text_logo {
-        height: var(--header_logo_height_large);
+        height: var(--header_logo_height);
         fill: var(--header_logo_color);
 
         z-index: 1000;
@@ -161,12 +164,6 @@
         }
     }
 
-    @media (max-width: 1280px) {
-        .idrott_text_logo {
-            height: var(--header_logo_height_medium);
-        }
-    }
-
     @media (max-width: 640px) {
         #router_links {
             display: none;
@@ -174,10 +171,6 @@
 
         .hamburger_menu {
             display: flex;
-        }
-
-        .idrott_text_logo {
-            height: var(--header_logo_height_small);
         }
     }
 
