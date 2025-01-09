@@ -2,8 +2,13 @@
     <BasicContainer>
         <ContentContainer>
             <div>
-                <h3>Contact us</h3>
+                <h3 class="font_weight_medium">Contact us</h3>
                 <p>Ask us any questions!</p>
+                <picture>
+                    <source media="(max-width: 640px)" srcset="/images/pages/home/Contact_Us_Small_7_5.png">
+                    <source media="(max-width: 1280px)" srcset="/images/pages/home/Contact_Us_Medium_7_5.png">
+                    <img src="/images/pages/home/Contact_Us_Large_7_5.png" alt="">
+                </picture>
             </div>
 
             <form action="">
@@ -42,9 +47,21 @@
 
     .content_container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 2.5fr;
         grid-template-rows: 1fr;
 
         height: 500px;
+    }
+
+    .content_container > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    img {
+        margin-top: var(--space_md_clamped);
+        width: 100%;
     }
 </style>
