@@ -6,15 +6,35 @@
                 <h1 class="font_weight_bold">TKDAT's</h1>
                 <h1 class="font_weight_bold">Athletic Team</h1>
                 <h6>TKDAT's Sports Committee is dedicated to bringing people together through exciting events that celebrate athleticism, teamwork, and community spirit.</h6>
+
+                <div>
+                    <BasicButton title="Learn more" :button-style="ButtonStyle.variant_2" class="font_p"></BasicButton>
+                    <p @click.self="youtubeVideoIsVisible = true; console.log(youtubeVideoIsVisible);" class="font_weight_medium">Watch our video</p>
+                </div>
             </div>
+
             <div class="center_horizontal flex_column"></div>
         </ContentContainer>
     </BasicContainer>
+    <YoutubeVideo v-if="youtubeVideoIsVisible" video-id="dQw4w9WgXcQ" @close_youtube_video="handleYoutubeVideoClose"></YoutubeVideo>
 </template>
 
 <script setup lang="ts">
     import BasicContainer from '../../containers/BasicContainer.vue';
     import ContentContainer from '../../containers/ContentContainer.vue';
+    import BasicButton from '../../BasicButton.vue';
+    import { ButtonStyle } from '../../../typescripts/other/ButtonStyle';
+
+    /* Component specific components. */
+    import YoutubeVideo from '../../YoutubeVideo.vue';
+
+    import { ref } from 'vue';
+
+    const youtubeVideoIsVisible = ref(false);
+
+    const handleYoutubeVideoClose = () => {
+        youtubeVideoIsVisible.value = false;
+    };
 </script>
 
 <style scoped>
@@ -30,6 +50,9 @@
         min-height: 700px;
         height: 100vh;
         max-height: 1000px;
+
+        z-index: 2;
+        box-shadow: var(--shadow_variant_1);
     }
 
     .content_container {
@@ -40,11 +63,31 @@
         grid-template-rows: 1fr;
     }
 
+    .content_container > div > div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        gap: var(--space_md_clamped);
+        margin-top: var(--space_md_clamped);
+    }
+
+    .content_container > div > div > p:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: var(--tertiary_color);
+        text-underline-offset: 4px;
+    }
+
     .content_container > div:nth-child(2) {
         background-image: url(/images/other/logo/Idrott_Logo_Large_1_1.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
+    }
+
+    h6 {
+        margin-top: var(--space_md_clamped);
     }
 
     @media (max-width: 1280px) {
@@ -83,9 +126,9 @@
     @media (max-width: 640px) {
         .basic_container {
             background: linear-gradient(0deg, var(--overlay_color), var(--overlay_color)), url(/images/pages/home/Landing_Hero_Small_2_3.jpg);
-            min-height: 360px;
+            min-height: 400px;
             height: 80vh;
-            max-height: 480px;
+            max-height: 500px;
 
             background-size: cover;
             background-repeat: no-repeat;

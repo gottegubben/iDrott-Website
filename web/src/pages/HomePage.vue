@@ -1,9 +1,10 @@
 <template>
     <PageContainer>
-        <Hero></Hero> <!-- Takes care of the content container itself! -->
+        <Hero></Hero>
         <ContentContainer>
-
+            <div style="height: 500px;"><h2 style="color: black;">Events</h2></div>
         </ContentContainer>
+        <Contact></Contact>
     </PageContainer>
 </template>
 
@@ -13,4 +14,5 @@
 
     /* Page specific components! */
     import Hero from '../assets/components/pages/home/Hero.vue';
+    import Contact from '../assets/components/pages/home/Contact.vue';
 </script>

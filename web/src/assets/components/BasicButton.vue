@@ -31,9 +31,12 @@
 
 <style>
     .basic_button {
-        padding: 0.5em 1.3em 0.5em 1.3em;
+        padding: 0.6em 1.3em;
         border-radius: 0.3em;
         border: 0;
+
+        width: max-content;
+        height: max-content;
     }
 
     .basic_button_variant_1 {
