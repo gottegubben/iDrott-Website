@@ -5,12 +5,13 @@
 
             <div id="router_links">
                 <RouterLink v-for="route in routes" :to="route.path" class="font_p link_idle" active-class="font_p link_active">{{ route.name }}</RouterLink>
+                <BasicButton :button-style="ButtonStyle.variant_2" title="Contact us" class="font_p"></BasicButton>
             </div>
 
             <HamburgerMenu :onclick="onHamburgerClick"></HamburgerMenu>
 
             <FixedPageContainer v-if="okForNavToBeDisplayed" :class="hamburgerIsSelected ? 'nav_hamburger_selected' : 'nav_hamburger_unselected'">
-                <ContentContainer id="content_container_nav">
+                <ContentContainer id="content_container_nav" v-if="hamburgerIsSelected">
                     <RouterLink v-for="route in routes" :to="route.path" class="font_h3 link_idle" active-class="font_h3 link_active">{{ route.name }}</RouterLink>
                 </ContentContainer>
             </FixedPageContainer>
@@ -21,6 +22,8 @@
 <script setup lang="ts">
     import FixedPageContainer from './containers/FixedPageContainer.vue';
     import ContentContainer from './containers/ContentContainer.vue';
+    import BasicButton from './BasicButton.vue';
+    import { ButtonStyle } from '../typescripts/other/ButtonStyle';
 
     /* Component specific components! */
     import IdrottTextLogo from './IdrottTextLogo.vue';
@@ -63,11 +66,13 @@
 <style>
     :root {
         --header_height: 60px;
-        --header_background_color_ontop: var(--primary_color);
-        --header_background_color_not_ontop: rgb(83, 83, 83);
+        --header_background_color_ontop: none;
+        --header_background_color_not_ontop: var(--primary_color);
         --header_link_gap: var(--space_lg_clamped);
         --header_logo_color: var(--secondary_color);
-        --header_logo_height: var(--font_h5_size_clamped);
+        --header_logo_height_large: var(--font_h6_size_clamped);
+        --header_logo_height_medium: var(--font_h6_size_clamped);
+        --header_logo_height_small: var(--font_h6_size_clamped);
         --header_hamburger_color: var(--secondary_color);
         --header_hamburger_height: 1.6rem;
         --nav_background_color: var(--primary_color);
@@ -93,7 +98,7 @@
     }
 
     .idrott_text_logo {
-        height: var(--header_logo_height);
+        height: var(--header_logo_height_large);
         fill: var(--header_logo_color);
 
         z-index: 1000;
@@ -101,6 +106,7 @@
 
     #router_links {
         display: flex;
+        align-items: center;
 
         margin-left: auto;
         gap: var(--header_link_gap);
@@ -155,6 +161,12 @@
         }
     }
 
+    @media (max-width: 1280px) {
+        .idrott_text_logo {
+            height: var(--header_logo_height_medium);
+        }
+    }
+
     @media (max-width: 640px) {
         #router_links {
             display: none;
@@ -162,6 +174,10 @@
 
         .hamburger_menu {
             display: flex;
+        }
+
+        .idrott_text_logo {
+            height: var(--header_logo_height_small);
         }
     }
 
