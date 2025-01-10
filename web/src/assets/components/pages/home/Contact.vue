@@ -20,7 +20,7 @@
 
                 <label for="subject" class="font_p">Subject</label>
                 <select name="subject" id="subject" class="font_p">
-                    <option value="tuesday_practice_wish">Tuesday practice wish</option>
+                    <option value="tuesday_practice_wish">Sport wish</option>
                     <option value="website_issue">Website issue</option>
                     <option value="general question">General question</option>
                     <option value="other">Other</option>

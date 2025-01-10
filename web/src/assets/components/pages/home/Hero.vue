@@ -86,10 +86,6 @@
         background-size: contain;
     }
 
-    h6 {
-        margin-top: var(--space_md_clamped);
-    }
-
     @media (max-width: 1280px) {
         .basic_container {
             background: linear-gradient(0deg, var(--overlay_color), var(--overlay_color)), url(/images/pages/home/Landing_Hero_Medium_3_2.jpg);

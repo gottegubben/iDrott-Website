@@ -15,7 +15,7 @@
     --font_h2_size_min: calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 5));
     --font_h2_size_max: calc(var(--font_p_size_max) * pow(var(--font_size_multiplier), 5));
 
-    --font_h3_size_min: calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 4));
+    --font_h3_size_min: calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 1));
     --font_h3_size_max: calc(var(--font_p_size_max) * pow(var(--font_size_multiplier), 4));
 
     --font_h4_size_min: calc(var(--font_p_size_min) * pow(var(--font_size_multiplier), 3));
