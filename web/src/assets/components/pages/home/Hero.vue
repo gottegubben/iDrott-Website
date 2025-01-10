@@ -128,7 +128,7 @@
             background: linear-gradient(0deg, var(--overlay_color), var(--overlay_color)), url(/images/pages/home/Landing_Hero_Small_2_3.jpg);
             min-height: 400px;
             height: 80vh;
-            max-height: 500px;
+            max-height: 600px;
 
             background-size: cover;
             background-repeat: no-repeat;

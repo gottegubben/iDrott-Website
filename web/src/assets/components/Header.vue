@@ -5,7 +5,7 @@
 
             <div id="router_links">
                 <RouterLink v-for="route in routes" :to="route.path" class="font_p font_header link_idle" active-class="font_p font_header link_active">{{ route.name }}</RouterLink>
-                <BasicButton :button-style="ButtonStyle.variant_2" title="Contact us" class="font_p font_header"></BasicButton>
+                <BasicButton :button-style="ButtonStyle.variant_2" title="Contact us" class="font_p font_header" :onclick="moveToContactUs"></BasicButton>
             </div>
 
             <HamburgerMenu :onclick="onHamburgerClick"></HamburgerMenu>
@@ -61,6 +61,10 @@
         if (scrollY > 0) onTopOfPage.value = false;
         else onTopOfPage.value = true;
     });
+
+    const moveToContactUs = () => {
+        window.location.href = "/#contact_us";
+    }
 </script>
 
 <style>
@@ -180,6 +184,7 @@
 
     .user_not_ontop {
         background-color: var(--header_background_color_not_ontop);
+        box-shadow: var(--shadow_variant_1);
     }
 
     .user_on_top, .user_not_ontop {

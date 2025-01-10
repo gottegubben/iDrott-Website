@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
     import FixedPageContainer from './containers/FixedPageContainer.vue';
-    import { defineProps, computed, defineEmits, onBeforeMount, onBeforeUnmount } from 'vue'
+    import { computed, onBeforeMount, onBeforeUnmount } from 'vue'
     import type { PropType } from 'vue';
 
     const props = defineProps({
