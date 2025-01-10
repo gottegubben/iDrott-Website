@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "expose": "vite --host"
   },
   "dependencies": {
     "vue": "^3.5.12",

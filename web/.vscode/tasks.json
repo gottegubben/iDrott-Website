@@ -12,6 +12,12 @@
             "type": "shell",
             "command": "npm run dev",
             "group": "build"
+        },
+        {
+            "label": "START Web (Local network)",
+            "type": "shell",
+            "command": "npm run expose",
+            "group": "build"
         }
     ]
 }
