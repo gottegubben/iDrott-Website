@@ -38,6 +38,10 @@
 </script>
 
 <style scoped>
+    h1 {
+            line-height: 1em;
+    }
+
     .basic_container {
         padding-top: var(--header_height); /* Move down from the header! */
 
@@ -84,6 +88,10 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
+    }
+
+    h6 {
+        margin-top: var(--space_xss_clamped);
     }
 
     @media (max-width: 1280px) {

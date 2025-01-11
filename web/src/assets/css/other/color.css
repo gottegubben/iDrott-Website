@@ -30,4 +30,5 @@
     --shadow_variant_1: 0px 5px 15px var(--shadow_color_1);
 
     --overlay_color: hsl(var(--primary_color_hue), var(--primary_color_sat), var(--primary_color_lig), 90%);
+    --overlay_color_1: hsl(var(--primary_color_hue), var(--primary_color_sat), calc(var(--primary_color_lig) - 5%), 90%);
 }

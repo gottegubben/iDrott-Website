@@ -9,8 +9,8 @@
                 <div class="footer_bottom_links"></div>
                 <div class="footer_bottom_designer">
                     <div>
-                        <p>Designed by</p>
-                        <p class="font_weight_medium">Lukas Söderberg</p>
+                        <p class="font_weight_medium">Designed by</p>
+                        <p>Lukas Söderberg</p>
                     </div>
                 </div>
                 <div class="footer_bottom_tm">

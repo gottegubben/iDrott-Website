@@ -118,7 +118,7 @@
 
     @media (max-width: 1280px) {
         .content_container {
-            gap: var(--space_md_clamped);
+            gap: 0;
         }
     }
 
@@ -134,6 +134,7 @@
 
         .content_container > div {
             margin-bottom: 0;
+            margin-top: calc(var(--space_xxl_clamped) * 2);
         }
     }
 </style>
