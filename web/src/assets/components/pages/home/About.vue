@@ -2,7 +2,7 @@
     <BasicContainer>
         <ContentContainer>
             <h3>Want to learn more about us?</h3>
-            <BasicButton title="Read here" :button-style="ButtonStyle.variant_2" class="font_p"></BasicButton>
+            <BasicButton title="Read here" :button-style="ButtonStyle.variant_2" class="font_p" :onclick="redirect"></BasicButton>
         </ContentContainer>
     </BasicContainer>
 </template>
@@ -12,6 +12,17 @@
     import ContentContainer from '../../containers/ContentContainer.vue';
     import BasicButton from '../../BasicButton.vue';
     import { ButtonStyle } from '../../../typescripts/other/ButtonStyle';
+
+    import { ref } from 'vue';
+    import { useRouter } from 'vue-router';
+
+    const vueRouter = useRouter();
+    const routes    = vueRouter.options.routes;
+
+    const redirect = () => {
+        const route = routes.find((x) => x.name?.toString().toLowerCase().trim() == "about");
+        vueRouter.push(route ? route.path : "/");
+    };
 </script>
 
 <style scoped>

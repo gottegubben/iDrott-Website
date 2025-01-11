@@ -4,7 +4,7 @@
             <IdrottTextLogo></IdrottTextLogo>
 
             <div id="router_links">
-                <RouterLink v-for="route in routes" :to="route.path" class="font_p font_header link_idle" active-class="font_p font_header link_active">{{ route.name }}</RouterLink>
+                <RouterLink v-for="route in routes" :to="route.path" class="router_link font_p font_header">{{ route.name }}</RouterLink>
                 <BasicButton :button-style="ButtonStyle.variant_2" title="Contact us" class="font_p font_header" :onclick="moveToContactUs"></BasicButton>
             </div>
 
@@ -12,7 +12,7 @@
 
             <FixedPageContainer v-if="okForNavToBeDisplayed" :class="hamburgerIsSelected ? 'nav_hamburger_selected' : 'nav_hamburger_unselected'">
                 <ContentContainer id="content_container_nav" v-if="hamburgerIsSelected">
-                    <RouterLink v-for="route in routes" :to="route.path" class="font_h2 link_idle" active-class="font_h2 link_active">{{ route.name }}</RouterLink>
+                    <RouterLink v-for="route in routes" :to="route.path" class="router_link font_h2 link_idle">{{ route.name }}</RouterLink>
                 </ContentContainer>
             </FixedPageContainer>
         </ContentContainer>
@@ -81,10 +81,10 @@
         --font_header_size: clamp(0.8em, var(--font_p_size), 1em);
     }
 
-    .link_idle:hover, .link_active {
-        text-decoration: underline;
-        text-decoration-color: var(--tertiary_color);
-        text-underline-offset: 4px;
+    .router_link:hover, .router-link-active {
+        text-decoration: underline !important;
+        text-decoration-color: var(--tertiary_color) !important;
+        text-underline-offset: 4px !important;
     }
 </style>
 
