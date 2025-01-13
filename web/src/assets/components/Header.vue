@@ -8,11 +8,11 @@
                 <BasicButton :button-style="ButtonStyle.variant_2" title="Contact us" class="font_p font_header" :onclick="moveToContactUs"></BasicButton>
             </div>
 
-            <HamburgerMenu :onclick="onHamburgerClick"></HamburgerMenu>
+            <HamburgerMenu id="header_hamburger" :onclick="onHamburgerClick"></HamburgerMenu>
 
             <FixedPageContainer v-if="okForNavToBeDisplayed" :class="hamburgerIsSelected ? 'nav_hamburger_selected' : 'nav_hamburger_unselected'">
                 <ContentContainer id="content_container_nav" v-if="hamburgerIsSelected">
-                    <RouterLink v-for="route in routes" :to="route.path" class="router_link font_h2 link_idle">{{ route.name }}</RouterLink>
+                    <RouterLink v-for="route in routes" :to="route.path" class="router_link font_h2 link_idle" :onclick="onRouterLinkClick">{{ route.name }}</RouterLink>
                 </ContentContainer>
             </FixedPageContainer>
         </ContentContainer>
@@ -41,6 +41,12 @@
         hamburgerIsSelected.value = !hamburgerIsSelected.value;
     };
 
+    const onRouterLinkClick = () => {
+        const input = <HTMLInputElement> document.getElementById("header_hamburger")?.children[0];
+        input.checked = false;
+        hamburgerIsSelected.value = false;
+    };
+
     window.addEventListener("resize", () => 
     {
         let width = window.innerWidth;
@@ -62,7 +68,9 @@
         else onTopOfPage.value = true;
     });
 
-    const moveToContactUs = () => {
+    const moveToContactUs = async () => {
+        vueRouter.push("/");
+        await new Promise(r => setTimeout(r, 10)); /* Need to wait a short time for the route to take effect! */
         window.location.href = "/#contact_us";
     }
 </script>

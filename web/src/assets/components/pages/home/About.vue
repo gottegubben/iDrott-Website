@@ -1,6 +1,6 @@
 <template>
     <BasicContainer>
-        <ContentContainer>
+        <ContentContainer class="center_horizontal flex_column">
             <h3>Want to learn more about us?</h3>
             <BasicButton title="Read here" :button-style="ButtonStyle.variant_2" class="font_p" :onclick="redirect"></BasicButton>
         </ContentContainer>
@@ -34,10 +34,6 @@
         border: 1px solid var(--secondary_color);
         height: 100%;
         border-radius: 1rem;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
 
         padding: var(--space_xl_clamped) 0;
         padding-left: var(--space_xl_clamped);

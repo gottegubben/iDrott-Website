@@ -1,7 +1,7 @@
 <template>
     <BasicContainer>
         <ContentContainer id="contact_us">
-            <div>
+            <div class="flex_column center_horizontal center_vertical">
                 <h3 class="font_weight_medium">Contact us</h3>
                 <p>Have a question? Ask us!</p>
                 <picture>
@@ -11,7 +11,7 @@
                 </picture>
             </div>
 
-            <form action="">
+            <form action="" class="flex_column">
                 <label for="first_name" class="font_p">First name</label>
                 <input type="text" id="first_name" name="first_name" placeholder="Your name..." class="font_p">
 
@@ -56,19 +56,11 @@
     }
 
     .content_container > div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
         margin: var(--space_xxl_clamped) 0;
     }
 
     form {
         margin: var(--space_xxl_clamped) 0;
-
-        display: flex;
-        flex-direction: column;
     }
 
     picture {
