@@ -28,7 +28,7 @@
             description: "AAA",
             startDate: new Date("2025-01-13"),
             endDate: new Date("2025-01-14"),
-            imgUrl: "/temporary/images/thumbnail-preview.jpg"
+            imgUrl: "https://picsum.photos/450/300"
         }
     ];
 </script>
@@ -47,27 +47,19 @@
         max-width: 40em;
     }
 
-    /* --- TESTING --- */
-
     .home_event_display {
         margin: 40px 0;
         width: 100%;
+
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        align-items: center;
-        gap: 20px;
+        gap: var(--space_lg_clamped);
     }
 
     @media (max-width: 1280px) {
         .home_event_display {
-            grid-template-rows: auto;
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
 
-    @media (max-width: 640px) {
-        .home_event_display {
-            grid-template-rows: auto;
+            display: grid;
             grid-template-columns: repeat(1, 1fr);
         }
     }
