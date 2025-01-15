@@ -34,7 +34,13 @@
 </script>
 
 <style>
+    .event:hover {
+        transform: scale(1.1);
+    }
+
     .event {
+        transition: var(--animation_fast);
+
         aspect-ratio: 3 / 2;
         max-width: 370px;
         min-width: 250px;
@@ -62,6 +68,8 @@
 
     .event_date > p {
         transform: rotateZ(-45deg);
+
+        font-size: 0.9em;
 
         position: absolute;
         text-align: center;

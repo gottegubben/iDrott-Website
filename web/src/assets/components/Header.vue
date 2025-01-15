@@ -103,6 +103,7 @@
 
     .fixed_page_container {
         height: var(--header_height);
+        z-index: 500;
     }
 
     .content_container {

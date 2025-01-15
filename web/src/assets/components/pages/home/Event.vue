@@ -10,6 +10,7 @@
                 <Event :event-view-model="events[0]"></Event>
             </div>
             <p class="font_color_primary">To read about all upcoming events, check the Event page!</p>
+            <BasicButton :button-style="ButtonStyle.variant_2" title="Read more" :onclick="() => router.push('/events')"></BasicButton>
         </ContentContainer>
     </BasicContainer>
 </template>
@@ -17,10 +18,15 @@
 <script setup lang="ts">
     import BasicContainer from '../../containers/BasicContainer.vue';
     import ContentContainer from '../../containers/ContentContainer.vue';
+    import { useRouter } from 'vue-router';
 
     /* Component specific components. */
     import Event from '../../Event.vue';
     import type { IEventViewModel } from '../../../typescripts/viewmodels/IEventViewModel';
+    import BasicButton from '../../BasicButton.vue';
+    import { ButtonStyle } from '../../../typescripts/other/ButtonStyle';
+
+    const router = useRouter();
 
     const events: IEventViewModel[] = [
         {
@@ -34,6 +40,10 @@
 </script>
 
 <style scoped>
+    button {
+        margin-top: var(--space_xs_clamped);
+    }
+
     .content_container {
         margin: var(--space_xxl_clamped) auto;
     }
