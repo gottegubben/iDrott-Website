@@ -30,10 +30,10 @@
 
     const events: IEventViewModel[] = [
         {
-            title: "Test",
-            description: "AAA",
-            startDate: new Date("2025-01-13"),
-            endDate: new Date("2025-01-14"),
+            title: "Workshop",
+            description: "A professional conference bringing experts together for insightful talks, networking, and workshops, fostering innovation and collaboration in the industry.",
+            startDate: new Date("2025-01-13T12:00"),
+            endDate: new Date("2025-01-13T15:30"),
             imgUrl: "https://picsum.photos/450/300"
         }
     ];
