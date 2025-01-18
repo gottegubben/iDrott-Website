@@ -1,6 +1,7 @@
 <template>
     <PageContainer>
         <Hero></Hero>
+        <Event></Event>
     </PageContainer>
 </template>
 
@@ -9,4 +10,5 @@
 
     /* Page specific components. */
     import Hero from '../assets/components/pages/event/Hero.vue';
+    import Event from '../assets/components/pages/event/Event.vue';
 </script>

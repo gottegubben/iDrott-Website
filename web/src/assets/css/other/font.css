@@ -150,6 +150,10 @@ p, .font_p {
     color: var(--secondary_color) !important;
 }
 
+.font_color_tertiary {
+    color: var(--tertiary_color) !important;
+}
+
 .font_weight_bold {
     font-weight: 900 !important;
 }

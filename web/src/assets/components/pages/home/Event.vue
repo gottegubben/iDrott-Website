@@ -68,7 +68,6 @@
 
     @media (max-width: 1280px) {
         .home_event_display {
-
             display: grid;
             grid-template-columns: repeat(1, 1fr);
         }

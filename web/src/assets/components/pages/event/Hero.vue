@@ -49,6 +49,7 @@
 
     h6 {
         margin-top: var(--space_xs_clamped);
+        text-align: center;
     }
 
     h1 {
