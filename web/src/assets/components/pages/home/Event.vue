@@ -58,7 +58,7 @@
     }
 
     .home_event_display {
-        margin: 40px 0;
+        margin: var(--space_xl_clamped) 0;
         width: 100%;
 
         display: grid;

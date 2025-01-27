@@ -36,6 +36,7 @@
         gap: var(--space_lg_clamped);
         flex-wrap: wrap;
         max-width: 100%;
+        justify-content: center;
     }
 
     .pin_icon {

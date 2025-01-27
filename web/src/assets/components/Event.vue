@@ -1,5 +1,5 @@
 <template>
-    <div :style="style" class="event">
+    <div :style="style" class="event" :onclick="onEventPressed">
         <div class="event_date">
             <p class="font_weight_medium">{{ date }}</p>
             <svg viewBox="0 0 50 50" class="event_triangle">
@@ -18,8 +18,19 @@
 </template>
 
 <script setup lang="ts">
-    import { computed, type PropType } from 'vue';
+    import InfoPopup from './InfoPopup.vue';
+    import { computed, ref, type PropType } from 'vue';
     import type { IEventViewModel } from '../typescripts/viewmodels/IEventViewModel';
+
+    const showPopup = ref(false);
+    
+    const onEventPressed = () => {
+        showPopup.value = true;
+    };
+
+    const onPopupClosed = () => {
+        showPopup.value = false;
+    };
 
     const titleMaxCharacterCount = 14;
     const descriptionMaxCharacterCount = 150;
