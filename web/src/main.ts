@@ -6,12 +6,12 @@ import App from "./App.vue";
 // Pages:
 import HomePage from "./pages/HomePage.vue";
 import EventPage from "./pages/EventPage.vue";
-
-// { path: "/", component: HomePage, name: "Home" }
+import AboutPage from "./pages/AboutPage.vue";
 
 const routes = [
     { path: "/", component: HomePage, name: "Home" },
-    { path: "/events", component: EventPage, name: "Events" }
+    { path: "/events", component: EventPage, name: "Events" },
+    { path: "/about", component: AboutPage, name: "About" }
 ];
 
 const router = createRouter({

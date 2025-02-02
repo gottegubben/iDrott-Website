@@ -8,7 +8,7 @@
                 <h6>TKDAT's Sports Committee is dedicated to bringing people together through exciting events that celebrate athleticism, teamwork, and community spirit.</h6>
 
                 <div>
-                    <BasicButton title="Learn more" :button-style="ButtonStyle.variant_2" class="font_p"></BasicButton>
+                    <BasicButton title="Learn more" :button-style="ButtonStyle.variant_2" class="font_p" @click="vueRouter.push('/about')"></BasicButton>
                     <p @click.self="youtubeVideoIsVisible = true; console.log(youtubeVideoIsVisible);" class="font_weight_medium">Watch our video</p>
                 </div>
             </div>
@@ -29,6 +29,9 @@
     import YoutubeVideo from '../../YoutubeVideo.vue';
 
     import { ref } from 'vue';
+    import { useRouter } from 'vue-router';
+
+    const vueRouter = useRouter();
 
     const youtubeVideoIsVisible = ref(false);
 

@@ -27,7 +27,7 @@
     --space_xs_max: calc(var(--space_xss_max) * pow(var(--space_min_max_multiplier), 1));
 
     --space_xss_min: 8px;
-    --space_xss_max: 500px;
+    --space_xss_max: 8.5px;
 
     --space_xss:  calc(var(--space_multiplier) * 1 * var(--space_unit));
     --space_xs:   calc(var(--space_multiplier) * 2 * var(--space_unit));
