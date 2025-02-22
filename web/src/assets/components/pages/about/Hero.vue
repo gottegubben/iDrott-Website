@@ -1,8 +1,7 @@
 <template>
     <BasicContainer>
         <ContentContainer class="center_vertical flex_column">
-            <h1 class="font_weight_bold">About us</h1>
-            <h6>A diverse and dedicated group of professionals united by a shared passion for excellence and innovation with a blend of unique talents.</h6>
+            <h2 class="font_weight_bold">About us</h2>
         </ContentContainer>
     </BasicContainer>
 </template>
@@ -47,13 +46,7 @@
         }    
     }
 
-    h6 {
-        margin-top: var(--space_xs_clamped);
-        text-align: center;
-        max-width: 700px;
-    }
-
-    h1 {
-        margin-top: var(--space_xs_clamped);
+    h2 {
+        margin-top: var(--space_xxl_clamped);
     }
 </style>

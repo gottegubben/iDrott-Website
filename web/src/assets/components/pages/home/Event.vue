@@ -41,11 +41,11 @@
 
 <style scoped>
     button {
-        margin-top: var(--space_xs_clamped);
+        margin-top: var(--space_lg_clamped);
     }
 
     .content_container {
-        margin: var(--space_xxl_clamped) auto;
+        margin: calc(var(--space_xxl_clamped) * 3) auto;
     }
 
     .content_container > p:nth-child(2) {

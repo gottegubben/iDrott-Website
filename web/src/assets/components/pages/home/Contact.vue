@@ -53,6 +53,8 @@
         gap: var(--space_xxl_clamped);
 
         height: fit-content;
+
+        padding: calc(var(--space_xxl_clamped) * 2) 0;
     }
 
     .content_container > div {
