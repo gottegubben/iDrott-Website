@@ -1,7 +1,7 @@
 <template>
     <BasicContainer>
         <ContentContainer class="flex_column center_vertical">
-            <h1 class="font_color_primary font_weight_medium">Events</h1>
+            <h2 class="font_color_primary font_weight_medium">Events</h2>
             <p class="font_color_primary">Through out the year there will be events taking place hosted
                 by us so keep an eye out! Here are some upcoming events...</p>
             <div class="home_event_display">

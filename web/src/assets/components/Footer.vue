@@ -45,7 +45,7 @@
         display: flex;
         flex-direction: column;
         gap: var(--space_xs_clamped);
-        padding: var(--space_xl_clamped) 0;
+        padding: var(--space_xxl_clamped) 0;
     }
 
     .idrott_text_logo {

@@ -94,7 +94,7 @@
     );
 }
 
-h1, h2, h3, h4, h5, h6, p, .font_h1, .font_h2, .font_h3, .font_h4, .font_h5, .font_h6, .font_p, .font_small, .font_tiny, label, input, option, select, input::placeholder, textarea, textarea::placeholder {
+span, h1, h2, h3, h4, h5, h6, p, .font_h1, .font_h2, .font_h3, .font_h4, .font_h5, .font_h6, .font_p, .font_small, .font_tiny, label, input, option, select, input::placeholder, textarea, textarea::placeholder {
     font-family: inter;
     font-weight: 100;
     text-decoration: none;

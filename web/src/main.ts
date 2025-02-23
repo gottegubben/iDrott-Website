@@ -19,6 +19,11 @@ const router = createRouter({
     routes
 });
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faEnvelope, faDumbbell, faMusic, faGear } from "@fortawesome/free-solid-svg-icons"
+
+library.add(faEnvelope, faDumbbell, faMusic, faGear);
+
 const app = createApp(App);
 
 app.config.globalProperties.$routes = routes;

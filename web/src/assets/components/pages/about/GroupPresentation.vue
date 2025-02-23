@@ -1,7 +1,7 @@
 <template>
     <BasicContainer>
         <ContentContainer class="flex_column center_vertical">
-            <img src="/images/pages/about/GroupPresentation.png" alt="">
+            <img src="/images/pages/about/GroupPresentation.jpg" alt="">
             <h6 class="font_color_primary font_weight_medium">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h6>
         </ContentContainer>
     </BasicContainer>
