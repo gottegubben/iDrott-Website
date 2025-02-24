@@ -7,13 +7,13 @@
 
             <div>
                 <span><FontAwesomeIcon class="font_awesome_icon" icon="envelope"></FontAwesomeIcon></span>
-                <p class="font_color_primary">{{ props.person.mail }}</p>
+                <div class="center_vertical"><p class="font_color_primary">{{ props.person.mail }}</p></div>
                 <span><FontAwesomeIcon class="font_awesome_icon" icon="dumbbell"></FontAwesomeIcon></span>
-                <p class="font_color_primary">{{ props.person.favSport }}</p>
+                <div class="center_vertical"><p class="font_color_primary">{{ props.person.favSport }}</p></div>
                 <span><FontAwesomeIcon class="font_awesome_icon" icon="music"></FontAwesomeIcon></span>
-                <p class="font_color_primary">{{ props.person.favSong }}</p>
+                <div class="center_vertical"><p class="font_color_primary">{{ props.person.favSong }}</p></div>
                 <span><FontAwesomeIcon class="font_awesome_icon" icon="gear"></FontAwesomeIcon></span>
-                <p class="font_color_primary">{{ props.person.task }}</p>
+                <div class="center_vertical"><p class="font_color_primary">{{ props.person.task }}</p></div>
             </div>
         </div>
     </div>
@@ -51,7 +51,7 @@
 
     .person_text_container > div {
         border-top: 2px solid var(--primary_color);
-        padding-top: var(--space_xl_clamped);
+        padding-top: var(--space_md_clamped);
 
         display: grid;
         grid-template-columns: 1.5em 1fr;
@@ -71,16 +71,34 @@
     img {
         aspect-ratio: 1 / 1;
         width: 300px;
+        object-fit: cover;
     }
 
     h6 {
         margin-bottom: var(--space_xs_clamped);
     }
 
-    @media (max-width: 1280px) {
+    @media (max-width: 1080px) {
         img {
-            aspect-ratio: 1 / 1;
-            width: 200px; 
-        }    
+            width: 270px;
+        }
+    }
+
+    @media (max-width: 840px) {
+        img {
+            width: 200px;
+        }
+
+        .person_text_container {
+            background-color: var(--secondary_color_1);
+            padding: var(--space_md_clamped);
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 640px) {
+        img {
+            width: 100px;
+        }
     }
 </style>
