@@ -8,9 +8,21 @@ import { env_config } from "./env_config";
 
 import config_json from "../env-config.json";
 
-const app = express();
-
 const CONFIG: env_config = config_json;
+
+// ---------------------------------
+
+import { Calendar } from "./calendar";
+
+const calendar: Calendar = new Calendar(CONFIG.google_config.service_account, CONFIG.google_config.event_calendar_id);
+
+calendar.GetEventsUpAhead().then(x => {
+    x.forEach(a => console.log(Calendar.ConvertToViewModel(a)));
+});
+
+/*
+
+const app = express();
 
 let server: https.Server | http.Server;
 
@@ -53,3 +65,5 @@ app.use(express.static(CONFIG.resources_absolute_path)); // Make resources avaib
 server.listen(CONFIG.port, () => {
     console.log(`Server has begun listening: ${CONFIG.use_https ? "https" : "http"}://localhost:${CONFIG.port}`);
 });
+
+*/
