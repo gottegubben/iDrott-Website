@@ -6,11 +6,17 @@ export class Calendar {
     private auth: JWT;
     private calendar: calendar_v3.Calendar;
     private calendarId: string;
+    private useCache: boolean;
+
+    private eventSourceCache: EventSource[]  = [];
+    private eventViewCache: EventViewModel[] = [];
+    private cacheDate: Date;
+    private static cacheAhead: number = 31; // Number of days to cache ahead.
 
     public static Months: string[] = ["January", "February", "Mars", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     public static MonthsCut: string[] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-    constructor(account: google_service_account, calendarId: string) {
+    constructor(account: google_service_account, calendarId: string, useCache: boolean) {
         this.auth = new JWT({
             email: account.client_email,
             key: account.private_key,
@@ -21,6 +27,11 @@ export class Calendar {
         this.calendar = google.calendar({ version: "v3", auth: this.auth });
 
         this.calendarId = calendarId;
+
+        this.useCache = useCache;
+
+        this.cacheDate = new Date();
+        this.cacheDate.setDate(this.cacheDate.getDate() - 1);
     }
 
     /**
@@ -73,7 +84,12 @@ export class Calendar {
         return eventSources.map(this.ConvertToViewModel);
     }
 
-    public async GetEventsUpAhead(numberOfEventsAhead: number = 5): Promise<EventSource[]> {
+    /**
+     * Gets the events up ahead to a certain max threshold, starting from closest.
+     * @param numberOfEventsAhead max events to send back.
+     * @returns A list of event sources.
+     */
+    private async getEventsUpAhead(numberOfEventsAhead: number = 5): Promise<EventSource[]> {
         try {
             const response = await this.calendar.events.list({
                 calendarId: this.calendarId,
@@ -92,6 +108,71 @@ export class Calendar {
         catch { }
 
         return [];
+    }
+
+    /**
+     * Fetches all the events between a given time span.
+     * @param start Start date.
+     * @param end End date.
+     * @param maxEvents Max amount of events to fetch.
+     * @returns Get all the events between the specified time span.
+     */
+    private async getEvents(start: Date, end: Date, maxEvents: number = 30): Promise<EventSource[]> {
+        try {
+            const response = await this.calendar.events.list({
+                calendarId: this.calendarId,
+                timeMin: start.toISOString(),
+                timeMax: end.toISOString(),
+                maxResults: maxEvents,
+                singleEvents: true,
+                orderBy: "startTime"
+            });
+            
+            if (!response.data.items || response.data.items.length === 0) {
+                return [];
+            }
+
+            return response.data.items.map(this.mapRawToEventSource);
+        }
+        catch { }
+
+        return [];
+    }
+
+    /**
+     * A function for returning todays date.
+     * @returns Todays date at 00:00:00.000.
+     */
+    private getTodaysDate(): Date {
+        const temp: Date = new Date();
+        temp.setHours(0, 0, 0, 0);
+        return temp;
+    }
+
+    /**
+     * Get new items for the cache.
+     * @param startDate The start date.
+     */
+    private async getNewCache(startDate: Date): Promise<void> {
+        console.log("Fetching new cache for the events...")
+
+        const endDate: Date = new Date();
+        endDate.setDate(endDate.getDate() + Calendar.cacheAhead);
+        endDate.setHours(23, 59, 0, 0); // 23:59:00.000.
+        
+        const eventSources: EventSource[] = await this.getEvents(startDate, endDate, Calendar.cacheAhead);
+        const eventViewModels: EventViewModel[] = Calendar.ConvertToViewModels(eventSources);
+
+        this.eventSourceCache = eventSources;
+        this.eventViewCache   = eventViewModels;
+        this.cacheDate        = startDate;
+    }
+
+    public async GetFirstThreeEventsView(): Promise<EventViewModel[]> {
+        if (this.useCache && this.getTodaysDate() > this.cacheDate) await this.getNewCache(this.getTodaysDate());
+
+        if (this.useCache) { return this.eventViewCache.slice(0, 3); }
+        else return Calendar.ConvertToViewModels(await this.getEventsUpAhead(3));
     }
 }
 

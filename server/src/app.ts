@@ -14,13 +14,7 @@ const CONFIG: env_config = config_json;
 
 import { Calendar } from "./calendar";
 
-const calendar: Calendar = new Calendar(CONFIG.google_config.service_account, CONFIG.google_config.event_calendar_id);
-
-calendar.GetEventsUpAhead().then(x => {
-    x.forEach(a => console.log(Calendar.ConvertToViewModel(a)));
-});
-
-/*
+const calendar: Calendar = new Calendar(CONFIG.google_config.service_account, CONFIG.google_config.event_calendar_id, true);
 
 const app = express();
 
@@ -45,6 +39,8 @@ else {
 
 const albums: Array<string> = [];
 
+/*
+
 fs.readdir(CONFIG.albums_absolute_path, (error, files) => {
     if(error) {
         console.log("Error occured when reading albums from disk: ", error.message);
@@ -60,10 +56,14 @@ app.get("/api/GetAllAlbums", (req, res) => {
     res.json(albums);
 });
 
+*/
+
+app.get("/api/GetFirstThreeEvents", async (req, res) => {
+    res.json(await calendar.GetFirstThreeEventsView());
+});
+
 app.use(express.static(CONFIG.resources_absolute_path)); // Make resources avaible!
 
 server.listen(CONFIG.port, () => {
     console.log(`Server has begun listening: ${CONFIG.use_https ? "https" : "http"}://localhost:${CONFIG.port}`);
 });
-
-*/
