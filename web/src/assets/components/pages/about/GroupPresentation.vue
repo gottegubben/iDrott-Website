@@ -7,7 +7,7 @@
             /images/pages/about/GroupPresentation_Medium.jpg 700w,
             /images/pages/about/GroupPresentation_Large.jpg 1200w"
             sizes="90%">
-            <h6 class="font_color_primary font_weight_medium">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h6>
+            <h6 class="font_color_primary font_weight_medium">We move faster than your morning alarm snooze, have better teamwork than your group chat, and break more sweat than your phone after a full day of scrolling. Whether we’re training, competing, or just finding new ways to avoid leg day, we do it together.</h6>
         </ContentContainer>
     </BasicContainer>
 </template>

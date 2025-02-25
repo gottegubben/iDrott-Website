@@ -4,11 +4,6 @@
             <h2 class="font_color_primary font_weight_medium">Events</h2>
             <p class="font_color_primary">Through out the year there will be events taking place hosted
                 by us so keep an eye out! Here are some upcoming events...</p>
-            <div class="home_event_display">
-                <Event :event-view-model="events[0]"></Event>
-                <Event :event-view-model="events[0]"></Event>
-                <Event :event-view-model="events[0]"></Event>
-            </div>
             <p class="font_color_primary">To read about all upcoming events, check the Event page!</p>
             <BasicButton :button-style="ButtonStyle.variant_2" title="Read more" :onclick="() => router.push('/events')"></BasicButton>
         </ContentContainer>
@@ -21,7 +16,6 @@
     import { useRouter } from 'vue-router';
 
     /* Component specific components. */
-    import Event from '../../Event.vue';
     import type { IEventViewModel } from '../../../typescripts/viewmodels/IEventViewModel';
     import BasicButton from '../../BasicButton.vue';
     import { ButtonStyle } from '../../../typescripts/other/ButtonStyle';

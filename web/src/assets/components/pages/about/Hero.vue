@@ -2,6 +2,7 @@
     <BasicContainer>
         <ContentContainer class="center_vertical flex_column">
             <h2 class="font_weight_bold">About us</h2>
+            <h6>Want to know a little about us? Scroll down.</h6>
         </ContentContainer>
     </BasicContainer>
 </template>
@@ -48,5 +49,10 @@
 
     h2 {
         margin-top: var(--space_xxl_clamped);
+    }
+
+    h6 {
+        margin-top: var(--space_xs_clamped);
+        text-align: center;
     }
 </style>
