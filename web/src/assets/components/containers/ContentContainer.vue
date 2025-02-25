@@ -13,7 +13,5 @@
         /* Fill up as much space as possible, but don't forget the margin! */
         width: calc(100% - (2 * var(--content_container_margin)));
         margin: auto var(--content_container_margin);
-
-        outline: 1px solid blue;
     }
 </style>

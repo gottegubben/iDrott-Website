@@ -5,17 +5,22 @@ import App from "./App.vue";
 
 // Pages:
 import HomePage from "./pages/HomePage.vue";
+import AboutPage from "./pages/AboutPage.vue";
 
 const routes = [
     { path: "/", component: HomePage, name: "Home" },
-    { path: "/", component: HomePage, name: "Events" },
-    { path: "/", component: HomePage, name: "About" }
+    { path: "/about", component: AboutPage, name: "About" }
 ];
 
 const router = createRouter({
     history: createMemoryHistory(),
     routes
 });
+
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faEnvelope, faDumbbell, faMusic, faGear } from "@fortawesome/free-solid-svg-icons"
+
+library.add(faEnvelope, faDumbbell, faMusic, faGear);
 
 const app = createApp(App);
 

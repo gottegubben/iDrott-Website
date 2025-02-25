@@ -1,3 +1,7 @@
+html {  
+    scroll-behavior: smooth;  
+}
+
 body {
     margin: 0;
 
@@ -14,4 +18,32 @@ body {
 /* Padding and margin is accounted for with the size of the element (ex: width and height). */
 *, *::before, *::after {
     box-sizing: border-box;
+}
+
+.hide {
+    display: none !important;
+}
+
+.flex_column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex_row {
+    display: flex;
+    flex-direction: row;
+}
+
+.center_horizontal {
+    display: flex;
+    justify-content: center;
+}
+
+.center_vertical {
+    display: flex;
+    align-items: center;
+}
+
+textarea:focus, input:focus, select:focus {
+    outline: none;
 }
