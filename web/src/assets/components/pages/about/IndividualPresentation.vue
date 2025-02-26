@@ -17,7 +17,7 @@
     const persons: IPersonViewModel[] = [
         {
             img: "/images/pages/about/Dalxa_Large.jpg",
-            role: "Chairman",
+            role: "President",
             post: "Lekledare",
             name: "Dalxa Yusuf",
             mail: "dalxa.yusuf@dtek.se",
@@ -42,7 +42,7 @@
             name: "Lukas Söderberg",
             mail: "luksode@dtek.se",
             favSport: "Football",
-            favSong: "'Balblalba' - Michael Jackson",
+            favSong: "'...' - ...",
             task: "Think of me as the club’s personal megaphone – but way cooler. I keep the buzz going, making sure everyone knows what’s happening and why they should be part of it. Whether it’s creating eye-catching posts (by copying the mastermind above), planning epic events, or just making sure we look good out there, I bring the energy. No boring press releases here – only top-tier hype!"
         },
         {
@@ -52,7 +52,7 @@
             name: "Joy Sabbah",
             mail: "joysab@dtek.se",
             favSport: "Darts",
-            favSong: "'Balblalba' - Michael Jackson",
+            favSong: "'Sunflower' - Post Malone",
             task: "I'm responsible for making sure that we have the right material for the right job."
         },
         {
