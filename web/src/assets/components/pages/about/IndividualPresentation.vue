@@ -27,7 +27,7 @@
         },
         {
             img: "/images/pages/about/Halli_Large.jpg",
-            role: "PR",
+            role: "PR #Chief",
             post: "Maskot",
             name: "Isabella Hall",
             mail: "isahall@dtek.se",
@@ -37,7 +37,7 @@
         },
         {
             img: "/images/pages/about/Lukas_Large.jpg",
-            role: "PR",
+            role: "PR #Benched",
             post: "Duracellkanin",
             name: "Lukas Söderberg",
             mail: "luksode@dtek.se",
@@ -47,23 +47,23 @@
         },
         {
             img: "/images/pages/about/Joy_Large.jpg",
-            role: "Material",
+            role: "Materials",
             post: "Skadad",
             name: "Joy Sabbah",
             mail: "joysab@dtek.se",
             favSport: "Darts",
             favSong: "'Sunflower' - Post Malone",
-            task: "I'm responsible for making sure that we have the right material for the right job."
+            task: "I’m the proud keeper of all things sporty. Whether it’s footballs, badminton rackets, or that one lonely frisbee — if we have it, I keep track of it. If we don’t, well… maybe it’s time to change that! Need to borrow equipment? Return something (please)? Or do you think we should introduce a brand-new sport? Let me know! I’m the one making sure we have what we need to keep the fun going. Just don’t ask for a bobsled team… yet."
         },
         {
             img: "/images/pages/about/Hjalmar_Large.jpg",
             role: "Korpen",
             post: "Rehab",
             name: "Hjalmar Rorsman",
-            mail: "hjalror@dtek.se",
-            favSport: "Football",
-            favSong: "'Balblalba' - Michael Jackson",
-            task: "I take care of everything regarding our korpen team."
+            mail: "hjalmar.rorsman@dtek.se",
+            favSport: "EVERY SPORT (even floorball)",
+            favSong: "'Love again' - Kid Laroi",
+            task: "I'm the manager of Hacke UTD, the greatest football club… at the very bottom of the league! I manage the work behind this unstoppable squad. Relegation? Impossible — we literally can’t drop any lower! But don’t underestimate us. We may not have trophies (yet), but we’ve got heart, passion, and a rock-solid guarantee that our league status is secure forever. So join us on this wild ride — because when you start at the bottom, the only way is up!"
         },
         {
             img: "/images/pages/about/Rawa_Large.jpg",
