@@ -18,9 +18,9 @@ const router = createRouter({
 });
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faEnvelope, faDumbbell, faMusic, faGear } from "@fortawesome/free-solid-svg-icons"
+import { faEnvelope, faDumbbell, faMusic, faGear, faCalendar, faClock } from "@fortawesome/free-solid-svg-icons"
 
-library.add(faEnvelope, faDumbbell, faMusic, faGear);
+library.add(faEnvelope, faDumbbell, faMusic, faGear, faCalendar, faClock);
 
 const app = createApp(App);
 
