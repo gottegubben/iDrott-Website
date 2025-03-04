@@ -3,8 +3,8 @@
         <div class="event_image">
             <div class="event_image_date">
                 <!-- THE DATE HERE -->
-                <p>8</p>
-                <p>MAR</p>
+                <p class="font_weight_medium">8</p>
+                <p class="font_weight_medium">MAR</p>
             </div>
         </div>
 
@@ -58,6 +58,13 @@
         background-color: var(--secondary_color_1);
         border-radius: 0.3rem;
         max-width: 22em;
+        height: 100%;
+
+        transition: var(--animation_fast);
+    }
+
+    .event_container:hover {
+        transform: scale(1.05);
     }
 
     .event_image {

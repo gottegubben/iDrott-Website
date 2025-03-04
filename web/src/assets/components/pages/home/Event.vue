@@ -6,9 +6,7 @@
                 by us so keep an eye out! Here are some upcoming events...</p>
             
             <div class="flex_row center_horizontal home_event_container">
-                <Event :event-view-model="events[0]"></Event>
-                <Event :event-view-model="events[0]"></Event>
-                <Event :event-view-model="events[0]"></Event>
+                <Event v-for="event in events" :event-view-model="event"></Event>
             </div>
 
             <p class="font_color_primary">To read about all upcoming events, check the Event page!</p>
@@ -30,33 +28,18 @@
 
     const router = useRouter();
 
-    const events: IEventViewModel[] = [
-        {
-            id: "gjaiotjmg-falsf",
-            title: "Workshop",
-            description: "BLABLABLABLALBLABLALBLAB",
-            startTime: "20:30",
-            endTime: "23:00",
-            startDate: {
-                day: 5,
-                month: "March",
-                monthCut: "Mar",
-                year: 2025
-            },
-            endDate: {
-                day: 5,
-                month: "March",
-                monthCut: "Mar",
-                year: 2025
-            }
-        }
-    ];
+    import { CalendarFactory } from '../../../typescripts/api/CalendarFactory';
+    import type { ICalendarAPI } from '../../../typescripts/api/ICalendarAPI';
+    const CalendarAPI: ICalendarAPI = CalendarFactory.getCalendar(true);
+
+    const events: IEventViewModel[] = CalendarAPI.getEventsAhead();
 </script>
 
 <style>
     .home_event_container {
         gap: var(--space_xl_clamped);
         width: 100%;
+        margin: var(--space_xxl_clamped) 0;
     }
 </style>
 
