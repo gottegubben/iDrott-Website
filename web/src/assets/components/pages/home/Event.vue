@@ -5,7 +5,7 @@
             <p class="font_color_primary">Through out the year there will be events taking place hosted
                 by us so keep an eye out! Here are some upcoming events...</p>
             
-            <div class="flex_row center_horizontal home_event_container">
+            <div class="home_event_container">
                 <Event v-for="event in events" :event-view-model="event"></Event>
             </div>
 
@@ -61,19 +61,12 @@
         max-width: 40em;
     }
 
-    .home_event_display {
+    .home_event_container {
         margin: var(--space_xl_clamped) 0;
         width: 100%;
 
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--space_lg_clamped);
-    }
-
-    @media (max-width: 1280px) {
-        .home_event_display {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-        }
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 </style>

@@ -40,6 +40,25 @@ export class MockCalendar implements ICalendarAPI {
                     monthCut: "Mar",
                     year: 2025
                 }
+            },
+            {
+                id: "fsafaa",
+                title: "fasfa",
+                description: "BLABLABLABLALBLABLALBLABBLABLABLABLALBLABLALBLABBLABLABLABLALBLABLALBLAB",
+                startTime: "20:30",
+                endTime: "23:00",
+                startDate: {
+                    day: 5,
+                    month: "March",
+                    monthCut: "Mar",
+                    year: 2025
+                },
+                endDate: {
+                    day: 5,
+                    month: "March",
+                    monthCut: "Mar",
+                    year: 2025
+                }
             }
         ];
 

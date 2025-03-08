@@ -3,8 +3,8 @@
         <div class="event_image">
             <div class="event_image_date">
                 <!-- THE DATE HERE -->
-                <p class="font_weight_medium">8</p>
-                <p class="font_weight_medium">MAR</p>
+                <p class="font_weight_medium">{{ props.eventViewModel.startDate.day }}</p>
+                <p class="font_weight_medium">{{ props.eventViewModel.startDate.monthCut.toUpperCase() }}</p>
             </div>
         </div>
 
@@ -23,7 +23,7 @@
             </div>
 
             <!-- DESCRIPTION -->
-            <p class="font_color_primary">{{ props.eventViewModel.description }}</p>
+            <p class="font_color_primary event_info_details_desc">{{ props.eventViewModel.description }}</p>
         </div>
     </div> 
 </template>
@@ -54,10 +54,11 @@
     }
 
     .event_container {
+        width: 336px;
         flex-grow: 1;
         background-color: var(--secondary_color_1);
         border-radius: 0.3rem;
-        max-width: 22em;
+        max-width: 21em;
         height: 100%;
 
         transition: var(--animation_fast);
@@ -92,6 +93,14 @@
 
     .event_image_date > p {
         text-align: center;
+    }
+
+    .event_info_details_desc {
+        display: block;  /* Ensures it's a block-level element */
+        width: 100%;     /* Makes it take up the full width of its container */
+        white-space: normal; /* Allow text to wrap naturally */
+        overflow: visible; /* Allow overflow to be visible */
+        word-wrap: break-word; /* Break long words when necessary */
     }
 </style>
 
