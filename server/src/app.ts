@@ -20,7 +20,7 @@ calendar.GetEventsUpAhead().then(x => {
     x.forEach(a => console.log(Calendar.ConvertToViewModel(a)));
 });
 
-/*
+
 
 const app = express();
 
@@ -60,10 +60,9 @@ app.get("/api/GetAllAlbums", (req, res) => {
     res.json(albums);
 });
 
-app.use(express.static(CONFIG.resources_absolute_path)); // Make resources avaible!
+// app.use(express.static(CONFIG.resources_absolute_path)); // Make resources avaible!
 
 server.listen(CONFIG.port, () => {
     console.log(`Server has begun listening: ${CONFIG.use_https ? "https" : "http"}://localhost:${CONFIG.port}`);
 });
 
-*/
