@@ -16,6 +16,8 @@ export class Calendar {
     public static Months: string[] = ["January", "February", "Mars", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     public static MonthsCut: string[] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
+    public static Days: string[] = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
     constructor(account: google_service_account, calendarId: string, useCache: boolean) {
         this.auth = new JWT({
             email: account.client_email,
@@ -60,12 +62,14 @@ export class Calendar {
             endTime: `${endDateTime.getHours().toString().padStart(2, "0")}:${endDateTime.getMinutes().toString().padStart(2, "0")}`,
             startDate: {
                 day: startDateTime.getDate(),
+                weekDay: Calendar.Days[startDateTime.getDay()],
                 month: Calendar.Months[startDateTime.getMonth()],
                 monthCut: Calendar.MonthsCut[startDateTime.getMonth()],
                 year: startDateTime.getFullYear()
             },
             endDate: {
                 day: endDateTime.getDate(),
+                weekDay: Calendar.Days[endDateTime.getDay()],
                 month: Calendar.Months[endDateTime.getMonth()],
                 monthCut: Calendar.MonthsCut[endDateTime.getMonth()],
                 year: endDateTime.getFullYear()
@@ -187,12 +191,14 @@ export interface EventViewModel {
     endTime: string,
     startDate: {
         day: number,
+        weekDay: string,
         month: string,
         monthCut: string,
         year: number
     },
     endDate: {
         day: number,
+        weekDay: string,
         month: string,
         monthCut: string,
         year: number
