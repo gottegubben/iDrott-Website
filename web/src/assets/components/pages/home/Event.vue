@@ -37,9 +37,11 @@
 
 <style>
     .home_event_container {
-        gap: var(--space_xl_clamped);
+        gap: var(--space_xxl_clamped);
         width: 100%;
         margin: var(--space_xxl_clamped) 0;
+        padding: var(--space_xxl_clamped) 0;
+        display: flex;
     }
 </style>
 

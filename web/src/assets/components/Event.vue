@@ -55,12 +55,9 @@
 
     .event_container {
         width: 336px;
-        flex-grow: 1;
         background-color: var(--secondary_color_1);
         border-radius: 0.3rem;
         max-width: 21em;
-        height: 100%;
-
         transition: var(--animation_fast);
     }
 
