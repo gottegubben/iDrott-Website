@@ -31,12 +31,12 @@ const events = [
   },
   {
     id: "blue",
-    title: "Work",
+    title: "Workshop med Idrott",
     description: "BLA",
-    startTime: "20:34",
-    endTime: "21:00",
+    startTime: "8:34",
+    endTime: "23:50",
     startDate: {
-        day: 6,
+        day: 3,
         month: "March",
         monthCut: "Mar",
         year: 2023
