@@ -32,7 +32,7 @@
     import type { ICalendarAPI } from '../../../typescripts/api/ICalendarAPI';
     const CalendarAPI: ICalendarAPI = CalendarFactory.getCalendar(true);
 
-    const events: IEventViewModel[] = CalendarAPI.getEventsAhead();
+    const events: IEventViewModel[] = CalendarAPI.getEventsAhead().slice(0, 3);
 </script>
 
 <style>

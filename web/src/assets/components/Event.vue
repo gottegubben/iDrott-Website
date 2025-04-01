@@ -15,7 +15,7 @@
             <div class="event_info_details">
                 <!-- DAY OF WEEK, MONTH, DATE, YEAR -->
                 <span><FontAwesomeIcon class="font_awesome_icon font_p" icon="calendar"></FontAwesomeIcon></span>
-                <p class="font_color_primary">Saturday, March 8, 2025</p>
+                <p class="font_color_primary">{{ props.eventViewModel.startDate.weekDay }}, {{ props.eventViewModel.startDate.month }} {{ props.eventViewModel.startDate.day }}, {{ props.eventViewModel.startDate.year }}</p>
 
                 <!-- TIME FROM & TO -->
                 <span><FontAwesomeIcon class="font_awesome_icon font_p" icon="clock"></FontAwesomeIcon></span>
@@ -52,9 +52,9 @@
         margin-bottom: var(--space_xs_clamped);
         row-gap: 0.3em;
 
-        border-top: 0.15em solid var(--secondary_color_2);
+        border-top: 0.15em solid var(--primary_color);
         padding: 10px 0;
-        border-bottom: 0.15em solid var(--secondary_color_2);
+        border-bottom: 0.15em solid var(--primary_color);
     }
 
     .event_container {
@@ -80,7 +80,7 @@
 
     .event_image_date {        
         padding: 1em;
-        background-color: rgb(63, 60, 60);
+        background-color: var(--primary_color);
         border-radius: 0.3em;
         aspect-ratio: 1 / 1;
 
