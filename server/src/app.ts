@@ -1,5 +1,6 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import cors from "cors";
+
 
 const app = express();
 const PORT = 8000;
@@ -50,8 +51,8 @@ const events = [
 ];
 
 // Define API route
-app.get("/api/events", (req, res) => {
-  res.json(events);
+app.get("/api/events", (Request, Response) => {
+  Response.json(events);
 });
 
 // Start server
