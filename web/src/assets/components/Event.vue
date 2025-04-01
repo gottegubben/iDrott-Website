@@ -51,6 +51,10 @@
         grid-template-columns: 1.5em 1fr;
         margin-bottom: var(--space_xs_clamped);
         row-gap: 0.3em;
+
+        border-top: 0.15em solid var(--secondary_color_2);
+        padding: 10px 0;
+        border-bottom: 0.15em solid var(--secondary_color_2);
     }
 
     .event_container {

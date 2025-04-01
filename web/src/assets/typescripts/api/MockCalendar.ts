@@ -44,7 +44,7 @@ export class MockCalendar implements ICalendarAPI {
             {
                 id: "fsafaa",
                 title: "fasfa",
-                description: "BLABLABLABLALBLABLALBLABBLABLABLABLALBLABLALBLABBLABLABLABLALBLABLALBLAB",
+                description: "",
                 startTime: "20:30",
                 endTime: "23:00",
                 startDate: {
