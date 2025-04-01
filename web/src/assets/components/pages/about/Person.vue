@@ -6,13 +6,13 @@
             <h6 class="font_color_primary"><span class="font_color_primary font_weight_medium">{{ props.person.post }}</span> - {{ props.person.name }}</h6>
 
             <div>
-                <span><FontAwesomeIcon class="font_awesome_icon" icon="envelope"></FontAwesomeIcon></span>
+                <span><FontAwesomeIcon class="font_awesome_icon font_h6" icon="envelope"></FontAwesomeIcon></span>
                 <div class="center_vertical"><p class="font_color_primary">{{ props.person.mail }}</p></div>
-                <span><FontAwesomeIcon class="font_awesome_icon" icon="dumbbell"></FontAwesomeIcon></span>
+                <span><FontAwesomeIcon class="font_awesome_icon font_h6" icon="dumbbell"></FontAwesomeIcon></span>
                 <div class="center_vertical"><p class="font_color_primary">{{ props.person.favSport }}</p></div>
-                <span><FontAwesomeIcon class="font_awesome_icon" icon="music"></FontAwesomeIcon></span>
+                <span><FontAwesomeIcon class="font_awesome_icon font_h6" icon="music"></FontAwesomeIcon></span>
                 <div class="center_vertical"><p class="font_color_primary">{{ props.person.favSong }}</p></div>
-                <span><FontAwesomeIcon class="font_awesome_icon" icon="gear"></FontAwesomeIcon></span>
+                <span><FontAwesomeIcon class="font_awesome_icon font_h6" icon="gear"></FontAwesomeIcon></span>
                 <div class="center_vertical"><p class="font_color_primary">{{ props.person.task }}</p></div>
             </div>
         </div>
@@ -99,6 +99,17 @@
     @media (max-width: 640px) {
         img {
             width: 100px;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .person_container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        img {
+            width: 100%;
         }
     }
 </style>
