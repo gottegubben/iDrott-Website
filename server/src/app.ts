@@ -51,7 +51,7 @@ const events = [
 ];
 
 // Define API route
-app.get("/api/events", (Request, Response) => {
+app.get("/events", (Request, Response) => {
   Response.json(events);
 });
 

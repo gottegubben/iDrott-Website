@@ -33,7 +33,7 @@
     const events = ref<IEventViewModel[]>([]);
 
     onMounted(() => {
-    fetch("https://idrott-website-backend.onrender.com/api/events")
+    fetch("https://idrott-website-backend.onrender.com/events")
         .then(res => res.json())
         .then(data => {
         events.value = data;
