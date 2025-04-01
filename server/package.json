@@ -1,16 +1,19 @@
 {
   "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.16",
     "typescript": "^5.7.2"
   },
   "dependencies": {
-    "@types/express": "^5.0.0",
-    "express": "^4.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
     "google-auth-library": "^9.15.1",
     "googleapis": "^144.0.0",
     "ts-node": "^10.9.2"
   },
   "scripts": {
-  "build": "tsc",
-  "start": "node build/app.js"
-}
+    "build": "tsc",
+    "start": "node build/app.js"
+  }
 }
