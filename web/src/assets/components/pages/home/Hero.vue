@@ -16,7 +16,7 @@
             <div class="center_horizontal flex_column"></div>
         </ContentContainer>
     </BasicContainer>
-    <YoutubeVideo v-if="youtubeVideoIsVisible" video-id="dQw4w9WgXcQ" @close_youtube_video="handleYoutubeVideoClose"></YoutubeVideo>
+    <YoutubeVideo v-if="youtubeVideoIsVisible" video-id="H_12WFvMqqE" @close_youtube_video="handleYoutubeVideoClose"></YoutubeVideo>
 </template>
 
 <script setup lang="ts">
