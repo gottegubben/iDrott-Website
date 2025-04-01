@@ -6,9 +6,11 @@
     "@types/express": "^5.0.0",
     "express": "^4.21.1",
     "google-auth-library": "^9.15.1",
-    "googleapis": "^144.0.0"
+    "googleapis": "^144.0.0",
+    "ts-node": "^10.9.2"
   },
   "scripts": {
-  "start": "ts-node src/app.ts"
+  "build": "tsc",
+  "start": "node build/app.js"
 }
 }
