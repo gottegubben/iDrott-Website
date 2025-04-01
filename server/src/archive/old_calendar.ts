@@ -1,6 +1,6 @@
 import { calendar_v3, google } from "googleapis";
 import { JWT } from "google-auth-library";
-import { google_service_account } from "./env_config";
+import { google_service_account } from "./old_env_config";
 
 export class Calendar {
     private auth: JWT;

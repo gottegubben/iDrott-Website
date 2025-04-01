@@ -1,68 +1,60 @@
 import express from "express";
-import https   from "https";
-import http    from "http";
-import fs      from "fs";
-import path    from "path";
-
-import { env_config } from "./env_config";
-
-import config_json from "../env-config.json";
-
-const CONFIG: env_config = config_json;
-
-// ---------------------------------
-
-import { Calendar } from "./calendar";
-
-const calendar: Calendar = new Calendar(CONFIG.google_config.service_account, CONFIG.google_config.event_calendar_id);
-
-calendar.GetEventsUpAhead().then(x => {
-    x.forEach(a => console.log(Calendar.ConvertToViewModel(a)));
-});
-
-
+import cors from "cors";
 
 const app = express();
+const PORT = 8000;
 
-let server: https.Server | http.Server;
+// Enable CORS so the frontend on localhost:5173 can access the backend
+app.use(cors());
 
-if(CONFIG.use_https) {
-    const crypto_cfg = CONFIG.cryptography_config;
-
-    const privateKey  = fs.readFileSync(path.join(crypto_cfg.folder_absolute_path, crypto_cfg.key_name), 'utf8');
-    const certificate = fs.readFileSync(path.join(crypto_cfg.folder_absolute_path, crypto_cfg.certificate_name), 'utf8');
-    
-    const credentials = {
-        key:  privateKey,
-        cert: certificate
-    };
-
-    server = https.createServer(credentials, app);
-}
-else {
-    server = http.createServer(app);
-}
-
-const albums: Array<string> = [];
-
-fs.readdir(CONFIG.albums_absolute_path, (error, files) => {
-    if(error) {
-        console.log("Error occured when reading albums from disk: ", error.message);
+// Dummy data for testing
+const events = [
+  {
+    id: "gjaiotjmg-falsf",
+    title: "Workshop",
+    description: "BLABLABLABLALBLABLALBLAB",
+    startTime: "20:30",
+    endTime: "23:00",
+    startDate: {
+        day: 5,
+        month: "March",
+        monthCut: "Mar",
+        year: 2025
+    },
+    endDate: {
+        day: 5,
+        month: "March",
+        monthCut: "Mar",
+        year: 2025
     }
-    else {
-        files.forEach(file => {
-            albums.push(file);
-        });
+  },
+  {
+    id: "blue",
+    title: "Work",
+    description: "BLA",
+    startTime: "20:34",
+    endTime: "21:00",
+    startDate: {
+        day: 6,
+        month: "March",
+        monthCut: "Mar",
+        year: 2023
+    },
+    endDate: {
+        day: 5,
+        month: "March",
+        monthCut: "Mar",
+        year: 2024
     }
+  }
+];
+
+// Define API route
+app.get("/api/events", (req, res) => {
+  res.json(events);
 });
 
-app.get("/api/GetAllAlbums", (req, res) => {
-    res.json(albums);
+// Start server
+app.listen(PORT, () => {
+  console.log(`✅ Backend is running at http://localhost:${PORT}`);
 });
-
-// app.use(express.static(CONFIG.resources_absolute_path)); // Make resources avaible!
-
-server.listen(CONFIG.port, () => {
-    console.log(`Server has begun listening: ${CONFIG.use_https ? "https" : "http"}://localhost:${CONFIG.port}`);
-});
-

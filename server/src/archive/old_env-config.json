@@ -1,0 +1,10 @@
+{
+    "use_https": false,                // You’re not using HTTPS (which is fine for local dev)
+    "port": 8000,                      // Your backend will run on http://localhost:8000
+    "resources_absolute_path": "C:\\Användare\\jespe\\iDrott-Website\\web\\build",
+    "cryptography_config": {
+      "folder_absolute_path": "",     // Needed only if HTTPS = true
+      "certificate_name": "",
+      "key_name": ""
+    }
+  }

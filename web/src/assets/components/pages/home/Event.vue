@@ -21,18 +21,25 @@
     import { useRouter } from 'vue-router';
 
     /* Component specific components. */
-    import type { IEventViewModel } from '../../../typescripts/viewmodels/IEventViewModel';
     import BasicButton from '../../BasicButton.vue';
     import { ButtonStyle } from '../../../typescripts/other/ButtonStyle';
     import Event from '../../Event.vue';
 
     const router = useRouter();
 
-    import { CalendarFactory } from '../../../typescripts/api/CalendarFactory';
-    import type { ICalendarAPI } from '../../../typescripts/api/ICalendarAPI';
-    const CalendarAPI: ICalendarAPI = CalendarFactory.getCalendar(true);
+    import { ref, onMounted } from 'vue';
+    import type { IEventViewModel } from '../../../typescripts/viewmodels/IEventViewModel';
 
-    const events: IEventViewModel[] = CalendarAPI.getEventsAhead();
+    const events = ref<IEventViewModel[]>([]);
+
+    onMounted(() => {
+    fetch("http://localhost:8000/api/events")
+        .then(res => res.json())
+        .then(data => {
+        events.value = data;
+        })
+        .catch(err => console.error("Failed to fetch events:", err));
+    });
 </script>
 
 <style>
