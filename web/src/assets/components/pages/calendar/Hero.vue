@@ -1,8 +1,8 @@
 <template>
     <BasicContainer>
         <ContentContainer class="center_vertical flex_column">
-            <h2 class="font_weight_bold">About us</h2>
-            <h6>Want to know a little about us? Scroll down.</h6>
+            <h2 class="font_weight_bold">Calendar</h2>
+            <h6>Check upcoming events below!</h6>
         </ContentContainer>
     </BasicContainer>
 </template>
@@ -16,7 +16,7 @@
     .basic_container {
         padding-top: var(--header_height); /* Move down from the header! */
 
-        background: linear-gradient(0deg, var(--overlay_color), var(--overlay_color)), url(/images/pages/about/Landing_Hero_Large_48_13.jpg);
+        background: linear-gradient(0deg, var(--overlay_color), var(--overlay_color)), url(/images/pages/calendar/Landing_Hero_Large_48_13.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -31,7 +31,7 @@
 
     @media (max-width: 1280px) {
         .basic_container {
-            background: linear-gradient(0deg, var(--overlay_color), var(--overlay_color)), url(/images/pages/about/Landing_Hero_Medium_48_13.jpg);
+            background: linear-gradient(0deg, var(--overlay_color), var(--overlay_color)), url(/images/pages/calendar/Landing_Hero_Medium_48_13.jpg);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -40,7 +40,7 @@
 
     @media (max-width: 640px) {
         .basic_container {
-            background: linear-gradient(0deg, var(--overlay_color), var(--overlay_color)), url(/images/pages/about/Landing_Hero_Small_48_13.jpg);
+            background: linear-gradient(0deg, var(--overlay_color), var(--overlay_color)), url(/images/pages/calendar/Landing_Hero_Small_48_13.jpg);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
