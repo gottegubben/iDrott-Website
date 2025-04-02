@@ -10,7 +10,7 @@
             </div>
 
             <p class="font_color_primary">To read about all upcoming events, check the Event page!</p>
-            <BasicButton :button-style="ButtonStyle.variant_2" title="Read more" :onclick="() => router.push('/events')"></BasicButton>
+            <BasicButton :button-style="ButtonStyle.variant_2" title="Read more" :onclick="() => router.push('/calendar')"></BasicButton>
         </ContentContainer>
     </BasicContainer>
 </template>
