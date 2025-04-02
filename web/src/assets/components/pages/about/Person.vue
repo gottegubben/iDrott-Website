@@ -50,7 +50,7 @@
     }
 
     .person_text_container > div {
-        border-top: 2px solid var(--primary_color);
+        border-top: 2px solid var(--secondary_color_2);
         padding-top: var(--space_md_clamped);
 
         display: grid;

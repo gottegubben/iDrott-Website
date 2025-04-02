@@ -1,7 +1,7 @@
 <template>
     <div class="event_container">
-        <div class="event_image">
-            <div class="event_image_date">
+        <div class="event_image" :style="eventImage">
+            <div class="event_image_date font_p">
                 <!-- THE DATE HERE -->
                 <p class="font_weight_medium">{{ props.eventViewModel.startDate.day }}</p>
                 <p class="font_weight_medium">{{ props.eventViewModel.startDate.monthCut.toUpperCase() }}</p>
@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
     import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-    import type { PropType } from 'vue';
+    import { computed, type PropType } from 'vue';
     import type { IEventViewModel } from '../typescripts/viewmodels/IEventViewModel';
 
     const props = defineProps({
@@ -38,6 +38,14 @@
             required: true,
             type: Object as PropType<IEventViewModel>
         }
+    });
+
+    const eventImage = computed(() => {
+        const imgId = Math.floor(Math.random() * 15);
+
+        return {
+            "background-image": `url(/images/other/events/Event${imgId}.jpg)`
+        };
     });
 </script>
 
@@ -52,9 +60,9 @@
         margin-bottom: var(--space_xs_clamped);
         row-gap: 0.3em;
 
-        border-top: 0.15em solid var(--primary_color);
+        border-top: 0.15em solid var(--secondary_color_2);
         padding: 10px 0;
-        border-bottom: 0.15em solid var(--primary_color);
+        border-bottom: 0.15em solid var(--secondary_color_2);
     }
 
     .event_container {
@@ -72,7 +80,6 @@
     .event_image {
         display: flex;
         padding: 1em;
-        background-image: url(/images/pages/home/Landing_Hero_Small_2_3.jpg);
         border-top-left-radius: 0.3rem;
         border-top-right-radius: 0.3rem;
         padding-bottom: 5em;
@@ -84,7 +91,7 @@
         border-radius: 0.3em;
         aspect-ratio: 1 / 1;
 
-        height: calc(1em * 4);
+        height: calc(1em * 4.5);
 
         display: flex;
         flex-direction: column;
