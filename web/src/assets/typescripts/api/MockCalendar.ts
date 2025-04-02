@@ -30,14 +30,14 @@ export class MockCalendar implements ICalendarAPI {
                 endTime: "23:00",
                 startDate: {
                     day: 5,
-                    weekDay: "",
+                    weekDay: "Monday",
                     month: "March",
                     monthCut: "Mar",
                     year: 2025
                 },
                 endDate: {
                     day: 5,
-                    weekDay: "",
+                    weekDay: "Monday",
                     month: "March",
                     monthCut: "Mar",
                     year: 2025
@@ -51,14 +51,14 @@ export class MockCalendar implements ICalendarAPI {
                 endTime: "22:00",
                 startDate: {
                     day: 7,
-                    weekDay: "",
+                    weekDay: "Wednesday",
                     month: "March",
                     monthCut: "Mar",
                     year: 2025
                 },
                 endDate: {
                     day: 7,
-                    weekDay: "",
+                    weekDay: "Wednesday",
                     month: "March",
                     monthCut: "Mar",
                     year: 2025
@@ -72,14 +72,14 @@ export class MockCalendar implements ICalendarAPI {
                 endTime: "00:00",
                 startDate: {
                     day: 10,
-                    weekDay: "",
+                    weekDay: "Saturday",
                     month: "March",
                     monthCut: "Mar",
                     year: 2025
                 },
                 endDate: {
                     day: 10,
-                    weekDay: "",
+                    weekDay: "Saturday",
                     month: "March",
                     monthCut: "Mar",
                     year: 2025
