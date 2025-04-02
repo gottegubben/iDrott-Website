@@ -83,6 +83,7 @@
         border-top-left-radius: 0.3rem;
         border-top-right-radius: 0.3rem;
         padding-bottom: 5em;
+        background-position: center;
     }
 
     .event_image_date {        
