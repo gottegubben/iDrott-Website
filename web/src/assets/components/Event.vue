@@ -41,7 +41,7 @@
     });
 
     const eventImage = computed(() => {
-        const imgId = Math.floor(Math.random() * 15);
+        const imgId = Math.floor(Math.random() * 13);
 
         return {
             "background-image": `url(/images/other/events/Event${imgId}.jpg)`
@@ -84,6 +84,7 @@
         border-top-right-radius: 0.3rem;
         padding-bottom: 5em;
         background-position: center;
+        background-size: cover;
     }
 
     .event_image_date {        
