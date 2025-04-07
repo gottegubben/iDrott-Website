@@ -19,8 +19,19 @@
             <div class="calendar_container">
                 <div class="calendar_header">
                     <div><h6 class="font_weight_medium">W</h6></div>
-                    
                     <div v-for="day in getWeekdayString"><h6>{{ day }}</h6></div>
+                </div>
+
+                <div class="calendar_content">
+                    <div class="calendar_content_weeks">
+                        <div v-for="week in getWeeksOfMonth"><h6 class="font_color_primary">{{ week }}</h6></div>
+                    </div>
+
+                    <div class="calendar_content_dates">
+                        <div v-for="empty in getEmptyDatesBefore"></div>
+
+                        <div v-for="date in getDatesOfMonth"><h6 class="font_color_primary">{{ date }}</h6></div>
+                    </div>
                 </div>
             </div>
         </ContentContainer>
@@ -46,6 +57,31 @@
 
     const getWeekdayString = computed(() => {
         return useWeekdaysCut.value ? weekdaysCut : weekdays;
+    });
+
+    const getWeeksOfMonth = computed(() => {
+        return [];
+    });
+
+    const getDatesOfMonth = computed(() => {
+        const days = [];
+
+        let current = new Date(selectedYear.value, selectedMonth.value, 1);
+        const month = selectedMonth.value;
+
+        while (current.getMonth() === month) {
+            days.push(current.getDate());
+            current.setDate(current.getDate() + 1);
+        }
+
+        return days;
+    });
+
+    const getEmptyDatesBefore = computed(() => {
+        const firstDate = new Date(selectedYear.value, selectedMonth.value, 1);
+        const daysSinceMon   = (firstDate.getDay() + 6) % 7;
+
+        return daysSinceMon;
     });
 
     onMounted(() => {
@@ -95,10 +131,40 @@
         height: calc(var(--font_h6_size_clamped) * 2.5);
         background-color: var(--primary_color);
         display: grid;
-        grid-template-columns: 2em repeat(7, 1fr);
+        grid-template-columns: calc(var(--font_h6_size_clamped) * 2.5) repeat(7, 1fr);
     }
 
     .calendar_header > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .calendar_content {
+        display: grid;
+        grid-template-columns: calc(var(--font_h6_size_clamped) * 2.5) 1fr;
+
+        width: 100%;
+        background-color: var(--secondary_color_1);
+    }
+
+    .calendar_content_weeks {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        border-right: 3px solid var(--secondary_color_2);
+    }
+
+    .calendar_content_dates {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    .calendar_content_dates > div {
+        margin: var(--space_xl_clamped);
+    }
+
+    .calendar_content_weeks > div, .calendar_content_dates > div {
         display: flex;
         justify-content: center;
         align-items: center;
