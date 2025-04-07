@@ -148,6 +148,7 @@ import type { IEventViewModel } from '../../../typescripts/viewmodels/IEventView
     }
 
     .calendar_selector:hover {
+        cursor: pointer;
         background-color: var(--primary_color_2);
     }
 
