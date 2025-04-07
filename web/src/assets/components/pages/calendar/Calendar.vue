@@ -33,7 +33,22 @@
                         <div v-for="empty in getEmptyDatesBefore"></div>
 
                         <div v-for="date in getDatesOfMonth"><div class="calendar_date"><h6 class="font_color_primary">{{ date }}</h6></div></div>
+
+                        <div class="calendar_week_select_container">
+                            <div class="calendar_week_selector" v-for="week in getWeeksOfMonth"><div :class="selectedWeek == week ? 'week_selected' : ''" @click="() => selectedWeek = week"></div></div>
+                        </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Events. -->
+            <div class="event_calendar_container">
+                <div class="calendar_events_title">
+                    <h6 class="font_weight_medium">Week {{ selectedWeek }}</h6>
+                </div>
+
+                <div class="calendar_events">
+                    <Event v-for="event in events" :event-view-model="event"></Event>
                 </div>
             </div>
         </ContentContainer>
@@ -44,6 +59,8 @@
     import { computed, onMounted, onUnmounted, ref } from 'vue';
     import BasicContainer from '../../containers/BasicContainer.vue';
     import ContentContainer from '../../containers/ContentContainer.vue';
+    import Event from '../../Event.vue';
+import type { IEventViewModel } from '../../../typescripts/viewmodels/IEventViewModel';
 
     const weekdays: string[] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     const weekdaysCut: string[] = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -52,6 +69,12 @@
     const useWeekdaysCut = ref(false);
     const selectedYear = ref(new Date().getFullYear());
     const selectedMonth = ref(new Date().getMonth());
+    const selectedWeek  = ref(1);
+
+    import { CalendarFactory } from '../../../typescripts/api/CalendarFactory';
+    import type { ICalendarAPI } from '../../../typescripts/api/ICalendarAPI';
+    const CalendarAPI: ICalendarAPI = CalendarFactory.getCalendar(true);
+    const events = ref(CalendarAPI.getEventsAhead());
 
     const getMonthString = computed(() => {
         return months[selectedMonth.value];
@@ -62,7 +85,7 @@
     });
 
     const getWeeksOfMonth = computed(() => {
-        return [];
+        return [1, 2, 3, 4, 5];
     });
 
     const getDatesOfMonth = computed(() => {
@@ -168,6 +191,8 @@
     }
 
     .calendar_content_dates {
+        position: relative;
+
         display: grid;
         grid-template-columns: repeat(7, 1fr);
     }
@@ -205,7 +230,72 @@
         background-color: var(--tertiary_color);
     }
 
-    .calendar_date:hover, .calendar_date_event {
-        background-color: var(--tertiary_color_1);
+    .calendar_week_select_container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: 0 !important;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .calendar_week_selector {
+        width: 100%;
+        flex-grow: 1;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .calendar_week_selector > div {
+        width: calc(100% - 3rem);
+        height: 3rem;
+        border-radius: 999999px;
+    }
+
+    .calendar_week_selector > div:hover {
+        cursor: pointer;
+        background-color: var(--tertiary_color_overlay_1);
+        width: calc(100% - 3rem);
+        height: 3rem;
+        border-radius: 999999px;
+    }
+
+    .week_selected {
+        background-color: var(--tertiary_color_overlay);
+    }
+
+    .event_calendar_container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space_md_clamped);
+    }
+
+    .calendar_events_title {
+        margin-top: calc(var(--space_xxl_clamped) * 2);
+        height: calc(var(--font_h6_size_clamped) * 2.5);
+        width: 100%;
+
+        background-color: var(--primary_color);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .calendar_events {
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        gap: var(--space_md_clamped);
+    }
+
+    .event_calendar_container {
+        margin-bottom: calc(var(--space_xxl_clamped) * 2);
     }
 </style>
