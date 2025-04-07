@@ -1,6 +1,8 @@
 <template>
     <BasicContainer>
-        <ContentContainer>
+        <ContentContainer class="flex_column">
+            <h6 class="font_color_primary font_weight_medium">To check the events for a week, select a row down in the calendar.</h6>
+
             <!-- For selecting a specific year. -->
             <div class="calendar_select_container">
                 <div class="calendar_selector" @click="() => selectedYear -= 1"></div>
@@ -30,7 +32,7 @@
                     <div class="calendar_content_dates">
                         <div v-for="empty in getEmptyDatesBefore"></div>
 
-                        <div v-for="date in getDatesOfMonth"><h6 class="font_color_primary">{{ date }}</h6></div>
+                        <div v-for="date in getDatesOfMonth"><div class="calendar_date"><h6 class="font_color_primary">{{ date }}</h6></div></div>
                     </div>
                 </div>
             </div>
@@ -99,12 +101,22 @@
 </script>
 
 <style scoped>
+    .content_container {
+        gap: var(--space_md_clamped);
+    }
+
     .calendar_select_container {
         width: 100%;
         background-color: var(--primary_color);
 
         display: grid;
         grid-template-columns: calc(var(--font_h6_size_clamped) * 2.5) 1fr calc(var(--font_h6_size_clamped) * 2.5);
+    }
+
+    .content_container > h6 {
+        margin-top: calc(var(--space_xxl_clamped) * 2);
+        width: 100%;
+        text-align: center;
     }
 
     .calendar_selector {
@@ -174,5 +186,26 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .calendar_date, .calendar_date_event {
+        width: 2.1em;
+        aspect-ratio: 1 / 1;
+        
+        border-radius: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        user-select: none;
+    }
+
+    .calendar_date_event {
+        background-color: var(--tertiary_color);
+    }
+
+    .calendar_date:hover, .calendar_date_event {
+        background-color: var(--tertiary_color_1);
     }
 </style>
