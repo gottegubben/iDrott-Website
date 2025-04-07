@@ -161,7 +161,13 @@
     }
 
     .calendar_content_dates > div {
-        margin: var(--space_xl_clamped);
+        margin: 1em;
+    }
+
+    @media (max-width: 700px) {
+        .calendar_content_dates > div {
+            margin: 1em 0.4em;
+        }
     }
 
     .calendar_content_weeks > div, .calendar_content_dates > div {
