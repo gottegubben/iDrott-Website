@@ -60,7 +60,7 @@
     import BasicContainer from '../../containers/BasicContainer.vue';
     import ContentContainer from '../../containers/ContentContainer.vue';
     import Event from '../../Event.vue';
-import type { IEventViewModel } from '../../../typescripts/viewmodels/IEventViewModel';
+    import type { IEventViewModel } from '../../../typescripts/viewmodels/IEventViewModel';
 
     const weekdays: string[] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     const weekdaysCut: string[] = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -84,8 +84,32 @@ import type { IEventViewModel } from '../../../typescripts/viewmodels/IEventView
         return useWeekdaysCut.value ? weekdaysCut : weekdays;
     });
 
+    const getWeek = function (date: Date) {
+        var target  = new Date(date.valueOf());
+        var dayNr   = (date.getDay() + 6) % 7;
+        target.setDate(target.getDate() - dayNr + 3);
+        var firstThursday = target.valueOf();
+        target.setMonth(0, 1);
+
+        if (target.getDay() != 4) {
+            target.setMonth(0, 1 + ((4 - target.getDay()) + 7) % 7);
+        }
+        
+        return 1 + Math.ceil((firstThursday - target.valueOf()) / 604800000);
+    }
+
     const getWeeksOfMonth = computed(() => {
-        return [1, 2, 3, 4, 5];
+        let weeks: Set<number> = new Set<number>([]);
+        
+        let current: Date = new Date(selectedYear.value, selectedMonth.value, 1);
+        const month = selectedMonth.value;
+
+        while (current.getMonth() === month) {
+            weeks.add(getWeek(current));
+            current.setDate(current.getDate() + 1);
+        }
+
+        return Array.from(weeks);
     });
 
     const getDatesOfMonth = computed(() => {
