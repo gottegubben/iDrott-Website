@@ -7,6 +7,7 @@ export interface IEventViewModel {
     startDate: {
         day: number,
         weekDay: string,
+        monthNumber: number,
         month: string,
         monthCut: string,
         year: number
@@ -15,6 +16,7 @@ export interface IEventViewModel {
         day: number,
         weekDay: string,
         month: string,
+        monthNumber: number,
         monthCut: string,
         year: number
     }

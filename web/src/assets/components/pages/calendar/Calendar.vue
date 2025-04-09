@@ -32,10 +32,10 @@
                     <div class="calendar_content_dates">
                         <div v-for="empty in getEmptyDatesBefore"></div>
 
-                        <div v-for="date in getDatesOfMonth"><div class="calendar_date"><h6 class="font_color_primary">{{ date }}</h6></div></div>
+                        <div v-for="date in getDatesOfMonth"><div :class="dayHasEvents[date] ? 'calendar_date_event' : 'calendar_date'"><h6 class="font_color_primary">{{ date }}</h6></div></div>
 
                         <div class="calendar_week_select_container">
-                            <div class="calendar_week_selector" v-for="week in getWeeksOfMonth"><div :class="selectedWeek == week ? 'week_selected' : ''" @click="() => selectedWeek = week"></div></div>
+                            <div class="calendar_week_selector" v-for="week in getWeeksOfMonth"><div :class="selectedWeek == week ? 'week_selected' : ''" @click="() => { selectedWeek = week; getEventsOfWeek(selectedWeek); }"></div></div>
                         </div>
                     </div>
                 </div>
@@ -62,6 +62,10 @@
     import Event from '../../Event.vue';
     import type { IEventViewModel } from '../../../typescripts/viewmodels/IEventViewModel';
 
+    import { CalendarFactory } from '../../../typescripts/api/CalendarFactory';
+    import type { ICalendarAPI } from '../../../typescripts/api/ICalendarAPI';
+    const CalendarAPI: ICalendarAPI = CalendarFactory.getCalendar(true);
+
     const weekdays: string[] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     const weekdaysCut: string[] = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
     const months: string[]   = ["January", "February", "Mars", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -69,12 +73,10 @@
     const useWeekdaysCut = ref(false);
     const selectedYear = ref(new Date().getFullYear());
     const selectedMonth = ref(new Date().getMonth());
-    const selectedWeek  = ref(1);
-
-    import { CalendarFactory } from '../../../typescripts/api/CalendarFactory';
-    import type { ICalendarAPI } from '../../../typescripts/api/ICalendarAPI';
-    const CalendarAPI: ICalendarAPI = CalendarFactory.getCalendar(true);
-    const events = ref(CalendarAPI.getEventsAhead());
+    const selectedWeek  = ref(0);
+    const dayHasEvents = ref<Array<boolean>>(new Array(32));
+    const weekToDates = ref<Map<number, Date[]>>(new Map<number, Date[]>());
+    const events = ref<IEventViewModel[]>();
 
     const getMonthString = computed(() => {
         return months[selectedMonth.value];
@@ -98,14 +100,50 @@
         return 1 + Math.ceil((firstThursday - target.valueOf()) / 604800000);
     }
 
+    const resetWeekToDates = () => {
+        weekToDates.value.clear();
+
+        for (let week = 0; week < 54; week++) {
+            weekToDates.value.set(week, []);
+        }
+    };
+
+    const getEventsOfWeek = (week: number) => {
+        const dates = weekToDates.value.get(week);
+
+        console.log({
+            "date-list": dates
+        });
+
+        if (dates != undefined) {
+            dates.sort((a, b) => a.valueOf() - b.valueOf());
+
+            const firstDate = dates[0];
+            const lastDate  = dates[dates.length - 1];
+
+            console.log({
+                "first-date": firstDate,
+                "last-date": lastDate
+            });
+
+            events.value = CalendarAPI.getEventsOfSpan(firstDate, lastDate);
+        }
+    };
+
     const getWeeksOfMonth = computed(() => {
         let weeks: Set<number> = new Set<number>([]);
+        
+        resetWeekToDates();
         
         let current: Date = new Date(selectedYear.value, selectedMonth.value, 1);
         const month = selectedMonth.value;
 
         while (current.getMonth() === month) {
-            weeks.add(getWeek(current));
+            let weekNr = getWeek(current);
+            weeks.add(weekNr);
+
+            weekToDates.value.get(weekNr)?.push(new Date(current));
+
             current.setDate(current.getDate() + 1);
         }
 
@@ -113,6 +151,10 @@
     });
 
     const getDatesOfMonth = computed(() => {
+        const daysWithEvents = CalendarAPI.getEventsDateOfMonth(selectedMonth.value);
+        
+        dayHasEvents.value.fill(false); // Set all values to false!
+
         const days = [];
 
         let current = new Date(selectedYear.value, selectedMonth.value, 1);
@@ -120,6 +162,15 @@
 
         while (current.getMonth() === month) {
             days.push(current.getDate());
+
+            const found = daysWithEvents.find((date) => {
+                return current.getFullYear() === date.getFullYear() &&
+                    current.getMonth() === date.getMonth() &&
+                    current.getDate() === date.getDate();
+            });
+
+            if (found != undefined) dayHasEvents.value[current.getDate()] = true;
+
             current.setDate(current.getDate() + 1);
         }
 
@@ -226,12 +277,6 @@
         margin: 1em;
     }
 
-    @media (max-width: 700px) {
-        .calendar_content_dates > div {
-            margin: 1em 0.4em;
-        }
-    }
-
     .calendar_content_weeks > div, .calendar_content_dates > div {
         display: flex;
         justify-content: center;
@@ -322,5 +367,50 @@
 
     .event_calendar_container {
         margin-bottom: calc(var(--space_xxl_clamped) * 2);
+    }
+
+    @media (max-width: 900px) {
+        .calendar_week_selector > div {
+            width: calc(100% - 1em);
+            height: 3rem;
+            border-radius: 999999px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .calendar_content_dates > div {
+            margin: 1em 0.4em;
+        }
+
+        .calendar_week_selector > div {
+            width: calc(100% - 0.4em);
+            height: 3rem;
+            border-radius: 999999px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .calendar_week_selector > div {
+            width: calc(100% - 0.1em);
+            height: 3rem;
+            border-radius: 999999px;
+        }
+
+        .calendar_content_dates > div {
+            margin: 1em 0em;
+        }
+
+        .calendar_date, .calendar_date_event {
+            width: 1.8em;
+            aspect-ratio: 1 / 1;
+            
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            user-select: none;
+        }
     }
 </style>

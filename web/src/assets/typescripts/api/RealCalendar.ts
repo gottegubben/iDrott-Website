@@ -23,4 +23,16 @@ export class RealCalendar implements ICalendarAPI {
     getEventsAhead(): IEventViewModel[] {
         return [];
     }
+
+    getEventsDateOfMonth(month: number): Date[] {
+        return [];
+    }
+
+    getEventsOfSpan(dateMin: Date, dateMax: Date): IEventViewModel[] {
+        return [];
+    }
+
+    getThreeFirstEvents(): IEventViewModel[] {
+        return [];
+    }
 }
