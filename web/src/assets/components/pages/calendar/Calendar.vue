@@ -64,7 +64,7 @@
 
     import { CalendarFactory } from '../../../typescripts/api/CalendarFactory';
     import type { ICalendarAPI } from '../../../typescripts/api/ICalendarAPI';
-    const CalendarAPI: ICalendarAPI = CalendarFactory.getCalendar(true);
+    const CalendarAPI: ICalendarAPI = CalendarFactory.getCalendar(false);
 
     const weekdays: string[] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     const weekdaysCut: string[] = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];

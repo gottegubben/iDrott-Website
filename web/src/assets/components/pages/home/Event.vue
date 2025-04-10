@@ -30,7 +30,7 @@
 
     import { CalendarFactory } from '../../../typescripts/api/CalendarFactory';
     import type { ICalendarAPI } from '../../../typescripts/api/ICalendarAPI';
-    const CalendarAPI: ICalendarAPI = CalendarFactory.getCalendar(true);
+    const CalendarAPI: ICalendarAPI = CalendarFactory.getCalendar(false);
 
     const events: IEventViewModel[] = CalendarAPI.getThreeFirstEvents();
 </script>
