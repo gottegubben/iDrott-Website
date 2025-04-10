@@ -1,0 +1,37 @@
+/*
+    This file will contain all the different variables for
+    the colors displayed on the page. For example, the color
+    of the background etc.
+*/
+
+:root {
+    --primary_color:   hsl(0, 0%, 17%);   /* Rule: takes up about 60% of the page. */
+    --primary_color_hue: 0;
+    --primary_color_sat: 0%;
+    --primary_color_lig: 17%;
+    --primary_color_1: hsl(var(--primary_color_hue), var(--primary_color_sat), calc(var(--primary_color_lig) - 5%));
+    --primary_color_2: hsl(var(--primary_color_hue), var(--primary_color_sat), calc(var(--primary_color_lig) - 10%));
+
+    --secondary_color: hsl(0, 0%, 96%);   /* Rule: takes up about 30% of the page. */
+    --secondary_color_hue: 0;
+    --secondary_color_sat: 0%;
+    --secondary_color_lig: 96%;
+    --secondary_color_1: hsl(var(--secondary_color_hue), var(--secondary_color_sat), calc(var(--secondary_color_lig) - 5%));
+    --secondary_color_2: hsl(var(--secondary_color_hue), var(--secondary_color_sat), calc(var(--secondary_color_lig) - 10%));
+
+    --tertiary_color:  hsl(20, 84%, 53%); /* Rule: takes up about 10% of the page. */
+    --tertiary_color_hue: 20;
+    --tertiary_color_sat: 84%;
+    --tertiary_color_lig: 53%;
+    --tertiary_color_overlay: hsl(var(--tertiary_color_hue), var(--tertiary_color_sat), var(--tertiary_color_lig), 30%);
+    --tertiary_color_overlay_1: hsl(var(--tertiary_color_hue), var(--tertiary_color_sat), var(--tertiary_color_lig), 50%);
+    --tertiary_color_1: hsl(var(--tertiary_color_hue), var(--tertiary_color_sat), calc(var(--tertiary_color_lig) - 10%));
+    --tertiary_color_2: hsl(var(--tertiary_color_hue), var(--tertiary_color_sat), calc(var(--tertiary_color_lig) - 20%));
+
+    --shadow_color_1: rgb(21, 21, 21);
+    --shadow_variant_1: 0px 5px 15px var(--shadow_color_1);
+
+    --overlay_color: hsl(var(--primary_color_hue), var(--primary_color_sat), var(--primary_color_lig), 90%);
+    --overlay_color_1: hsl(var(--primary_color_hue), var(--primary_color_sat), calc(var(--primary_color_lig) - 5%), 90%);
+    --overlay_color_2: hsl(var(--primary_color_hue), var(--primary_color_sat), var(--primary_color_lig), 70%);
+}

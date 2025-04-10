@@ -1,0 +1,33 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "BUILD Server",
+			"type": "shell",
+			"command": "npx tsc",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			}
+		},
+		{
+			"label": "RUN Server",
+			"type": "shell",
+			"command": "node .\\build\\src\\app.js",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			}
+		},
+		{
+			"label": "RUN & BUILD Server",
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"dependsOn": ["BUILD Server", "RUN Server"],
+			"dependsOrder": "sequence"
+		}
+	]
+}

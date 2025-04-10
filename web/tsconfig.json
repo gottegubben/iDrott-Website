@@ -1,0 +1,6 @@
+{
+    "extends": "@vue\\tsconfig\\tsconfig.json",
+    "compilerOptions": {
+        "moduleResolution": "bundler"
+    }
+}

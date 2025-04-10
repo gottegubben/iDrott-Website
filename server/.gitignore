@@ -1,0 +1,8 @@
+build/
+node_modules/
+
+# Contains some static resources that's used for testing purposes.
+test_resources/
+
+# Contains secrets that should not be shared.
+env-config.json
