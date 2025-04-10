@@ -111,20 +111,11 @@
     const getEventsOfWeek = (week: number) => {
         const dates = weekToDates.value.get(week);
 
-        console.log({
-            "date-list": dates
-        });
-
         if (dates != undefined) {
             dates.sort((a, b) => a.valueOf() - b.valueOf());
 
             const firstDate = dates[0];
             const lastDate  = dates[dates.length - 1];
-
-            console.log({
-                "first-date": firstDate,
-                "last-date": lastDate
-            });
 
             events.value = CalendarAPI.getEventsOfSpan(firstDate, lastDate);
         }
