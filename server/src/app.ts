@@ -37,29 +37,16 @@ else {
     server = http.createServer(app);
 }
 
-const albums: Array<string> = [];
-
-/*
-
-fs.readdir(CONFIG.albums_absolute_path, (error, files) => {
-    if(error) {
-        console.log("Error occured when reading albums from disk: ", error.message);
-    }
-    else {
-        files.forEach(file => {
-            albums.push(file);
-        });
-    }
+app.get("/api/GetEventsDateOfMonth", async (req, res) => {
+    // Returns Date[].
 });
 
-app.get("/api/GetAllAlbums", (req, res) => {
-    res.json(albums);
+app.get("/api/GetEventsOfSpan", async (req, res) => {
+    // Returns EventViewModel[].
 });
 
-*/
-
-app.get("/api/GetFirstThreeEvents", async (req, res) => {
-    res.json(await calendar.GetFirstThreeEventsView());
+app.get("/api/GetThreeFirstEvents", async (req, res) => {
+    // Returns EventViewModel[].
 });
 
 app.use(express.static(CONFIG.resources_absolute_path)); // Make resources avaible!

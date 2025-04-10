@@ -6,12 +6,10 @@ export class Calendar {
     private auth: JWT;
     private calendar: calendar_v3.Calendar;
     private calendarId: string;
-    private useCache: boolean;
 
-    private eventSourceCache: EventSource[]  = [];
-    private eventViewCache: EventViewModel[] = [];
-    private cacheDate: Date;
-    private static cacheAhead: number = 31; // Number of days to cache ahead.
+    private lastCacheDate: Date;
+    private cachedEvents: EventViewModel[] = [];
+    private maxCachedEvents: number = 90;
 
     public static Months: string[] = ["January", "February", "Mars", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     public static MonthsCut: string[] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -30,10 +28,8 @@ export class Calendar {
 
         this.calendarId = calendarId;
 
-        this.useCache = useCache;
-
-        this.cacheDate = new Date();
-        this.cacheDate.setDate(this.cacheDate.getDate() - 1);
+        this.lastCacheDate = new Date();
+        this.lastCacheDate.setDate(this.lastCacheDate.getDate() - 1);
     }
 
     /**
@@ -64,6 +60,7 @@ export class Calendar {
                 day: startDateTime.getDate(),
                 weekDay: Calendar.Days[startDateTime.getDay()],
                 month: Calendar.Months[startDateTime.getMonth()],
+                monthNumber: startDateTime.getMonth(),
                 monthCut: Calendar.MonthsCut[startDateTime.getMonth()],
                 year: startDateTime.getFullYear()
             },
@@ -71,6 +68,7 @@ export class Calendar {
                 day: endDateTime.getDate(),
                 weekDay: Calendar.Days[endDateTime.getDay()],
                 month: Calendar.Months[endDateTime.getMonth()],
+                monthNumber: endDateTime.getMonth(),
                 monthCut: Calendar.MonthsCut[endDateTime.getMonth()],
                 year: endDateTime.getFullYear()
             }
@@ -93,7 +91,7 @@ export class Calendar {
      * @param numberOfEventsAhead max events to send back.
      * @returns A list of event sources.
      */
-    private async getEventsUpAhead(numberOfEventsAhead: number = 5): Promise<EventSource[]> {
+    private async getEventsUpAhead(numberOfEventsAhead: number = 3): Promise<EventSource[]> {
         try {
             const response = await this.calendar.events.list({
                 calendarId: this.calendarId,
@@ -154,29 +152,39 @@ export class Calendar {
     }
 
     /**
-     * Get new items for the cache.
-     * @param startDate The start date.
+     * Checks if the cache is out of date or not.
+     * @returns True if the cache is out of date by one day.
      */
-    private async getNewCache(startDate: Date): Promise<void> {
-        console.log("Fetching new cache for the events...")
+    private cacheOutOfDate(): boolean {
+        const today = this.getTodaysDate();
 
-        const endDate: Date = new Date();
-        endDate.setDate(endDate.getDate() + Calendar.cacheAhead);
-        endDate.setHours(23, 59, 0, 0); // 23:59:00.000.
-        
-        const eventSources: EventSource[] = await this.getEvents(startDate, endDate, Calendar.cacheAhead);
-        const eventViewModels: EventViewModel[] = Calendar.ConvertToViewModels(eventSources);
-
-        this.eventSourceCache = eventSources;
-        this.eventViewCache   = eventViewModels;
-        this.cacheDate        = startDate;
+        return today.getFullYear() > this.lastCacheDate.getFullYear() ||
+            today.getMonth() > this.lastCacheDate.getMonth() ||
+            today.getDate() > this.lastCacheDate.getDate();
     }
 
-    public async GetFirstThreeEventsView(): Promise<EventViewModel[]> {
-        if (this.useCache && this.getTodaysDate() > this.cacheDate) await this.getNewCache(this.getTodaysDate());
+    /**
+     * API function that gets the dates of which there are events.
+     * @returns A list of dates containing events of a certain month.
+     */
+    public GetEventsDateOfMonth(month: number): Date[] {
+        return [];
+    }
 
-        if (this.useCache) { return this.eventViewCache.slice(0, 3); }
-        else return Calendar.ConvertToViewModels(await this.getEventsUpAhead(3));
+    /**
+     * API function that retrieves the events in between a certain span.
+     * @returns A list of events.
+     */
+    public GetEventsOfSpan(dateMin: Date, dateMax: Date): EventViewModel[] {
+        return [];
+    }
+
+    /**
+     * API function that retrieves the three first events coming up.
+     * @returns The three events coming up.
+     */
+    public GetThreeFirstEvents(): EventViewModel[] {
+        return [];
     }
 }
 
@@ -193,6 +201,7 @@ export interface EventViewModel {
         day: number,
         weekDay: string,
         month: string,
+        monthNumber: number,
         monthCut: string,
         year: number
     },
@@ -200,6 +209,7 @@ export interface EventViewModel {
         day: number,
         weekDay: string,
         month: string,
+        monthNumber: number,
         monthCut: string,
         year: number
     }
