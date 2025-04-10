@@ -9,6 +9,7 @@ export class Calendar {
 
     private lastCacheDate: Date;
     private cachedEvents: EventViewModel[] = [];
+    private cachedMonthsDate: Map<number, Date[]> = new Map<number, Date[]>();
     private maxCachedEvents: number = 90;
 
     public static Months: string[] = ["January", "February", "Mars", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -164,27 +165,87 @@ export class Calendar {
     }
 
     /**
+     * Gets the start date of an event.
+     * @returns A date.
+     */
+    private getStartDateOfEventViewModel(event: EventViewModel): Date {
+        return new Date(event.startDate.year, event.startDate.monthNumber, event.startDate.day);
+    }
+
+    /**
+     * Gets the end date of an event.
+     * @return A date.
+     */
+    private getEndDateOfEventViewModel(event: EventViewModel): Date {
+        return new Date(event.endDate.year, event.endDate.monthNumber, event.endDate.day);
+    }
+
+    /**
+     * Checks the cache to see if it's up to date and if not
+     * updates the cache.
+     */
+    private async checkCache(): Promise<void> {
+        if (this.cacheOutOfDate()) {
+            console.log("[Server] Cache was out of date, retrieving new data!\n");
+
+            this.cachedEvents = []; // Reset the cached events.
+
+            const today = this.getTodaysDate();
+            const yearAhead = this.getTodaysDate();
+            yearAhead.setFullYear(yearAhead.getFullYear() + 1, yearAhead.getMonth() - 1);
+
+            const rawEvents = await this.getEvents(today, yearAhead, this.maxCachedEvents);
+
+            const events = Calendar.ConvertToViewModels(rawEvents);
+
+            this.cachedEvents = events;
+
+            this.cachedMonthsDate.clear(); // Clear the maps!
+
+            for (let i = 0; i < 12; i++) { // For each month, cache the dates.
+                const eventsOfMonth = events.filter(x => x.startDate.monthNumber === i);
+
+                this.cachedMonthsDate.set(i, eventsOfMonth.map(x => this.getStartDateOfEventViewModel(x)));
+            }
+        }
+    }
+
+    /**
      * API function that gets the dates of which there are events.
      * @returns A list of dates containing events of a certain month.
      */
-    public GetEventsDateOfMonth(month: number): Date[] {
-        return [];
+    public async GetEventsDateOfMonth(month: number): Promise<Date[]> {
+        await this.checkCache();
+
+        const dates = this.cachedMonthsDate.get(month);
+
+        return dates ? dates : [];
     }
 
     /**
      * API function that retrieves the events in between a certain span.
      * @returns A list of events.
      */
-    public GetEventsOfSpan(dateMin: Date, dateMax: Date): EventViewModel[] {
-        return [];
+    public async GetEventsOfSpan(dateMin: Date, dateMax: Date): Promise<EventViewModel[]> {
+        await this.checkCache();
+
+        const events = this.cachedEvents.filter(x => {
+            const date = this.getStartDateOfEventViewModel(x);
+
+            return dateMin.valueOf() <= date.valueOf() && date.valueOf() <= dateMax.valueOf();
+        });
+        
+        return events;
     }
 
     /**
      * API function that retrieves the three first events coming up.
      * @returns The three events coming up.
      */
-    public GetThreeFirstEvents(): EventViewModel[] {
-        return [];
+    public async GetThreeFirstEvents(): Promise<EventViewModel[]> {
+        await this.checkCache();
+
+        return this.cachedEvents.slice(0, 3);
     }
 }
 
