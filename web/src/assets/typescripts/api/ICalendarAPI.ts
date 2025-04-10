@@ -5,11 +5,11 @@
 import type { IEventViewModel } from "../viewmodels/IEventViewModel";
 
 export interface ICalendarAPI {
-    getEventsAhead(): IEventViewModel[]; // Retrieves the events that are ahead (max 10 I think).
+    getEventsAhead(): Promise<IEventViewModel[]>; // Retrieves the events that are ahead (max 10 I think).
 
-    getEventsDateOfMonth(month: number): Date[]; // Retrieves the events for a month (only their dates).
+    getEventsDateOfMonth(month: number): Promise<Date[]>; // Retrieves the events for a month (only their dates).
 
-    getEventsOfSpan(dateMin: Date, dateMax: Date): IEventViewModel[]; // Retrieves the events between a certain time span.
+    getEventsOfSpan(dateMin: Date, dateMax: Date): Promise<IEventViewModel[]>; // Retrieves the events between a certain time span.
 
-    getThreeFirstEvents(): IEventViewModel[]; // Retrieves the first 3 events coming up.
+    getThreeFirstEvents(): Promise<IEventViewModel[]>; // Retrieves the first 3 events coming up.
 }

@@ -20,48 +20,48 @@ export class RealCalendar implements ICalendarAPI {
         }
     }
 
-    getEventsAhead(): IEventViewModel[] {
-        return [];
+    getEventsAhead(): Promise<IEventViewModel[]> {
+        return Promise.resolve([]);
     }
 
-    getEventsDateOfMonth(month: number): Date[] {
-        let dates: Date[] = [];
+    getEventsDateOfMonth(month: number): Promise<Date[]> {
+        console.log("Fetching dates of month...\n");
 
-        fetch("/api/GetEventsOfSpan", {
-            method: "GET",
-            body: JSON.stringify(month)
+        return fetch("/api/getEventsDateOfMonth", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({month})
         })
         .then(response => response.json())
-        .then(data => dates = data as Date[]);
-
-        return dates;
+        .then(data => (data as Array<string>).map(x => new Date(x)));
     }
 
-    getEventsOfSpan(dateMin: Date, dateMax: Date): IEventViewModel[] {
-        let events: IEventViewModel[] = [];
+    getEventsOfSpan(dateMin: Date, dateMax: Date): Promise<IEventViewModel[]> {
+        console.log("Fetching events between dates...\n");
 
-        fetch("/api/GetEventsOfSpan", {
-            method: "GET",
+        return fetch("/api/GetEventsOfSpan", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify({
                 dateMin,
                 dateMax
             })
         })
         .then(response => response.json())
-        .then(data => events = data as IEventViewModel[]);
-
-        return events;
+        .then(data => data as IEventViewModel[]);
     }
 
-    getThreeFirstEvents(): IEventViewModel[] {
-        let events: IEventViewModel[] = [];
+    getThreeFirstEvents(): Promise<IEventViewModel[]> {
+        console.log("Fetching first three events...\n");
 
-        fetch("/api/GetThreeFirstEvents", {
+        return fetch("/api/GetThreeFirstEvents", {
             method: "GET"
         })
         .then(response => response.json())
-        .then(data => events = data as IEventViewModel[]);
-
-        return events;
+        .then(data => data as IEventViewModel[]);
     }
 }

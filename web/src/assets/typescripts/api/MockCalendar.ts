@@ -20,7 +20,7 @@ export class MockCalendar implements ICalendarAPI {
         }
     }
 
-    getEventsAhead(): IEventViewModel[] {
+    getEventsAhead(): Promise<IEventViewModel[]> {
         const events: IEventViewModel[] = [
             {
                 id: "gjaiotjmg-falsf",
@@ -116,14 +116,14 @@ export class MockCalendar implements ICalendarAPI {
             }
         ];
 
-        return events;
+        return Promise.resolve(events);
     }
 
-    getEventsDateOfMonth(month: number): Date[] {
-        if (0 < month && month > 11) return [];
+    getEventsDateOfMonth(month: number): Promise<Date[]> {
+        if (0 < month && month > 11) return Promise.resolve([]);
         
         if (month == 3) { // If month == April.
-            return [
+            return Promise.resolve([
                 new Date(2025, 3, 1),
                 new Date(2025, 3, 10),
                 new Date(2025, 3, 12),
@@ -131,10 +131,10 @@ export class MockCalendar implements ICalendarAPI {
                 new Date(2025, 3, 21),
                 new Date(2025, 3, 25),
                 new Date(2025, 3, 29)
-            ];
+            ]);
         }
         else if (month == 4) { // If month == May.
-            return [
+            return Promise.resolve([
                 new Date(2025, 4, 1),
                 new Date(2025, 4, 3),
                 new Date(2025, 4, 5),
@@ -142,13 +142,13 @@ export class MockCalendar implements ICalendarAPI {
                 new Date(2025, 4, 25),
                 new Date(2025, 4, 26),
                 new Date(2025, 4, 29)
-            ];
+            ]);
         }
 
-        return [];
+        return Promise.resolve([]);
     }
 
-    getEventsOfSpan(dateMin: Date, dateMax: Date): IEventViewModel[] {
+    getEventsOfSpan(dateMin: Date, dateMax: Date): Promise<IEventViewModel[]> {
         const dates = [
             {
                 id: "gjaiotjmg-falsf",
@@ -227,11 +227,11 @@ export class MockCalendar implements ICalendarAPI {
                 dateMin.getDate() <= x.startDate.day && x.startDate.day <= dateMax.getDate();
         });
 
-        return events;
+        return Promise.resolve(events);
     }
 
-    getThreeFirstEvents(): IEventViewModel[] {
-        return [
+    getThreeFirstEvents(): Promise<IEventViewModel[]> {
+        return Promise.resolve([
             {
                 id: "gjaiotjmg-falsf",
                 title: "Workshop",
@@ -301,6 +301,6 @@ export class MockCalendar implements ICalendarAPI {
                     year: 2025
                 }
             }
-        ];
+        ]);
     }
 }

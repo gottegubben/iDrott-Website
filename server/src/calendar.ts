@@ -207,6 +207,8 @@ export class Calendar {
 
                 this.cachedMonthsDate.set(i, eventsOfMonth.map(x => this.getStartDateOfEventViewModel(x)));
             }
+
+            this.lastCacheDate = new Date();
         }
     }
 
@@ -232,7 +234,9 @@ export class Calendar {
         const events = this.cachedEvents.filter(x => {
             const date = this.getStartDateOfEventViewModel(x);
 
-            return dateMin.valueOf() <= date.valueOf() && date.valueOf() <= dateMax.valueOf();
+            const ret = dateMin.valueOf() <= date.valueOf() && date.valueOf() <= dateMax.valueOf();
+            
+            return ret;
         });
         
         return events;

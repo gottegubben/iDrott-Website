@@ -30,9 +30,15 @@
 
     import { CalendarFactory } from '../../../typescripts/api/CalendarFactory';
     import type { ICalendarAPI } from '../../../typescripts/api/ICalendarAPI';
+    import { onMounted, ref } from 'vue';
+    
     const CalendarAPI: ICalendarAPI = CalendarFactory.getCalendar(false);
 
-    const events: IEventViewModel[] = CalendarAPI.getThreeFirstEvents();
+    const events = ref<IEventViewModel[]>();
+
+    onMounted(async () => {
+        events.value = await CalendarAPI.getThreeFirstEvents();
+    });
 </script>
 
 <style>

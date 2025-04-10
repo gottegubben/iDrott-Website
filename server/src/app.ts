@@ -17,6 +17,7 @@ import { Calendar } from "./calendar";
 const calendar: Calendar = new Calendar(CONFIG.google_config.service_account, CONFIG.google_config.event_calendar_id, true);
 
 const app = express();
+app.use(express.json());
 
 let server: https.Server | http.Server;
 
@@ -37,8 +38,8 @@ else {
     server = http.createServer(app);
 }
 
-app.get("/api/GetEventsDateOfMonth", async (req, res) => {
-    const month = req.body;
+app.post("/api/GetEventsDateOfMonth", async (req, res) => {
+    const month = parseInt(req.body["month"]);
 
     try {
         const dates = await calendar.GetEventsDateOfMonth(month);
@@ -51,8 +52,9 @@ app.get("/api/GetEventsDateOfMonth", async (req, res) => {
     }
 });
 
-app.get("/api/GetEventsOfSpan", async (req, res) => {
-    const { startDate, endDate } = req.body;
+app.post("/api/GetEventsOfSpan", async (req, res) => {
+    const startDate = req.body["dateMin"];
+    const endDate   = req.body["dateMax"];
 
     try {
         const events = await calendar.GetEventsOfSpan(new Date(startDate), new Date(endDate));

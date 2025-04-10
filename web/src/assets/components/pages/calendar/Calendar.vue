@@ -5,16 +5,16 @@
 
             <!-- For selecting a specific year. -->
             <div class="calendar_select_container">
-                <div class="calendar_selector" @click="() => selectedYear -= 1"></div>
+                <div class="calendar_selector" @click="() => { selectedYear -= 1; updateEventDatesOfMonth(); }"></div>
                 <div class="calendar_selector_value"><h6 class="font_weight_medium">{{ selectedYear }}</h6></div>
-                <div class="calendar_selector" @click="() => selectedYear += 1"></div>
+                <div class="calendar_selector" @click="() => { selectedYear += 1; updateEventDatesOfMonth(); }"></div>
             </div>
 
             <!-- For selecting a specific month of the year specified. -->
             <div class="calendar_select_container">
-                <div class="calendar_selector" @click="() => selectedMonth = Math.max(0, (selectedMonth - 1))"></div>
+                <div class="calendar_selector" @click="() => { selectedMonth = Math.max(0, (selectedMonth - 1)); updateEventDatesOfMonth(); }"></div>
                 <div class="calendar_selector_value"><h6 class="font_weight_medium">{{ getMonthString }}</h6></div>
-                <div class="calendar_selector" @click="() => selectedMonth = Math.min(11, (selectedMonth + 1))"></div>
+                <div class="calendar_selector" @click="() => { selectedMonth = Math.min(11, (selectedMonth + 1)); updateEventDatesOfMonth(); }"></div>
             </div>
 
             <!-- Calendar. -->
@@ -77,6 +77,17 @@
     const dayHasEvents = ref<Array<boolean>>(new Array(32));
     const weekToDates = ref<Map<number, Date[]>>(new Map<number, Date[]>());
     const events = ref<IEventViewModel[]>();
+    const eventDatesOfMonth = ref<Date[]>([]);
+
+    onMounted(async () => {
+        updateEventDatesOfMonth();
+    });
+
+    const updateEventDatesOfMonth = async () => {
+        const dates = await CalendarAPI.getEventsDateOfMonth(selectedMonth.value);
+
+        eventDatesOfMonth.value = dates;
+    }
 
     const getMonthString = computed(() => {
         return months[selectedMonth.value];
@@ -108,7 +119,7 @@
         }
     };
 
-    const getEventsOfWeek = (week: number) => {
+    const getEventsOfWeek = async (week: number) => {
         const dates = weekToDates.value.get(week);
 
         if (dates != undefined) {
@@ -117,7 +128,7 @@
             const firstDate = dates[0];
             const lastDate  = dates[dates.length - 1];
 
-            events.value = CalendarAPI.getEventsOfSpan(firstDate, lastDate);
+            events.value = await CalendarAPI.getEventsOfSpan(firstDate, lastDate);
         }
     };
 
@@ -142,8 +153,6 @@
     });
 
     const getDatesOfMonth = computed(() => {
-        const daysWithEvents = CalendarAPI.getEventsDateOfMonth(selectedMonth.value);
-        
         dayHasEvents.value.fill(false); // Set all values to false!
 
         const days = [];
@@ -154,7 +163,7 @@
         while (current.getMonth() === month) {
             days.push(current.getDate());
 
-            const found = daysWithEvents.find((date) => {
+            const found = eventDatesOfMonth.value.find((date) => {
                 return current.getFullYear() === date.getFullYear() &&
                     current.getMonth() === date.getMonth() &&
                     current.getDate() === date.getDate();
@@ -164,7 +173,7 @@
 
             current.setDate(current.getDate() + 1);
         }
-
+        
         return days;
     });
 
