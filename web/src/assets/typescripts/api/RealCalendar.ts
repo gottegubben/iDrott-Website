@@ -25,14 +25,43 @@ export class RealCalendar implements ICalendarAPI {
     }
 
     getEventsDateOfMonth(month: number): Date[] {
-        return [];
+        let dates: Date[] = [];
+
+        fetch("/api/GetEventsOfSpan", {
+            method: "GET",
+            body: JSON.stringify(month)
+        })
+        .then(response => response.json())
+        .then(data => dates = data as Date[]);
+
+        return dates;
     }
 
     getEventsOfSpan(dateMin: Date, dateMax: Date): IEventViewModel[] {
-        return [];
+        let events: IEventViewModel[] = [];
+
+        fetch("/api/GetEventsOfSpan", {
+            method: "GET",
+            body: JSON.stringify({
+                dateMin,
+                dateMax
+            })
+        })
+        .then(response => response.json())
+        .then(data => events = data as IEventViewModel[]);
+
+        return events;
     }
 
     getThreeFirstEvents(): IEventViewModel[] {
-        return [];
+        let events: IEventViewModel[] = [];
+
+        fetch("/api/GetThreeFirstEvents", {
+            method: "GET"
+        })
+        .then(response => response.json())
+        .then(data => events = data as IEventViewModel[]);
+
+        return events;
     }
 }
