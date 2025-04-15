@@ -375,6 +375,14 @@
             height: 3rem;
             border-radius: 999999px;
         }
+
+        .calendar_week_selector > div:hover {
+            cursor: pointer;
+            background-color: var(--tertiary_color_overlay_1);
+            width: calc(100% - 1rem);
+            height: 3rem;
+            border-radius: 999999px;
+        }
     }
 
     @media (max-width: 640px) {
@@ -383,7 +391,15 @@
         }
 
         .calendar_week_selector > div {
-            width: calc(100% - 0.4em);
+            width: calc(100% - 0.1em);
+            height: 3rem;
+            border-radius: 999999px;
+        }
+
+        .calendar_week_selector > div:hover {
+            cursor: pointer;
+            background-color: var(--tertiary_color_overlay_1);
+            width: calc(100% - 1rem);
             height: 3rem;
             border-radius: 999999px;
         }
@@ -391,13 +407,21 @@
 
     @media (max-width: 500px) {
         .calendar_week_selector > div {
-            width: calc(100% - 0.1em);
+            width: 100%;
             height: 3rem;
             border-radius: 999999px;
         }
 
         .calendar_content_dates > div {
             margin: 1em 0em;
+        }
+
+        .calendar_week_selector > div:hover {
+            cursor: pointer;
+            background-color: var(--tertiary_color_overlay_1);
+            width: 100%;
+            height: 3rem;
+            border-radius: 999999px;
         }
 
         .calendar_date, .calendar_date_event {
