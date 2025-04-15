@@ -51,12 +51,24 @@ export class Calendar {
         const startDateTime: Date = new Date(eventSource.start.dateTime);
         const endDateTime: Date = new Date(eventSource.end.dateTime);
 
+        // Set Swedish locale for time formatting.
+        const options: Intl.DateTimeFormatOptions = { 
+            hour: '2-digit', 
+            minute: '2-digit', 
+            hour12: false,  // Use 24-hour format.
+            timeZone: 'Europe/Stockholm' // Swedish time zone.
+        };
+
+        // Convert start and end time to Swedish 24-hour format.
+        const startTime = startDateTime.toLocaleTimeString('sv-SE', options);
+        const endTime   = endDateTime.toLocaleTimeString('sv-SE', options);
+
         const temp: EventViewModel = {
             id: eventSource.id,
             title: eventSource.summary,
             description: eventSource.description,
-            startTime: `${startDateTime.getHours().toString().padStart(2, "0")}:${startDateTime.getMinutes().toString().padStart(2, "0")}`,
-            endTime: `${endDateTime.getHours().toString().padStart(2, "0")}:${endDateTime.getMinutes().toString().padStart(2, "0")}`,
+            startTime: startTime,
+            endTime: endTime,
             startDate: {
                 day: startDateTime.getDate(),
                 weekDay: Calendar.Days[startDateTime.getDay()],
